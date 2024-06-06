@@ -14,3 +14,15 @@ To run the development mode, run the following command.
 ```bash
 npm run dev
 ```
+
+Before pushing the code, please run the following command to check the code quality.
+
+```bash
+npm run lint
+```
+
+if there are any prettier errors, please run the following command to fix them.
+
+```bash
+npx prettier . --write
+```
