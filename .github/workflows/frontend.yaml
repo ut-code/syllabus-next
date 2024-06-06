@@ -29,4 +29,3 @@ jobs:
         run: npm run lint
       - name: format
         run: npm run fmt
-
