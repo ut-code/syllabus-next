@@ -9,4 +9,3 @@ export type RegisterType = {
   grade: string | undefined;
   classNumber: string | undefined;
 };
-
