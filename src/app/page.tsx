@@ -1,3 +1,5 @@
+import ClassModal from "./components/ClassModal";
+
 export default function Home() {
-  return <div>fix me</div>;
+  return <ClassModal />;
 }
