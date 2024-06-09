@@ -9,7 +9,7 @@ export type ClassDataType = {
   type: string;
   category: string;
   semester: string;
-  dayPeriod: DayPeriod | "集中";
+  dayPeriod: DayPeriod[] | "集中";
   classroom: string;
   titleJp: string;
   lecturer: string;
