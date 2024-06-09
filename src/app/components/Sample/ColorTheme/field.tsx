@@ -1,8 +1,8 @@
 /*
     定義済みColorを用いてインプットフィールドをデザインするサンプル
 */
-"use client"
-import React, { useState, ChangeEvent } from 'react';
+"use client";
+import React, { useState, ChangeEvent } from "react";
 
 type ValidatedInputProps = {
   placeholder?: string;
@@ -13,7 +13,9 @@ type ValidatedInputProps = {
  * @param param0.placeholder placeholderのテキスト
  * @returns inputフィールドのサンプル
  */
-const ValidatedInput: React.FC<ValidatedInputProps> = ({ placeholder = "Only alphanumeric!" }) => {
+const ValidatedInput: React.FC<ValidatedInputProps> = ({
+  placeholder = "Only alphanumeric!",
+}) => {
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
 
@@ -36,10 +38,10 @@ const ValidatedInput: React.FC<ValidatedInputProps> = ({ placeholder = "Only alp
         placeholder={placeholder}
         className={`border-b-2 p-2 
         ${
-            // エラーの有無で枠線の色を変更
-            error ? 
-            'border-error' : // エラーの場合はエラー色(推奨)
-            'border-tertiary' // エラーでない場合はtertiary色(例)
+          // エラーの有無で枠線の色を変更
+          error
+            ? "border-error" // エラーの場合はエラー色(推奨)
+            : "border-tertiary" // エラーでない場合はtertiary色(例)
         } focus:outline-none focus:ring-2 bg-surface-container`}
       />
       {error && <p className="text-error mt-2 text-nowrap">{error}</p>}
