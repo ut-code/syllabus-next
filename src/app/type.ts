@@ -36,6 +36,6 @@ export type ClassDataType = {
 };
 
 type DayPeriod = {
-  day: string;
-  period: number;
+  day: "mon" | "tue" | "wed" | "thu" | "fri" | "sat";
+  period: 1 | 2 | 3 | 4 | 5 | 6;
 };
