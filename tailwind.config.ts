@@ -14,12 +14,14 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    
     colors: {
 
       /* 
-       * テーマ色の定義
-       * (Material designに乗っ取った配色)
+       * global.cssで定義した色の定義を参照
+       * (ダークモードかライトモードかで色が変わる)
        * 
+       * Material designに乗っ取った配色となっている
        * 色の種類は 1-3次色とエラー色の4種類が定義されており、
        * それぞれに対し、containerとonの属性が存在
        *
@@ -130,6 +132,9 @@ const config: Config = {
       "scrim": "rgb(var(--color-scrim) / <alpha-value>)", // スクリム(背景を暗くして目立たなくする際の色。モーダルなどで使用)
 
       "surface-tint": "rgb(var(--color-surface-tint) / <alpha-value>)", // !!非推奨!!
+
+      /* テキスト色 */
+      "text-default":"rgb(var(--color-text-default) / <alpha-value>)",
     },
   },
   plugins: [],

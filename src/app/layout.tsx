@@ -16,7 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    // ライト/ダークモードで背景色と文字色を変更
+    <html lang="ja" className="bg-surface-container text-text-default">
       <body className={inter.className}>{children}</body>
     </html>
   );

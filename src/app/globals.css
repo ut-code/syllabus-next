@@ -4,10 +4,18 @@
 
 @layer base {
 
+    /* 
+    色の定義を行う。
+    ここで宣言した変数は、tailwind.config.tsで参照されるが、
+    ライトモードでは:rootの値が
+    ダークモードでは:root[class~="dark"]の値が適用される。
+     */
+
     /* 色の定義(ライトモード) */
     :root {
 
-        /* Color Highlight というvscode拡張機能で、色が見やすくなります */
+        /* Color Highlight というvscode拡張機能を利用すると、
+        コメント部に色が付き見やすくなります */
         /* 色の種類や用途についてはtailwind.config.tsを参照 */
         --color-primary: 46 106 68; /* #2E6A44 */
         --color-surface-tint: 46 106 68; /* #2E6A44 */
@@ -58,6 +66,7 @@
         --color-surface-container: 235 239 232; /* #EAEFE8 */
         --color-surface-container-high: 229 234 226; /* #E5EAE2 */
         --color-surface-container-highest: 223 228 220; /* #DFE4DC */
+        --color-text-default: 0 0 0;
     }
   
     /* 色の定義(ダークモード) */
@@ -111,5 +120,6 @@
         --color-surface-container: 28 33 28; /* #1C211C */
         --color-surface-container-high: 38 43 38; /* #262B26 */
         --color-surface-container-highest: 49 54 49; /* #313631 */
+        --color-text-default: 255 255 255;
     }
   }
