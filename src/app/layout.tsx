@@ -10,6 +10,12 @@ export const metadata: Metadata = {
   description: "ut.code();が開発する東京大学前期教養の時間割アプリ",
 };
 
+/**
+ * RootLayout コンポーネントは、アプリケーション全体のレイアウトを定義します。
+ * @param props - コンポーネントのプロパティ。
+ * @param props.children - レイアウト内に表示する子要素。
+ * @returns HTMLドキュメントのルート要素としてのJSX要素。
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
