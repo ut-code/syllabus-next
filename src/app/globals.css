@@ -4,9 +4,11 @@
 
 @layer base {
 
+    /* 色の定義(ライトモード) */
     :root {
 
         /* Color Highlight というvscode拡張機能で、色が見やすくなります */
+        /* 色の種類や用途についてはtailwind.config.tsを参照 */
         --color-primary: 46 106 68; /* #2E6A44 */
         --color-surface-tint: 46 106 68; /* #2E6A44 */
         --color-on-primary: 255 255 255; /* #FFFFFF */
@@ -58,6 +60,7 @@
         --color-surface-container-highest: 223 228 220; /* #DFE4DC */
     }
   
+    /* 色の定義(ダークモード) */
     :root[class~="dark"] {
         --color-primary: 150 213 166; /* #96D5A6 */
         --color-surface-tint: 150 213 166; /* #96D5A6 */
