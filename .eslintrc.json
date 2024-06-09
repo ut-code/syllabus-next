@@ -1,3 +1,10 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:jsdoc/recommended-typescript-error"
+  ],
+  "plugins": ["jsdoc"],
+  "rules": {
+    "jsdoc/require-jsdoc": ["error", { "publicOnly": true }]
+  }
 }
