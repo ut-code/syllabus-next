@@ -9,8 +9,7 @@ export type ClassDataType = {
   type: string;
   category: string;
   semester: string;
-  day: string;
-  period: string;
+  dayPeriod: DayPeriod | "集中";
   classroom: string;
   titleJp: string;
   lecturer: string;
@@ -34,4 +33,9 @@ export type ClassDataType = {
   shortenedCategory: string;
   shortenedEvaluation: string;
   shortenedClassroom: string;
+};
+
+type DayPeriod = {
+  day: string;
+  period: number;
 };
