@@ -5,6 +5,10 @@
 
 import React, { useState } from "react";
 
+/**
+ *  定義済みColorを用いてデザインしたトグルボタンのサンプル
+ * @returns トグルボタンのサンプル
+ */
 export default function ToggleSample() {
   const [isOn, setIsOn] = useState(true);
 

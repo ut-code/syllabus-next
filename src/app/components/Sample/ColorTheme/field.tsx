@@ -7,7 +7,12 @@ import React, { useState, ChangeEvent } from 'react';
 type ValidatedInputProps = {
   placeholder?: string;
 };
-
+/**
+ * 定義済みColorを用いてデザインしたinputフィールドのサンプル
+ * @param param0 props
+ * @param param0.placeholder placeholderのテキスト
+ * @returns inputフィールドのサンプル
+ */
 const ValidatedInput: React.FC<ValidatedInputProps> = ({ placeholder = "Only alphanumeric!" }) => {
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");

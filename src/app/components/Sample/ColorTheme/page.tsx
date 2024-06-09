@@ -13,7 +13,7 @@ const ThemeSampleComponent: React.FC = () => {
       <div className="w-1/2 p-4">
         <h2 className="text-2xl font-bold">Theme Sample</h2>
         <p className="mt-4">
-          定義したテーマ色を利用したデザイン例
+          定義した色を利用したデザイン例
         </p>
         <div className="mt-4">
           <div className="grid grid-cols-2 justify-center items-center gap-2">
