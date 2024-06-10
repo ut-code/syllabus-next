@@ -9,7 +9,7 @@ import React, { useState } from "react";
  *  定義済みColorを用いてデザインしたトグルボタンのサンプル
  * @returns トグルボタンのサンプル
  */
-export default function ToggleSample() {
+const ToggleSample: React.FC = () => {
   const [isOn, setIsOn] = useState(true);
 
   const toggle = () => {
@@ -36,4 +36,6 @@ export default function ToggleSample() {
       />
     </button>
   );
-}
+};
+
+export default ToggleSample;

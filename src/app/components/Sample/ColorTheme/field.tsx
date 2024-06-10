@@ -2,11 +2,20 @@
     定義済みColorを用いてインプットフィールドをデザインするサンプル
 */
 "use client";
-import React, { useState, ChangeEvent } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
 
 type ValidatedInputProps = {
   placeholder?: string;
 };
+
+/**
+ * フォームの入力内容を表すinterface
+ */
+interface IFormInput {
+  content: string;
+}
+
 /**
  * 定義済みColorを用いてデザインしたinputフィールドのサンプル
  * @param param0 props
@@ -16,35 +25,27 @@ type ValidatedInputProps = {
 const ValidatedInput: React.FC<ValidatedInputProps> = ({
   placeholder = "Only alphanumeric!",
 }) => {
-  const [inputValue, setInputValue] = useState("");
-  const [error, setError] = useState("");
+  const {
+    register,
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    if (/^[a-zA-Z0-9]*$/.test(value)) {
-      setError("");
-    } else {
-      setError("英数のみ使用してください");
-    }
-    setInputValue(value);
-  };
+    // フォームの状態を管理する。
+    // ユーザーとフォームのやり取りを追跡できる。
+    // ここではエラー状態を利用しているが、他にも様々な状態を管理できる。
+    formState: { errors },
+  } = useForm<IFormInput>({ mode: "onChange" });
 
   return (
     <div className="flex flex-col items-center">
       <input
-        type="text"
-        value={inputValue}
-        onChange={handleChange}
+        className={`${
+          errors.content ? "border-error" : "border-tertiary"
+        } border-b-2`}
+        {...register("content", { pattern: /^[a-zA-Z0-9]*$/ })}
         placeholder={placeholder}
-        className={`border-b-2 p-2 
-        ${
-          // エラーの有無で枠線の色を変更
-          error
-            ? "border-error" // エラーの場合はエラー色(推奨)
-            : "border-tertiary" // エラーでない場合はtertiary色(例)
-        } focus:outline-none focus:ring-2 bg-surface-container`}
       />
-      {error && <p className="text-error mt-2 text-nowrap">{error}</p>}
+      {errors.content && (
+        <p className="text-error mt-2 text-nowrap">英数のみ使用してください</p>
+      )}
     </div>
   );
 };
