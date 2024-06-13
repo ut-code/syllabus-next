@@ -1,7 +1,11 @@
 import Image from "next/image";
-import { FaSearch, FaCog } from "react-icons/fa";
+import { FaCog } from "react-icons/fa";
 
-export const Header = () => {
+/**
+ * ヘッダー
+ * @returns ヘッダー
+ */
+export default function Haeder() {
   return (
     <header
       id="global-header"
@@ -35,4 +39,4 @@ export const Header = () => {
       </div>
     </header>
   );
-};
+}
