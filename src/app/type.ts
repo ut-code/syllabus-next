@@ -35,7 +35,7 @@ export type ClassDataType = {
   shortenedClassroom: string;
 };
 
-type DayPeriod = {
+export type DayPeriod = {
   day: "mon" | "tue" | "wed" | "thu" | "fri" | "sat";
   period: 1 | 2 | 3 | 4 | 5 | 6;
 };
