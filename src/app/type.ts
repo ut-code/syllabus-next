@@ -1,3 +1,10 @@
+export type ThemeType = "light" | "dark";
+
+export type ThemeProviderValue = {
+  theme: ThemeType;
+  setTheme: (theme: ThemeType) => void;
+};
+
 export type RegisterType = {
   stream: string | undefined;
   grade: string | undefined;
