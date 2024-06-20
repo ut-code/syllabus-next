@@ -27,7 +27,7 @@ const ThemeSampleComponent: React.FC = () => {
       {/* モーダル */}
       <ClassModalComponent
         isOpen={isOpen} // モーダルの表示状態
-        onCloseButtonClicked={(prev) => setIsOpen(!prev)} // モーダルの閉じるボタンが押された時のコールバック。閉じる処理を記述する。(連打対策のため、コールバック関数の引数(現在の表示状態)を反転させる
+        onCloseButtonClicked={(current) => setIsOpen(!current)} // モーダルの閉じるボタンが押された時のコールバック。閉じる処理を記述する。(連打対策のため、コールバック関数の引数(現在の表示状態)を反転させる
         classData={SampleClasses[1]} // 表示したい講義情報
       />
     </>

@@ -45,7 +45,7 @@ function dayPeriodsToString(dayPeriods: DayPeriod[] | "集中"): string {
   return dayPeriods
     .map((dayPeriod) => {
       // 曜日は漢字に変換
-      let day = dayMapping[dayPeriod.day];
+      const day = dayMapping[dayPeriod.day];
       // 曜限は、漢字の曜日 + 数字
       return day + dayPeriod.period;
     })
