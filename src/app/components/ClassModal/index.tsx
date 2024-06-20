@@ -1,6 +1,6 @@
 import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 import { FiX } from "react-icons/fi";
-import { ClassDataType, DayPeriod } from "@/app/type";
+import { ClassDataType, DayPeriod, dayMapping } from "@/app/type";
 import Item from "./ClassModalItem";
 
 /**
@@ -44,27 +44,7 @@ function dayPeriodsToString(dayPeriods: DayPeriod[] | "集中"): string {
   return dayPeriods
     .map((dayPeriod) => {
       // 曜日は漢字に変換
-      let day = "";
-      switch (dayPeriod.day) {
-        case "mon":
-          day = "月";
-          break;
-        case "tue":
-          day = "火";
-          break;
-        case "wed":
-          day = "水";
-          break;
-        case "thu":
-          day = "木";
-          break;
-        case "fri":
-          day = "金";
-          break;
-        case "sat":
-          day = "土";
-          break;
-      }
+      let day = dayMapping[dayPeriod.day];
       // 曜限は、漢字の曜日 + 数字
       return day + dayPeriod.period;
     })
