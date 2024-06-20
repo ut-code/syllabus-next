@@ -28,7 +28,7 @@ const ThemeSampleComponent: React.FC = () => {
       <ClassModalComponent
         isOpen={isOpen} // モーダルの表示状態
         onCloseButtonClicked={() => setIsOpen(false)} // モーダルの閉じるボタンが押された時のコールバック。閉じる処理(setIsOpen(false))を記述する
-        classData={SampleClasses[0]} // 表示したい講義情報
+        classData={SampleClasses[1]} // 表示したい講義情報
       />
     </>
   );
