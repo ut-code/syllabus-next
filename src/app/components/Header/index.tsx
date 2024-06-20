@@ -1,11 +1,20 @@
+"use client";
+
+import { useContext } from "react";
 import Image from "next/image";
 import { FaCog } from "react-icons/fa";
+import { CiDark } from "react-icons/ci";
+import { MdDarkMode } from "react-icons/md";
+
+import { ThemeContext } from "@/app/layout";
+import { ThemeProviderValue } from "@/app/type";
 
 /**
  * ヘッダー
  * @returns ヘッダー
  */
-export default function Haeder() {
+export default function Header() {
+  const { theme, setTheme } = useContext(ThemeContext) as ThemeProviderValue;
   return (
     <header
       id="global-header"
@@ -33,6 +42,21 @@ export default function Haeder() {
         </a>
       </div>
       <div className="flex space-x-4">
+        <button>
+          {theme === "light" ? (
+            <MdDarkMode
+              size={24}
+              onClick={() => setTheme("dark")}
+              className="text-green-600"
+            />
+          ) : (
+            <CiDark
+              size={24}
+              onClick={() => setTheme("light")}
+              className="text-green-600"
+            />
+          )}
+        </button>
         <button id="settings" className="text-green-600">
           <FaCog size={24} />
         </button>
