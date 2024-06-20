@@ -48,5 +48,5 @@ export const dayMapping: { [key in Day]: string } = {
   wed: "水",
   thu: "木",
   fri: "金",
-  sat: "土"
+  sat: "土",
 };

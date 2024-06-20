@@ -14,8 +14,9 @@ interface ModalProps {
 
   /**
    * モーダルの閉じるボタンが押された時のコールバック
+   * @param currentIsOpen 現在表示中か否か
    */
-  onCloseButtonClicked: () => void;
+  onCloseButtonClicked: (currentIsOpen: boolean) => void;
 
   /**
    * 授業の情報
@@ -74,7 +75,7 @@ const ClassModalComponent: React.FC<ModalProps> = ({
     <>
       <Dialog
         open={isOpen}
-        onClose={onCloseButtonClicked}
+        onClose={() => onCloseButtonClicked(isOpen)} // モーダル外をクリック(=閉じるボタンをクリック)。連打対策のため、現在表示されているかを渡す
         className="relative z-50" // 他の要素よりも手前に表示
       >
         {/* モーダルが表示されている時メイン画面を覆う */}
@@ -90,7 +91,11 @@ const ClassModalComponent: React.FC<ModalProps> = ({
                 {classData.titleJp} / {classData.titleEn}
               </DialogTitle>
               {/* 閉じるボタン */}
-              <button onClick={onCloseButtonClicked} className="text-3xl">
+              {/* onClickでモーダルを閉じる処理を期待する。連打対策のため現在表示されているかを渡す */}
+              <button
+                onClick={() => onCloseButtonClicked(isOpen)}
+                className="text-3xl"
+              >
                 <FiX />
               </button>
             </div>
