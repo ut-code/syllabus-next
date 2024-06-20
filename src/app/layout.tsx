@@ -1,14 +1,13 @@
-import type { Metadata } from "next";
+"use client";
+
 import { Inter } from "next/font/google";
+import { useState } from "react";
 
 import "./globals.css";
+import { ThemeType, ThemeProviderValue } from "@/app/type";
+import { ThemeContext } from "@/app/context";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "シ楽バス",
-  description: "ut.code();が開発する東京大学前期教養の時間割アプリ",
-};
 
 /**
  * RootLayout コンポーネントは、アプリケーション全体のレイアウトを定義します。
@@ -21,10 +20,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [theme, setTheme] = useState<ThemeType>("light");
   return (
     // ライト/ダークモードで背景色と文字色を変更
-    <html lang="ja" className="bg-surface-container text-text-default">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
+      <html
+        lang="ja"
+        className={`bg-surface-container text-text-default ${theme}`}
+      >
+        <body className={inter.className}>{children}</body>
+      </html>
+    </ThemeContext.Provider>
   );
 }

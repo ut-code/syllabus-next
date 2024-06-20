@@ -6,7 +6,7 @@ import { FaCog } from "react-icons/fa";
 import { CiDark } from "react-icons/ci";
 import { MdDarkMode } from "react-icons/md";
 
-import { ThemeContext } from "@/app/layout";
+import { ThemeContext } from "@/app/context";
 import { ThemeProviderValue } from "@/app/type";
 
 /**
