@@ -42,7 +42,18 @@ export type ClassDataType = {
   shortenedClassroom: string;
 };
 
-type DayPeriod = {
-  day: "mon" | "tue" | "wed" | "thu" | "fri" | "sat";
+export type Day = "mon" | "tue" | "wed" | "thu" | "fri" | "sat";
+
+export type DayPeriod = {
+  day: Day;
   period: 1 | 2 | 3 | 4 | 5 | 6;
+};
+
+export const dayMapping: { [key in Day]: string } = {
+  mon: "月",
+  tue: "火",
+  wed: "水",
+  thu: "木",
+  fri: "金",
+  sat: "土",
 };

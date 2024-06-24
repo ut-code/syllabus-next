@@ -1,5 +1,5 @@
-import Header from "@/app/components/Header";
 
+import Header from "@/app/components/Header";
 /**
  * Home コンポーネントは、ホームページの内容を表示します。
  * @returns HTMLを生成するReactコンポーネント。
