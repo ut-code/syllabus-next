@@ -18,25 +18,25 @@ export default function Footer() {
           ご意見
         </Link>
         <Link
-          href="howToUse.html"
+          href="#"
           className="hover:bg-surface-variant hover:text-white px-2 py-1 rounded transition duration-200"
         >
           使い方
         </Link>
         <Link
-          href="notion.html"
+          href="#"
           className="hover:bg-surface-variant hover:text-white px-2 py-1 rounded transition duration-200"
         >
           履修上の注意
         </Link>
         <Link
-          href="disclaimer.html"
+          href="#"
           className="hover:bg-surface-variant hover:text-white px-2 py-1 rounded transition duration-200"
         >
           免責事項
         </Link>
         <Link
-          href="aboutus.html"
+          href="#"
           className="hover:bg-surface-variant hover:text-white px-2 py-1 rounded transition duration-200"
         >
           About us
