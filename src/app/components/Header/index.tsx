@@ -3,7 +3,7 @@
 import { useContext } from "react";
 import Image from "next/image";
 import { FaCog } from "react-icons/fa";
-import { CiDark } from "react-icons/ci";
+import { MdDarkMode } from "react-icons/md";
 import { MdOutlineWbSunny } from "react-icons/md";
 
 import { ThemeContext } from "@/app/context";
@@ -50,7 +50,7 @@ export default function Header() {
               className="text-green-600"
             />
           ) : (
-            <CiDark
+            <MdDarkMode
               size={24}
               onClick={() => setTheme("light")}
               className="text-green-600"
