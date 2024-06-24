@@ -4,7 +4,7 @@ import { useContext } from "react";
 import Image from "next/image";
 import { FaCog } from "react-icons/fa";
 import { CiDark } from "react-icons/ci";
-import { MdDarkMode } from "react-icons/md";
+import { MdOutlineWbSunny } from "react-icons/md";
 
 import { ThemeContext } from "@/app/context";
 import { ThemeProviderValue } from "@/app/type";
@@ -44,7 +44,7 @@ export default function Header() {
       <div className="flex space-x-4">
         <button>
           {theme === "light" ? (
-            <MdDarkMode
+            <MdOutlineWbSunny
               size={24}
               onClick={() => setTheme("dark")}
               className="text-green-600"
