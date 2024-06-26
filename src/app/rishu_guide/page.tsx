@@ -1,3 +1,8 @@
+/**
+ * Homeページコンポーネント
+ * @returns HomeページのJSXエレメント
+ */
+
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer/page";
 
