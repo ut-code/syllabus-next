@@ -5,7 +5,6 @@ import Footer from "@/app/components/Footer/page";
  * Homeページコンポーネント
  * @returns HomeページのJSXエレメント
  */
-
 export default function Home(): JSX.Element {
   return (
     <div>
