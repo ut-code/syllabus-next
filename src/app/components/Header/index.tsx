@@ -19,7 +19,7 @@ export default function Header() {
     <header
       id="global-header"
       className="flex items-center justify-between px-4 py-2 bg-white shadow-md fixed w-full z-10"
-      style={{ backgroundColor: 'rgba(255, 255, 255, 1)' }}  // 背景色の不透明度を設定
+      style={{ backgroundColor: "rgba(255, 255, 255, 1)" }} // 背景色の不透明度を設定
     >
       <div className="flex items-center space-x-2">
         <a href="/" id="syllabus-link" className="text-lg">
