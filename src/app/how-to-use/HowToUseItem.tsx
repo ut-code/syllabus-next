@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ComponentProps } from "react";
 import {
   Disclosure,
   DisclosureButton,
@@ -8,6 +8,10 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 
 /**
  * 使い方ページの各項目をまとめるレイアウト
+ * @param param0 プロパティ
+ * @param param0.title タイトル
+ * @param param0.children 内容
+ * @returns レイアウト
  */
 export const HowToUseItem: React.FC<{
   title: string;
@@ -23,24 +27,30 @@ export const HowToUseItem: React.FC<{
 
 /**
  * Quick Start の手順に利用するリストアイテム
+ * @param param0 プロパティ
+ * @param param0.title タイトル
+ * @param param0.children 内容
+ * @returns リストアイテム
  */
 export const QuickStartItem: React.FC<{
   title: string;
   children: React.ReactNode;
 }> = ({ title, children }) => {
   return (
-    <>
-      <li className="font-bold">{title}</li>
-      <div className="ml-5 mb-2">{children}</div>
-    </>
+    <IndentLi className="mb-4">
+      <span className="font-bold">{title}</span>
+      <br />
+      {children}
+    </IndentLi>
   );
 };
 
 /**
  * フィルターの挙動を説明するカード
- * @param title カードのタイトル
- * @param detail カードの詳細
- * @param onReset リセット時の挙動
+ * @param param0 プロパティ
+ * @param param0.title カードのタイトル
+ * @param param0.detail カードの詳細
+ * @param param0.onReset リセット時の挙動
  * @returns フィルターのカード
  */
 export const FilterCard: React.FC<{
@@ -66,9 +76,10 @@ export const FilterCard: React.FC<{
 
 /**
  * 必修、推奨を表すマークを説明するコンポーネント
- * @param title カードのタイトル
- * @param detail カードの詳細
- * @param mark マーク
+ * @param param0 プロパティ
+ * @param param0.title タイトル
+ * @param param0.detail 詳細
+ * @param param0.mark マーク
  * @returns コンポーネント
  */
 export const ClassMark: React.FC<{
@@ -87,6 +98,11 @@ export const ClassMark: React.FC<{
 
 /**
  * Faq の質問と回答を表示するコンポーネント
+ * Disclosure を利用して、質問をクリックすると回答が表示されるようにする
+ * @param param0 プロパティ
+ * @param param0.question 質問
+ * @param param0.children 回答
+ * @returns コンポーネント
  */
 export const FaqItem: React.FC<{
   question: string;
@@ -94,15 +110,38 @@ export const FaqItem: React.FC<{
 }> = ({ question, children }) => {
   return (
     <Disclosure as="div" className="p-6" defaultOpen={false}>
+      {/* クリックで回答を表示するボタン */}
       <DisclosureButton className="group flex w-full items-center justify-between">
+        {/* 質問を表示。ホーバーで色が変わる。 */}
         <span className="font-medium group-data-[hover]:text-text-default/80">
           {question}
         </span>
+
+        {/* 開閉アイコン */}
         <MdKeyboardArrowDown className="size-5 group-data-[hover]:fill-text-default/50 group-data-[open]:rotate-180" />
       </DisclosureButton>
+
+      {/* 回答 */}
       <DisclosurePanel className="mt-2 text-sm/5 text-text-default/60 pr-8">
         {children}
       </DisclosurePanel>
     </Disclosure>
+  );
+};
+
+/**
+ * 適切にインデントするli要素
+ * li 要素が長くなりwrapされる際、インデントが崩れるのを防ぐ
+ * @param param0 プロパティ
+ * @param param0.children 子要素
+ * @returns li要素
+ */
+export const IndentLi: React.FC<
+  {
+    children: React.ReactNode;
+  } & ComponentProps<"li">
+> = ({ children, ...prop }) => {
+  return (
+    <li className={"pl-5 -indent-5" + " " + prop.className}>{children}</li>
   );
 };
