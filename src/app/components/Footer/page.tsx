@@ -24,7 +24,7 @@ export default function Footer() {
           使い方
         </Link>
         <Link
-          href="#"
+          href="/rishu_guide"
           className="hover:bg-surface-variant hover:text-white px-2 py-1 rounded transition duration-200"
         >
           履修上の注意
