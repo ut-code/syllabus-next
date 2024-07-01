@@ -18,7 +18,7 @@ export default function Footer() {
           ご意見
         </Link>
         <Link
-          href="#"
+          href="/how-to-use"
           className="hover:bg-surface-variant hover:text-white px-2 py-1 rounded transition duration-200"
         >
           使い方
