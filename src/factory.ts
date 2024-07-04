@@ -1,5 +1,5 @@
-import { LocalStorageProfile } from "@/app/services/profile/LocalStorage";
-import { StorageType } from "@/app/type";
+import { LocalStorageProfile } from "@/services/profile/LocalStorage";
+import { StorageType } from "@/type";
 
 export interface Profile {
   save(): void;

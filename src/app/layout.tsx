@@ -4,8 +4,8 @@ import { Inter } from "next/font/google";
 import { useState } from "react";
 
 import "./globals.css";
-import { ThemeType, ThemeProviderValue } from "@/app/type";
-import { ThemeContext } from "@/app/context";
+import { ThemeType, ThemeProviderValue } from "@/type";
+import { ThemeContext } from "@/context";
 
 const inter = Inter({ subsets: ["latin"] });
 

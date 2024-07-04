@@ -6,8 +6,8 @@ import { FaCog } from "react-icons/fa";
 import { MdDarkMode } from "react-icons/md";
 import { MdOutlineWbSunny } from "react-icons/md";
 
-import { ThemeContext } from "@/app/context";
-import { ThemeProviderValue } from "@/app/type";
+import { ThemeContext } from "@/context";
+import { ThemeProviderValue } from "@/type";
 
 /**
  * ヘッダー
