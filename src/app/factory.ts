@@ -1,5 +1,3 @@
-"use client";
-
 import { LocalStorageProfile } from "@/app/services/profile/LocalStorage";
 import { StorageType } from "@/app/type";
 
