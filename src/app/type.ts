@@ -57,3 +57,7 @@ export const dayMapping: { [key in Day]: string } = {
   fri: "金",
   sat: "土",
 };
+/**
+ * userの情報を格納するレジストリ
+ */
+export type StorageType = "localStorage";
