@@ -1,4 +1,4 @@
-import { ClassDataType } from "@/app/type";
+import { ClassDataType } from "@/type";
 
 /**
  * 講義詳細モーダルの動作確認に利用するサンプルデータ

@@ -1,6 +1,6 @@
 "use client";
 
-import { Profile } from "@/app/factory";
+import { Profile } from "@/factory";
 
 export class LocalStorageProfile implements Profile {
   save() {
