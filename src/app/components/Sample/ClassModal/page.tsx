@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import ClassModalComponent from "../../ClassModal"; // モーダルのコンポーネント
-import { SampleClasses } from "./SampleClassData"; // モーダルのデモで利用する講義のサンプルデータ
+import ClassModalComponent from "@/app/components/ClassModal"; // モーダルのコンポーネント
+import { SampleClasses } from "./SampleClassData";
+// モーダルのデモで利用する講義のサンプルデータ
 
 /**
  * ClassModalComponentを利用するサンプルです

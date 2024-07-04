@@ -1,6 +1,6 @@
 import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 import { FiX } from "react-icons/fi";
-import { ClassDataType, DayPeriod, dayMapping } from "@/app/type";
+import { ClassDataType, DayPeriod, dayMapping } from "@/type";
 import Item from "./ClassModalItem";
 
 /**
