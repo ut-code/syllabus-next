@@ -1,6 +1,13 @@
 import Header from "@/app/components/Header";
-import Logo from "@/../../public/syllabus_icon.svg"
+import Logo from "@/../../public/syllabus_icon.svg";
 import Image from "next/image";
+
+const logoSize = "150px";
+const logoSizeS = "100px";
+const backgroundImageWidth = "800px";
+const titleFontSize = "6xl";
+const subtitleFontSize = "2xl";
+
 /**
  * Home コンポーネントは、ホームページの内容を表示します。
  * @returns HTMLを生成するReactコンポーネント。
@@ -9,22 +16,61 @@ export default function Home(): JSX.Element {
   return (
     <div>
       <Header />
-      <div className="flex items-center min-h-screen ml-24">
-        <div className="absolute right-0 w-[800px] h-full">
-        <Image className="opacity-40" src={"/backgroundImage.png"} 
-        alt="backgroundImage" layout={'fill'} objectFit={'cover'}/>
-        </div>
-        <div className="flex justify-center items-center">
-          <div className="relative flex items-center rounded-lg z-10">
-            <Image src={Logo} alt="Logo" width={150} height={150} className="mr-4" />
-            <div className="flex items-center">
-              <div className="m-4">
-                <h1 className="text-6xl font-bold mb-12">Welcome to シ楽バス</h1>
-                <p className="text-2xl">全ての講義情報を、いつも手元に。</p>
+
+      {/* バックグラウンド画像 */}
+      <div
+        className={`absolute right-0 bottom-0 w-[${backgroundImageWidth}] h-full`}
+      >
+        <Image
+          className="opacity-40 object-cover"
+          src={"/backgroundImage.png"}
+          alt="backgroundImage"
+          fill
+        />
+      </div>
+
+      <div className="flex items-center min-h-screen mx-12 md:ml-36">
+        {/* タイトルとボタンを中央ぞろえするためgridを使用 */}
+        <div className="grid grid-column-1">
+          {/* タイトル */}
+          <div className="relative flex justify-center items-center rounded-lg z-10">
+            {/* ロゴ(解像度に応じてサイズを変える) */}
+            <div
+              className={`relative w-[${logoSizeS}] h-[${logoSizeS}] md:w-[${logoSize}] md:h-[${logoSize}]`}
+            >
+              <Image
+                src={Logo}
+                alt="Logo"
+                className="mr-4 object-contain"
+                fill
+              />
+            </div>
+
+            {/* タイトル&サブタイトル */}
+            <div className="m-4">
+              {/* タイトル */}
+              <div
+                className={`text-${titleFontSize} font-bold break-keep text-left`}
+              >
+                {/* 幅に余裕があるときに表示 */}
+                <span className="max-md:hidden">Welcome to </span>シ楽バス
               </div>
+
+              {/* サブタイトル (幅に余裕があるときに表示) */}
+              <p
+                className={`mt-12 text-${subtitleFontSize} text-center md:text-left max-sm:hidden`}
+              >
+                全ての講義情報を、いつも手元に。
+              </p>
             </div>
           </div>
-          <div className="rounded-lg bg-primary text-on-primary w-36 text-center p-4 mt-24 hover:bg-primary/90 font-bold">はじめる</div>
+
+          {/* はじめるボタン */}
+          <div className="flex items-center justify-center">
+            <div className="rounded-lg bg-primary text-on-primary w-36 text-center p-4 mt-24 hover:bg-primary/90 font-bold">
+              はじめる
+            </div>
+          </div>
         </div>
       </div>
     </div>
