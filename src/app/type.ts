@@ -46,7 +46,7 @@ export type Day = "mon" | "tue" | "wed" | "thu" | "fri" | "sat";
 
 export type DayPeriod = {
   day: Day;
-  period: 1 | 2 | 3 | 4 | 5 | 6;
+  period: 1 | 2 | 3 | 4 | 5 | 6 | "集中";
 };
 
 export const dayMapping: { [key in Day]: string } = {
