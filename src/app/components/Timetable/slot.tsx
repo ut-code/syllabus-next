@@ -1,4 +1,4 @@
-import { Day, DayPeriod } from "@/app/type";
+import { ClassDataType, Day, DayPeriod } from "@/app/type";
 import React, { ReactNode } from "react";
 import { design } from "./design";
 
@@ -8,6 +8,7 @@ export type PosH = "left" | "center" | "right";
 interface classProps extends props {
   day_period: DayPeriod;
   hasSaturday: boolean;
+  classes: ClassDataType[];
 }
 
 interface dayProps extends props {
@@ -23,6 +24,7 @@ interface props {
   pos_h: PosH;
   children?: ReactNode;
   className?: string;
+  onClick?:()=>void;
 }
 
 export const ClassSlot: React.FC<classProps> = (props: classProps) => {
@@ -31,9 +33,10 @@ export const ClassSlot: React.FC<classProps> = (props: classProps) => {
       pos_v={props.pos_v}
       pos_h={props.pos_h}
       className={`col-span-2 row-span-2 ${props.className}`}
+      onClick={()=>{console.log(props.classes)}}
     >
       <div>
-        {props.day_period.day} {props.day_period.period}
+        {props.classes.length>0?props.classes[0].titleJp:""}
       </div>
     </SlotDiv>
   );
@@ -48,9 +51,9 @@ export const IntensiveClassSlot: React.FC<classProps> = (props: classProps) => {
           pos_h={props.pos_h}
           className={`${props.hasSaturday ? "col-span-12" : "col-span-10"} row-span-2 ${props.className}`}
         >
-          <div>
-            {props.day_period.day} {props.day_period.period}
-          </div>
+      <div>
+        {props.classes.length>0?props.classes[0].titleJp:""}
+      </div>
         </SlotDiv>
       ) : (
         <SlotDiv
@@ -58,9 +61,9 @@ export const IntensiveClassSlot: React.FC<classProps> = (props: classProps) => {
           pos_h={props.pos_h}
           className={`col-span-10 row-span-2 ${props.className}`}
         >
-          <div>
-            {props.day_period.day} {props.day_period.period}
-          </div>
+      <div>
+        {props.classes.length>0?props.classes[0].titleJp:""}
+      </div>
         </SlotDiv>
       )}
     </>
@@ -118,6 +121,7 @@ export const SlotDiv: React.FC<props> = (prop) => {
             ${prop.pos_h == "right" ? "border-x" : "border-l"}
             ${prop.className}
             `}
+      onClick={e=>{prop.onClick && prop.onClick()}}
     >
       {prop.children}
     </div>
