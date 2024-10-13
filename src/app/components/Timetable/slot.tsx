@@ -46,7 +46,7 @@ export const IntensiveClassSlot: React.FC<classProps> = (props: classProps) => {
         <SlotDiv
           pos_v={props.pos_v}
           pos_h={props.pos_h}
-          className={`col-span-12 row-span-2 ${props.className}`}
+          className={`${props.hasSaturday ? "col-span-12" : "col-span-10"} row-span-2 ${props.className}`}
         >
           <div>
             {props.day_period.day} {props.day_period.period}

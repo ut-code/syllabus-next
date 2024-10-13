@@ -15,7 +15,7 @@ function getDay(): Day[] {
     ? ["mon", "tue", "wed", "thu", "fri", "sat"]
     : ["mon", "tue", "wed", "thu", "fri"];
 }
-const hasSaturday = true;
+const hasSaturday = false;
 
 function slotRow(
   period: 1 | 2 | 3 | 4 | 5 | 6 | "集中",
@@ -85,7 +85,6 @@ const Timetable: React.FC = () => {
       {/* 集中の講義スロット */}
       <IntensiveClassSlot
         hasSaturday={hasSaturday}
-        className="col-span-10 row-span-2"
         day_period={{ day: "mon", period: "集中" }}
         pos_v={"bottom"}
         pos_h={"right"}
