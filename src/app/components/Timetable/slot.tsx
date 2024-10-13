@@ -7,7 +7,7 @@ export type PosH = "left" | "center" | "right";
 
 interface classProps extends props {
   day_period: DayPeriod;
-  hasSaturday: boolean
+  hasSaturday: boolean;
 }
 
 interface dayProps extends props {
@@ -40,31 +40,32 @@ export const ClassSlot: React.FC<classProps> = (props: classProps) => {
 };
 
 export const IntensiveClassSlot: React.FC<classProps> = (props: classProps) => {
-
-    return (
-        <>
-        {
-            props.hasSaturday
-        ?<SlotDiv
-        pos_v={props.pos_v}
-        pos_h={props.pos_h}
-        className={`col-span-12 row-span-2 ${props.className}`}>
-        <div>
-          {props.day_period.day} {props.day_period.period}
-        </div>
-      </SlotDiv>
-      :<SlotDiv
-      pos_v={props.pos_v}
-      pos_h={props.pos_h}
-      className={`col-span-10 row-span-2 ${props.className}`}>
-      <div>
-        {props.day_period.day} {props.day_period.period}
-      </div>
-    </SlotDiv>
-}
-      </>
-    );
-  };
+  return (
+    <>
+      {props.hasSaturday ? (
+        <SlotDiv
+          pos_v={props.pos_v}
+          pos_h={props.pos_h}
+          className={`col-span-12 row-span-2 ${props.className}`}
+        >
+          <div>
+            {props.day_period.day} {props.day_period.period}
+          </div>
+        </SlotDiv>
+      ) : (
+        <SlotDiv
+          pos_v={props.pos_v}
+          pos_h={props.pos_h}
+          className={`col-span-10 row-span-2 ${props.className}`}
+        >
+          <div>
+            {props.day_period.day} {props.day_period.period}
+          </div>
+        </SlotDiv>
+      )}
+    </>
+  );
+};
 
 export const DaySlot: React.FC<dayProps> = (props: dayProps) => {
   return (

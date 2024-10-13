@@ -1,3 +1,3 @@
 export const design = {
-    rounded: ""
-}
+  rounded: "",
+};
