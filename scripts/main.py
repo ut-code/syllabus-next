@@ -7,7 +7,6 @@ def main():
     urls: Urls = get_urls()
     threads: list[threading.Thread] = []
     
-    # 'data'ディレクトリを作成
     os.makedirs('data', exist_ok=True)
     
     for faculty_name, url in urls.items():
