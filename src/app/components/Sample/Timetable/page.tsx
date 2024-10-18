@@ -4,12 +4,16 @@ import TimetableFrame from "../../Timetable/timetableFrame";
 import { useState } from "react";
 import ClassModalComponent from "../../ClassModal";
 
-const TimetableComponent: React.FC = () => {
+/**
+ * 時間割のサンプル
+ * @returns 時間割のサンプルコンポーネント
+ */
+const TimetableComponentSample: React.FC = () => {
   return (
     <div className="m-5 w-5/6 h-[800px] bg-surface">
       <TimetableFrame
-        hasSaturday={true}
-        classSlotElement={ClassSlotElement}
+        hasSaturday={true} // 土曜日を表示
+        classSlotElement={ClassSlotElement} // 講義スロット内のデザイン
         periodSlotElement={(p) => <div>{p}</div>}
         daySlotElement={(d) => <div>{d}</div>}
       />
@@ -17,6 +21,12 @@ const TimetableComponent: React.FC = () => {
   );
 };
 
+/**
+ * 講義スロット内のデザイン
+ * Timetableコンポーネントが利用する関数で、classesはTimetableにより決定される
+ * @param classes このスロットに表示する関数
+ * @returns スロット内の要素
+ */
 function ClassSlotElement(classes: ClassDataType[]) {
   const [classForModal, setClassForModal] = useState<ClassDataType>();
 
@@ -56,4 +66,4 @@ function ClassSlotElement(classes: ClassDataType[]) {
   );
 }
 
-export default TimetableComponent;
+export default TimetableComponentSample;

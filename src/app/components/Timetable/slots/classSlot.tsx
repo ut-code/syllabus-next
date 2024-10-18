@@ -22,7 +22,7 @@ export const ClassSlot: React.FC<classProps> = (props: classProps) => {
   let col_span = "col-span-2"; // 通常講義ならグリッドの幅は2
   if (props.isIntensiveClass) {
     // 集中講義なら、土曜日表示の場合のグリッドの幅は12、土曜日非表示の場合のグリッドの幅は10
-    col_span = props.hasSaturday? "col-span-12": "col-span-10"
+    col_span = props.hasSaturday ? "col-span-12" : "col-span-10";
   }
 
   return (

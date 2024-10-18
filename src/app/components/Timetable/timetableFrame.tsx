@@ -92,7 +92,6 @@ function findClasses(classes: ClassDataType[], dayPeriod: DayPeriod | "集中") 
  * @returns 時間割コンポーネント
  */
 const Timetable: React.FC<props> = (props) => {
-
   // 時間割に表示したい講義
   const [classes, setClasses] = useState<ClassDataType[]>([]);
 
@@ -113,11 +112,10 @@ const Timetable: React.FC<props> = (props) => {
   // 以降、時間割に表示するスロットを作成し、全てこの配列に入れる
   const slots: ReactNode[] = [];
 
-  
   /*
    *
    *  時間割票に配置するスロットの作成
-   * 
+   *
    */
 
   // 左上の空白
@@ -183,15 +181,15 @@ const Timetable: React.FC<props> = (props) => {
   );
 
   return (
-      // gridのgapを1pxとし、時間割の枠線を表現
-      // ヘッダーの厚みを1x2 (or 2x1)、講義スロットを2x2で計算し、
-      // 時間割は15行11列(土曜日を表示する場合は13列)を使用
-      <div
-        className={`grid ${props.hasSaturday ? "grid-cols-13" : "grid-cols-11"} grid-rows-15 gap-[1px] grid-flow-row h-full bg-outline rounded-md border border-outline overflow-hidden`}
-      >
-        {/* 作成したスロットを表示 */}
-        {slots}
-      </div>
+    // gridのgapを1pxとし、時間割の枠線を表現
+    // ヘッダーの厚みを1x2 (or 2x1)、講義スロットを2x2で計算し、
+    // 時間割は15行11列(土曜日を表示する場合は13列)を使用
+    <div
+      className={`grid ${props.hasSaturday ? "grid-cols-13" : "grid-cols-11"} grid-rows-15 gap-[1px] grid-flow-row h-full bg-outline rounded-md border border-outline overflow-hidden`}
+    >
+      {/* 作成したスロットを表示 */}
+      {slots}
+    </div>
   );
 };
 

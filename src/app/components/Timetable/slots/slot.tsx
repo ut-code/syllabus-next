@@ -29,7 +29,8 @@ export interface slotProps {
 export const SlotDiv: React.FC<slotProps> = (props) => {
   return (
     <div
-      className={`border-outline border-solid flex justify-center items-center bg-surface ${props.className} w-full overflow-hidden`}>
+      className={`border-outline border-solid flex justify-center items-center bg-surface ${props.className} w-full overflow-hidden`}
+    >
       {props.children}
     </div>
   );

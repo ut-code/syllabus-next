@@ -95,16 +95,17 @@ export const SampleClasses: ClassDataType[] = [
     shortenedCategory: "基礎",
     shortenedEvaluation: "レポ出席",
     shortenedClassroom: "他(学内等)",
-  },{
+  },
+  {
     code: "50033",
     type: "基礎",
     category: "既修外国語",
     semester: "A",
     dayPeriod: [
-        {
-          day: "mon",
-          period: 2,
-        }
+      {
+        day: "mon",
+        period: 2,
+      },
     ],
     classroom: "駒場5号館 516教室",
     titleJp: "英語二列W(ALESA)",
@@ -113,96 +114,72 @@ export const SampleClasses: ClassDataType[] = [
     lecturerEn: "Simon Perry",
     ccCode: "CAS-FC1114S3",
     credits: 2,
-    detail: "This course introduces students to the skill of building an effective written argument in English supported by sources and evidence, and to the conventions of formal writing. By the end of the course, students will:\n- be able to present a clear position which is supported by evidence and addresses alternative points of view;\n- understand the organisation and rhetorical features of an argumentative essay;\n- be familiar with basic stylistic conventions of academic writing.",
+    detail:
+      "This course introduces students to the skill of building an effective written argument in English supported by sources and evidence, and to the conventions of formal writing. By the end of the course, students will:\n- be able to present a clear position which is supported by evidence and addresses alternative points of view;\n- understand the organisation and rhetorical features of an argumentative essay;\n- be familiar with basic stylistic conventions of academic writing.",
     schedule: "",
-    methods: "Class activities will include reading and analyzing argumentative writing in English; developing a position on an issue on the basis of individual research; engaging in a variety of pre-writing exercises; writing and revising; and using peer feedback to improve students’ own and others’ work in discussion and written comments.\n\nThe class is taught in English, and students are encouraged to speak English in class. Graduate-student teaching assistants are available in the Komaba Writers’ Studio to help students with their research, writing, and discussion.",
-    "evaluation": "Grades are based on writing assignments, discussion, and participation in class activities.",
+    methods:
+      "Class activities will include reading and analyzing argumentative writing in English; developing a position on an issue on the basis of individual research; engaging in a variety of pre-writing exercises; writing and revising; and using peer feedback to improve students’ own and others’ work in discussion and written comments.\n\nThe class is taught in English, and students are encouraged to speak English in class. Graduate-student teaching assistants are available in the Komaba Writers’ Studio to help students with their research, writing, and discussion.",
+    evaluation:
+      "Grades are based on writing assignments, discussion, and participation in class activities.",
     notes: "",
     class: "1年 文一二(8,22)文三(5,7,9)",
     guidance: "なし",
     guidanceDate: "",
     guidancePeriod: "",
     time: 90,
-    timeCompensation: "Students will be encouraged to contact the instructor by email when they have further questions.",
+    timeCompensation:
+      "Students will be encouraged to contact the instructor by email when they have further questions.",
     targetClass: [
-        [
-            "l1_8",
-            "l2_8",
-            "l1_22",
-            "l2_22",
-            "l3_5",
-            "l3_7",
-            "l3_9"
-        ],
-        []
+      ["l1_8", "l2_8", "l1_22", "l2_22", "l3_5", "l3_7", "l3_9"],
+      [],
     ],
-    importance: [
-        [
-            "l1",
-            "l2",
-            "l3",
-            "s1",
-            "s2",
-            "s3"
-        ],
-        []
-    ],
+    importance: [["l1", "l2", "l3", "s1", "s2", "s3"], []],
     shortenedCategory: "基礎",
     shortenedEvaluation: "レポ出席平常",
-    shortenedClassroom: "516"
-},{
-  code: "51320",
-  type: "総合",
-  category: "A(思想・芸術)",
-  semester: "A",
-  dayPeriod: [
-    {
-      day: "mon",
-      period: 2,
-    }
-  ],
-  classroom: "駒場12号館 1232教室",
-  titleJp: "外国文学",
-  lecturer: "Barnaby Ralph",
-  titleEn: "Foreign Literature",
-  lecturerEn: "Barnaby Ralph",
-  ccCode: "CAS-GC1A17L1",
-  credits: 2,
-  detail: "Students who take this course will reinforce their knowledge of Western literature, history, and culture, whilst learning about how works can be connected thematically. They will be introduced to key critical terms and will also have opportunities for discussion and a chance to develop their academic writing skills. It is intended to offer information that can continue to be valuable for their future studies.",
-  schedule: "Week One: The beginnings of Western Literature, including Homer and Greek tragedy\nWeek Two: Greece to Rome, including Horace's \"Ars Poetica\"\nWeek Three: The rise of English, including Anglo-Saxon poetry\nWeek Four: Middle English, Chaucer, and the battle over language\nWeek Five: The Elizabethan period and the plays of Shakespeare\nWeek Six: The short seventeenth century - war, plague, fire, and Milton\nWeek Seven: The long eighteenth century and the satires of Swift and Pope\nWeek Eight: The rise of Romanticism and Sensibility\nWeek Nine: British Imperialism and the nineteenth century\nWeek Ten: Literature in the New World, Manifest Destiny, and the American Dream\nWeek Eleven: Modernism and the search for meaning\nWeek Twelve: In-class test\nWeek Thirteen: Literature from the late twentieth century to today",
-  methods: "This class shall be conducted using a lecture/discussion format. Handouts will be given each week and these shall form a kind of textbook on which the final examination will be based.",
-  evaluation: "In-class work (including homework): 20%\nTest: 30%\nEssay: 50%",
-  notes: "Each week, homework will be given. It is expected that this will be completed by the next class and this will be checked.",
-  class: "1年 文科 理科 2年 文科 理科",
-  guidance: "なし",
-  guidanceDate: "",
-  guidancePeriod: "",
-  time: 90,
-  timeCompensation: "The shortened class time wil be compensated for through homework assignments and set readings.",
-  targetClass: [
-      [
-          "l1_all",
-          "l2_all",
-          "l3_all",
-          "s1_all",
-          "s2_all",
-          "s3_all"
-      ],
-      [
-          "l1_all",
-          "l2_all",
-          "l3_all",
-          "s1_all",
-          "s2_all",
-          "s3_all"
-      ]
-  ],
-  importance: [
-      [],
-      []
-  ],
-  shortenedCategory: "総合A",
-  shortenedEvaluation: "レポ",
-  shortenedClassroom: "1232"
-},
+    shortenedClassroom: "516",
+  },
+  {
+    code: "51320",
+    type: "総合",
+    category: "A(思想・芸術)",
+    semester: "A",
+    dayPeriod: [
+      {
+        day: "mon",
+        period: 2,
+      },
+    ],
+    classroom: "駒場12号館 1232教室",
+    titleJp: "外国文学",
+    lecturer: "Barnaby Ralph",
+    titleEn: "Foreign Literature",
+    lecturerEn: "Barnaby Ralph",
+    ccCode: "CAS-GC1A17L1",
+    credits: 2,
+    detail:
+      "Students who take this course will reinforce their knowledge of Western literature, history, and culture, whilst learning about how works can be connected thematically. They will be introduced to key critical terms and will also have opportunities for discussion and a chance to develop their academic writing skills. It is intended to offer information that can continue to be valuable for their future studies.",
+    schedule:
+      'Week One: The beginnings of Western Literature, including Homer and Greek tragedy\nWeek Two: Greece to Rome, including Horace\'s "Ars Poetica"\nWeek Three: The rise of English, including Anglo-Saxon poetry\nWeek Four: Middle English, Chaucer, and the battle over language\nWeek Five: The Elizabethan period and the plays of Shakespeare\nWeek Six: The short seventeenth century - war, plague, fire, and Milton\nWeek Seven: The long eighteenth century and the satires of Swift and Pope\nWeek Eight: The rise of Romanticism and Sensibility\nWeek Nine: British Imperialism and the nineteenth century\nWeek Ten: Literature in the New World, Manifest Destiny, and the American Dream\nWeek Eleven: Modernism and the search for meaning\nWeek Twelve: In-class test\nWeek Thirteen: Literature from the late twentieth century to today',
+    methods:
+      "This class shall be conducted using a lecture/discussion format. Handouts will be given each week and these shall form a kind of textbook on which the final examination will be based.",
+    evaluation:
+      "In-class work (including homework): 20%\nTest: 30%\nEssay: 50%",
+    notes:
+      "Each week, homework will be given. It is expected that this will be completed by the next class and this will be checked.",
+    class: "1年 文科 理科 2年 文科 理科",
+    guidance: "なし",
+    guidanceDate: "",
+    guidancePeriod: "",
+    time: 90,
+    timeCompensation:
+      "The shortened class time wil be compensated for through homework assignments and set readings.",
+    targetClass: [
+      ["l1_all", "l2_all", "l3_all", "s1_all", "s2_all", "s3_all"],
+      ["l1_all", "l2_all", "l3_all", "s1_all", "s2_all", "s3_all"],
+    ],
+    importance: [[], []],
+    shortenedCategory: "総合A",
+    shortenedEvaluation: "レポ",
+    shortenedClassroom: "1232",
+  },
 ];
