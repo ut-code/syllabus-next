@@ -22,26 +22,16 @@ export interface slotProps {
 }
 
 /**
- * この親スロット特有のプロパティ
- */
-interface baseSlotProps extends slotProps {
-  onClick?: () => void;
-}
-
-/**
  * スロット要素
  * @param props スロット要素のプロパティ
  * @returns スロット要素
  */
-export const SlotDiv: React.FC<baseSlotProps> = (props) => {
+export const SlotDiv: React.FC<slotProps> = (props) => {
   return (
     <div
       className={`border-outline border-solid flex justify-center items-center bg-surface
               ${props.className}
               overflow-hidden w-full`}
-      onClick={(_) => {
-        props.onClick && props.onClick();
-      }}
     >
       {props.children}
     </div>
