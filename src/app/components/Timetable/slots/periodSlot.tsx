@@ -1,12 +1,11 @@
-import { Day } from "@/app/type";
 import { Period, SlotDiv, slotProps } from "./slot";
 
 /**
  * 時限が表示されるスロット要素のプロパティ
  */
 interface periodProps extends slotProps {
-  period: Period;
-  periodSlotElement: React.FC<Period>;
+  period: Period | "集中";
+  periodSlotElement: React.FC<Period | "集中">;
 }
 
 /**

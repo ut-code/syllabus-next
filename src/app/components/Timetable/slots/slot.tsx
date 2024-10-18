@@ -10,7 +10,7 @@ import React, { ReactNode } from "react";
 /**
  * 時限の型
  */
-export type Period = 1 | 2 | 3 | 4 | 5 | 6 | "集中";
+export type Period = 1 | 2 | 3 | 4 | 5 | 6;
 
 /**
  * スロット要素のプロパティ
@@ -29,10 +29,7 @@ export interface slotProps {
 export const SlotDiv: React.FC<slotProps> = (props) => {
   return (
     <div
-      className={`border-outline border-solid flex justify-center items-center bg-surface
-              ${props.className}
-              overflow-hidden w-full`}
-    >
+      className={`border-outline border-solid flex justify-center items-center bg-surface ${props.className} w-full overflow-hidden`}>
       {props.children}
     </div>
   );

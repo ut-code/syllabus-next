@@ -19,7 +19,7 @@ const config: Config = {
         "13": "repeat(13, minmax(0, 1fr))",
       },
       gridTemplateRows: {
-        // 13列のグリッドを定義
+        // 15行のグリッドを定義
         "15": "repeat(15, minmax(0, 1fr))",
       },
     },

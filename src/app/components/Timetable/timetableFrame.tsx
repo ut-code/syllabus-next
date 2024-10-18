@@ -32,7 +32,7 @@ interface props {
 
   // 時限ヘッダー内のデザイン
   // 詳細はclassSlotElementと同じ
-  periodSlotElement: React.FC<Period>;
+  periodSlotElement: React.FC<Period | "集中">;
 
   // 曜日ヘッダー内のデザイン
   // 詳細はclassSlotElementと同じ
@@ -54,11 +54,11 @@ async function loadClass(): Promise<ClassDataType[]> {
  * @param dayPeriod 検索対象の曜限
  * @returns 指定の曜限に開講される授業全て
  */
-function findClasses(classes: ClassDataType[], dayPeriod: DayPeriod) {
+function findClasses(classes: ClassDataType[], dayPeriod: DayPeriod | "集中") {
   // i番目の講義が、指定の曜限(dayPeriod)に開講されているか否かを判定する関数
   const predicate = (i: number) => {
     // 集中講義が検索されているとき
-    if (dayPeriod.period == "集中") {
+    if (dayPeriod == "集中") {
       // classes[i] が集中か否かを返す
       return classes[i].dayPeriod == "集中";
     }
@@ -92,8 +92,11 @@ function findClasses(classes: ClassDataType[], dayPeriod: DayPeriod) {
  * @returns 時間割コンポーネント
  */
 const Timetable: React.FC<props> = (props) => {
+
+  // 時間割に表示したい講義
   const [classes, setClasses] = useState<ClassDataType[]>([]);
 
+  // 時間割表示時、ユーザーが履修している講義を取得
   useEffect(() => {
     loadClass().then((d) => {
       setClasses(d);
@@ -101,15 +104,21 @@ const Timetable: React.FC<props> = (props) => {
   }, []);
 
   // 時限のコレクション
-  // 集中は除外(この行は他と構造が違うためループに使えない)
   const period: Period[] = [1, 2, 3, 4, 5, 6];
 
   const day: Day[] = props.hasSaturday
     ? ["mon", "tue", "wed", "thu", "fri", "sat"]
     : ["mon", "tue", "wed", "thu", "fri"];
 
-  // 以降、時間割に表示するスロットを全てこの配列に入れる
+  // 以降、時間割に表示するスロットを作成し、全てこの配列に入れる
   const slots: ReactNode[] = [];
+
+  
+  /*
+   *
+   *  時間割票に配置するスロットの作成
+   * 
+   */
 
   // 左上の空白
   slots.push(<SlotDiv key={"void"} />);
@@ -117,32 +126,32 @@ const Timetable: React.FC<props> = (props) => {
   // 曜日のヘッダー
   day.map((d) =>
     slots.push(
-      <DaySlot day={d} key={d} daySlotElement={props.daySlotElement} />,
+      <DaySlot key={d} day={d} daySlotElement={props.daySlotElement} />,
     ),
   );
 
-  // 各時限でループ
+  // 各時限に対し、時限ヘッダーと講義スロット(各曜日分)を作成
   period.map((period) => {
     /* 時限のヘッダー */
     slots.push(
       <PeriodSlot
-        period={period}
         key={"period" + period}
+        period={period}
         periodSlotElement={props.periodSlotElement}
       />,
     );
 
     // 各曜日でループ
     day.map((d) => {
-      const dayPeriod = { day: d, period: period };
+      const dayPeriod: DayPeriod = { day: d, period: period };
 
       // このスロットに表示する講義情報
       const foundClass = findClasses(classes, dayPeriod);
       slots.push(
         <ClassSlot
+          key={d + period}
           hasSaturday={props.hasSaturday}
           day_period={dayPeriod}
-          key={d + period}
           classes={foundClass}
           isIntensiveClass={false}
           classSlotElement={props.classSlotElement}
@@ -161,7 +170,7 @@ const Timetable: React.FC<props> = (props) => {
   );
 
   // 集中講義のスロット
-  const dayPeriod: DayPeriod = { day: "mon", period: "集中" };
+  const dayPeriod: DayPeriod | "集中" = "集中";
   slots.push(
     <ClassSlot
       key={"int_slot"}
@@ -174,13 +183,15 @@ const Timetable: React.FC<props> = (props) => {
   );
 
   return (
-    <>
+      // gridのgapを1pxとし、時間割の枠線を表現
+      // ヘッダーの厚みを1x2 (or 2x1)、講義スロットを2x2で計算し、
+      // 時間割は15行11列(土曜日を表示する場合は13列)を使用
       <div
-        className={`grid ${props.hasSaturday ? "grid-cols-13" : "grid-cols-11"} grid-rows-15 gap-[1px] grid-flow-row h-full bg-outline rounded-md border border-outline overflow-hidden min-h-0`}
+        className={`grid ${props.hasSaturday ? "grid-cols-13" : "grid-cols-11"} grid-rows-15 gap-[1px] grid-flow-row h-full bg-outline rounded-md border border-outline overflow-hidden`}
       >
+        {/* 作成したスロットを表示 */}
         {slots}
       </div>
-    </>
   );
 };
 

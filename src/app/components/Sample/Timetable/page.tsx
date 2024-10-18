@@ -22,15 +22,16 @@ function ClassSlotElement(classes: ClassDataType[]) {
 
   return (
     <>
-      <div className="w-full flex">
+      {/* スロット内の要素 */}
+      <div className="w-full h-full flex items-center justify-center">
         {classes.map((c, i) => {
           return (
             <div
-              className="flex w-full items-center justify-center"
+              className="flex w-full h-full items-center justify-center min-w-0 m-1"
               key={i}
               onClick={() => setClassForModal(c)}
             >
-              <div className="cursor-pointer bg-secondary/10 w-full max-w-40">
+              <div className="cursor-pointer bg-secondary/10 w-full h-5/6 max-w-40">
                 <div className="m-2 text-sm font-bold truncate">
                   {c.titleJp}
                 </div>
@@ -42,6 +43,8 @@ function ClassSlotElement(classes: ClassDataType[]) {
           );
         })}
       </div>
+
+      {/* 講義がクリックされたとき、詳細を表示 */}
       {classForModal && (
         <ClassModalComponent
           isOpen={true}
