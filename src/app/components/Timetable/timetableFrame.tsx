@@ -67,13 +67,13 @@ function findClasses(classes: ClassDataType[], dayPeriod: DayPeriod | "集中") 
     else {
       // classes[i]が集中講義ならfalse
       if (classes[i].dayPeriod == "集中") return false;
+      const dayPeriods = classes[i].dayPeriod as DayPeriod[];
 
       // classes[i]が集中講義ではない場合、
       // 開講曜限でループを回し、
-      for (let j = 0; j < classes[i].dayPeriod.length; j++) {
+      for (let j = 0; j < dayPeriods.length; j++) {
         // 一つでもdayPeriodに一致するものがあればtrue
-        const dp = classes[i].dayPeriod[j];
-        if (dp.day == dayPeriod.day && dp.period == dayPeriod.period)
+        if (dayPeriods[j].day == dayPeriod.day && dayPeriods[j].period == dayPeriod.period)
           return true;
       }
 
