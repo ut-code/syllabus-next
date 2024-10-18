@@ -73,7 +73,10 @@ function findClasses(classes: ClassDataType[], dayPeriod: DayPeriod | "集中") 
       // 開講曜限でループを回し、
       for (let j = 0; j < dayPeriods.length; j++) {
         // 一つでもdayPeriodに一致するものがあればtrue
-        if (dayPeriods[j].day == dayPeriod.day && dayPeriods[j].period == dayPeriod.period)
+        if (
+          dayPeriods[j].day == dayPeriod.day &&
+          dayPeriods[j].period == dayPeriod.period
+        )
           return true;
       }
 
