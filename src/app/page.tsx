@@ -2,6 +2,7 @@ import Header from "@/app/components/Header";
 import Logo from "@/../../public/syllabus_icon.svg";
 import Image from "next/image";
 
+console.log(process.env.NEXT_PUBLIC_MODE);
 /**
  * Home コンポーネントは、ホームページの内容を表示します。
  * @returns HTMLを生成するReactコンポーネント。
