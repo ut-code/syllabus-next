@@ -11,7 +11,7 @@
 
 "use client";
 import { ClassDataType, Day, DayPeriod } from "@/app/type";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactElement, ReactNode, useEffect, useState } from "react";
 import { SampleClasses } from "../Sample/ClassModal/SampleClassData";
 import { Period, SlotDiv } from "./slots/slot";
 import { ClassSlot } from "./slots/classSlot";
@@ -21,7 +21,7 @@ import { DaySlot } from "./slots/daySlot";
 /**
  * 時間割のフレームコンポーネントのプロパティ
  */
-interface props {
+interface TimetableProps {
   // 土曜日を表示するか否か
   hasSaturday: boolean;
 
@@ -94,7 +94,7 @@ function findClasses(classes: ClassDataType[], dayPeriod: DayPeriod | "集中") 
  * @param props 時間割コンポーネントのプロパティ
  * @returns 時間割コンポーネント
  */
-const Timetable: React.FC<props> = (props) => {
+const Timetable: React.FC<TimetableProps> = (props: TimetableProps) => {
   // 時間割に表示したい講義
   const [classes, setClasses] = useState<ClassDataType[]>([]);
 
@@ -113,7 +113,16 @@ const Timetable: React.FC<props> = (props) => {
     : ["mon", "tue", "wed", "thu", "fri"];
 
   // 以降、時間割に表示するスロットを作成し、全てこの配列に入れる
-  const slots: ReactNode[] = [];
+  // SlotDiv: 時間割表の左上の空白スロット
+  // PeriodSlot: 時限ヘッダー
+  // DaySlot: 曜日ヘッダー
+  // ClassSlot: 講義スロット
+  const slots: (
+    | ReactElement<typeof SlotDiv>
+    | ReactElement<typeof PeriodSlot>
+    | ReactElement<typeof DaySlot>
+    | ReactElement<typeof ClassSlot>
+  )[] = [];
 
   /*
    *
