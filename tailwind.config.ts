@@ -13,6 +13,15 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      gridTemplateColumns: {
+        // 13列のグリッドを定義
+        "11": "repeat(11, minmax(0, 1fr))",
+        "13": "repeat(13, minmax(0, 1fr))",
+      },
+      gridTemplateRows: {
+        // 15行のグリッドを定義
+        "15": "repeat(15, minmax(0, 1fr))",
+      },
     },
 
     colors: {
