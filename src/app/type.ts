@@ -5,10 +5,12 @@ export type ThemeProviderValue = {
   setTheme: (theme: ThemeType) => void;
 };
 
+export type Stream = "s1" | "s2" | "s3" | "l1" | "l2" | "l3";
+
 export type RegisterType = {
-  stream: string | undefined;
-  grade: string | undefined;
-  classNumber: string | undefined;
+  stream: Stream | undefined;
+  grade: number | undefined;
+  classNumber: number | undefined;
 };
 
 export type ClassDataType = {
