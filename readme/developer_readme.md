@@ -26,3 +26,13 @@ if there are any prettier errors, please run the following command to fix them.
 ```bash
 npx prettier . --write
 ```
+
+## mock mode
+
+To run the mock mode, run the following command.
+
+```bash
+npm run dev:mock
+```
+
+It will run the application with the mock data.
