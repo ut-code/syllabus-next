@@ -43,7 +43,7 @@ export default function NotFound(): JSX.Element {
               {/* タイトル */}
               <div className={`text-6xl font-bold break-keep text-left`}>
                 {/* 幅に余裕があるときに表示 */}
-                404<span className="max-md:hidden"> - Not Found</span>
+                <span className="max-md:hidden">404 - </span>Not Found
               </div>
 
               {/* サブタイトル (幅に余裕があるときに表示) */}
