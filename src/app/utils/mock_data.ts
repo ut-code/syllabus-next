@@ -185,7 +185,7 @@ export const SampleClasses: ClassDataType[] = [
 ];
 
 export const SampleUser: RegisterType = {
-  stream: "文",
-  grade: "1",
-  classNumber: "1",
+  stream: "l1",
+  grade: 1,
+  classNumber: 1,
 };
