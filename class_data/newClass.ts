@@ -1,15 +1,16 @@
-import { dayMappingToEn, DayPeriod, PreviousClassType } from "./type";
+import { PreviousClassData } from "./previousClassDaya";
+import { dayMappingToEn, DayPeriod } from "./type";
 
 /**
  * 新シ楽バス仕様の講義情報クラス
  * 構造はほとんど同様なのでPreviousClassTypeを継承する
  */
-export class NewClassData extends PreviousClassType {
+export class NewClassData extends PreviousClassData {
   /**
    * 旧シ楽バスのデータをもとにインスタンス化する
    * @param prevClass 旧シ楽バスのデータ
    */
-  constructor(prevClass: PreviousClassType) {
+  constructor(prevClass: PreviousClassData) {
     super();
     /********* プロパティのコピー *********/
     Object.assign(this, prevClass);
