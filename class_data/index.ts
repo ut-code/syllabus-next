@@ -1,4 +1,4 @@
-import { PreviousClassType } from "./type";
+import { PreviousClassData } from "./previousClassDaya";
 import fs from "fs";
 import { argv } from "node:process";
 import { NewClassData } from "./newClass";
@@ -39,7 +39,7 @@ function main() {
   const inputData: string = fs.readFileSync(inputFilepath, "utf8");
 
   // PreviousClassTypeの配列にパース
-  const prevClassData: PreviousClassType[] = JSON.parse(inputData);
+  const prevClassData: PreviousClassData[] = JSON.parse(inputData);
 
   // データを変換
   const converted = prevClassData.map((c) => new NewClassData(c));
