@@ -22,8 +22,8 @@ const MultiselectCheckbox: React.FC = () => {
       prevCheckboxes.map((checkbox) =>
         checkbox.id === id
           ? { ...checkbox, checked: !checkbox.checked }
-          : checkbox
-      )
+          : checkbox,
+      ),
     );
   };
 
@@ -32,7 +32,10 @@ const MultiselectCheckbox: React.FC = () => {
       <h1>複数選択可能なチェックボックス</h1>
       <div style={{ display: "flex", gap: "16px" }}>
         {checkboxes.map((checkbox) => (
-          <label key={checkbox.id} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <label
+            key={checkbox.id}
+            style={{ display: "flex", alignItems: "center", gap: "8px" }}
+          >
             <input
               type="checkbox"
               checked={checkbox.checked}

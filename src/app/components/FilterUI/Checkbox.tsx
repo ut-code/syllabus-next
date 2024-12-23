@@ -8,9 +8,12 @@ type CheckboxProps = {
 };
 
 /**
- *  チェックボックスを表示する
- * @param param0  チェックボックスのラベル、チェック状態、チェック状態が変化したときのコールバックを受け取る
- * @returns  チェックボックスを表示する
+ *  チェックボックスコンポーネント
+ * @param param0  チェックボックスのプロパティ
+ * @param param0.label チェックボックスに表示するラベル
+ * @param param0.checked チェック状態
+ * @param param0.onChange チェック状態が変化したときのコールバック
+ * @returns チェックボックスコンポーネント
  */
 const Checkbox: React.FC<CheckboxProps> = ({ label, checked, onChange }) => {
   return (
