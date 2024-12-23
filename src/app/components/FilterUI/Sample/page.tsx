@@ -1,5 +1,7 @@
-import { useState } from "react";
-import { FreewordComponent } from "../FilterComponent";
+/*
+ * FilterUIのサンプルページ
+ */
+
 import { FilterUI } from "../FilterUI";
 
 const FilterUISample: React.FC = () => {

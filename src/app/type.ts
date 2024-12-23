@@ -59,3 +59,8 @@ export const dayMapping: { [key in Day]: string } = {
   fri: "金",
   sat: "土",
 };
+
+/**
+ * セメスターを表現する型
+ */
+export type Semester = "S"|"S1"|"S2"|"A"|"A1"|"A2";
