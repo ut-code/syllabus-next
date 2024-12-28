@@ -6,25 +6,32 @@ type SearchResultProps = {
   data: Array<Record<string, any>>;
 };
 
-export const sampleHeader = ["titleJp", "period", "category", "credit", "classroom", "lecturerJp"];
+export const sampleHeader = [
+  "titleJp",
+  "period",
+  "category",
+  "credit",
+  "classroom",
+  "lecturer",
+];
 
 const SearchResult: React.FC<SearchResultProps> = ({ headers, data }) => {
   return (
     <div className="overflow-x-auto">
-      <table className="min-w-full bg-white border border-gray-300">
+      <table className="m-0 h-full w-full table-fixed border-collapse border-none">
         <tbody>
           {data.map((row, rowIndex) => (
-            <tr key={rowIndex}>
-              <div>
+            <tr key={rowIndex} className="border border-t border-b border-l-0 border-r-0 border-gray-300">
+              <td className="px-[0.25em] py-[5px]">
                 {headers.map((header, colIndex) => (
                   <span
-                  key={colIndex}
-                  className="px-4 py-2 border-b text-gray-600"
+                    key={colIndex}
+                    className="px-4 py-2 border-b text-gray-600"
                   >
-                  {`${header}: ${row[header]}` || ""}
+                    {`${header}: ${row[header]}` || ""}
                   </span>
                 ))}
-              </div>
+              </td>
             </tr>
           ))}
         </tbody>
