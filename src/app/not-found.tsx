@@ -4,10 +4,10 @@ import Logo from "@/../../public/syllabus_icon.svg";
 import Image from "next/image";
 
 /**
- * Home コンポーネントは、ホームページの内容を表示します。
+ * NotFound コンポーネントは、存在しないリンクへのアクセス時に表示されます。
  * @returns HTMLを生成するReactコンポーネント。
  */
-export default function Home(): JSX.Element {
+export default function NotFound(): JSX.Element {
   return (
     <div>
       <Header />
@@ -44,22 +44,15 @@ export default function Home(): JSX.Element {
               {/* タイトル */}
               <div className={`text-6xl font-bold break-keep text-left`}>
                 {/* 幅に余裕があるときに表示 */}
-                <span className="max-md:hidden">Welcome to </span>シ楽バス
+                <span className="max-md:hidden">404 - </span>Not Found
               </div>
 
               {/* サブタイトル (幅に余裕があるときに表示) */}
               <p
                 className={`mt-12 text-2xl text-center md:text-left max-sm:hidden`}
               >
-                全ての講義情報を、いつも手元に。
+                お探しのページは見つかりませんでした。リンクに誤りはありませんか？
               </p>
-            </div>
-          </div>
-
-          {/* はじめるボタン */}
-          <div className="flex items-center justify-center">
-            <div className="rounded-full bg-primary text-on-primary w-36 text-center p-3 mt-24 hover:bg-primary/90 font-bold">
-              はじめる
             </div>
           </div>
         </div>

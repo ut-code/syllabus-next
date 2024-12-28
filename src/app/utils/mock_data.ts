@@ -1,4 +1,4 @@
-import { ClassDataType } from "@/app/type";
+import { ClassDataType, RegisterType } from "@/app/type";
 
 /**
  * 講義詳細モーダルの動作確認に利用するサンプルデータ
@@ -183,3 +183,9 @@ export const SampleClasses: ClassDataType[] = [
     shortenedClassroom: "1232",
   },
 ];
+
+export const SampleUser: RegisterType = {
+  stream: "l1",
+  grade: 1,
+  classNumber: 1,
+};
