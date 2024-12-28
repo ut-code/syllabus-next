@@ -1,4 +1,3 @@
-// components/Table.tsx
 import React from "react";
 
 type SearchResultProps = {
