@@ -6,6 +6,8 @@ import { useState } from "react";
 import "./globals.css";
 import { ThemeType, ThemeProviderValue } from "@/app/type";
 import { ThemeContext } from "@/app/context";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +30,13 @@ export default function RootLayout({
         lang="ja"
         className={`bg-surface-container text-text-default ${theme}`}
       >
-        <body className={inter.className}>{children}</body>
+        <body className={`${inter.className} overscroll-none`}>
+          <Header />
+
+          {children}
+
+          <Footer />
+        </body>
       </html>
     </ThemeContext.Provider>
   );
