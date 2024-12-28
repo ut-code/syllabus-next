@@ -43,9 +43,7 @@ export default function Header() {
       </div>
       <div>
         <a href="/notion">
-          <span className="flex space-x-3" >
-            履修上の注意
-          </span>
+          <span className="flex space-x-3">履修上の注意</span>
         </a>
       </div>
       <div className="flex space-x-4">
