@@ -1,4 +1,5 @@
 import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
 import Logo from "@/../../public/syllabus_icon.svg";
 import Image from "next/image";
 
@@ -56,6 +57,8 @@ export default function NotFound(): JSX.Element {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
