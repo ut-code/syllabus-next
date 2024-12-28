@@ -19,18 +19,20 @@ const SearchResult: React.FC<SearchResultProps> = ({ headers, data }) => {
   return (
     <div className="overflow-x-auto">
       <table className="m-0 h-full w-full table-fixed border-collapse border-none">
-        <tbody>
+        <tbody className="cursor-pointer">
           {data.map((row, rowIndex) => (
-            <tr key={rowIndex} className="border border-t border-b border-l-0 border-r-0 border-gray-300">
+            <tr
+              key={rowIndex}
+              className="border border-t border-b border-l-0 border-r-0 border-gray-300"
+            >
               <td className="px-[0.25em] py-[5px]">
-                {headers.map((header, colIndex) => (
-                  <span
-                    key={colIndex}
-                    className="px-4 py-2 border-b text-gray-600"
-                  >
-                    {`${header}: ${row[header]}` || ""}
-                  </span>
-                ))}
+                <div>
+                  {headers.map((header, colIndex) => (
+                    <span key={colIndex} className="px-[1em] inline-block">
+                      {`${header}: ${row[header]}` || ""}
+                    </span>
+                  ))}
+                </div>
               </td>
             </tr>
           ))}
