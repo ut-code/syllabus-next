@@ -120,12 +120,11 @@
     --color-surface-container-highest: 49 54 49; /* #313631 */
     --color-text-default: 255 255 255;
   }
-  a { 
+  a {
     text-decoration: underline;
   }
-  
+
   a:hover {
     text-decoration: none;
   }
-  
 }

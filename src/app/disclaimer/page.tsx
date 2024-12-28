@@ -1,11 +1,24 @@
 import React from "react";
 import { FaqItem, HowToUseItem } from "../how-to-use/HowToUseItem";
+
+const Blue: React.FC<{ children: string }> = ({ children }) => {
+  return <span className="text-tertiary">{children}</span>;
+};
+
 const disclaimer: React.FC = () => {
   return (
     <>
       <HowToUseItem title="免責事項">
         <FaqItem question="情報の精度">
-          本サービスにより提供されているデータは、UTAS(https://utas.adm.u-tokyo.ac.jp/campusweb/campusportal.do)と東京大学授業カタログ(https://catalog.he.u-tokyo.ac.jp)がオンラインで公開している情報をベースとしています。データの正確性に関しては保証いたしかねますので、履修の際は必ず公式の資料に目を通してください。本サービスの利用によって生じたいかなる損害についても
+          本サービスにより提供されているデータは、
+          <a href="https://utas.adm.u-tokyo.ac.jp/campusweb/campusportal.do">
+            <Blue>UTAS</Blue>
+          </a>
+          と
+          <a href="https://catalog.he.u-tokyo.ac.jp">
+            <Blue>東京大学授業カタログ</Blue>
+          </a>
+          がオンラインで公開している情報をベースとしています。データの正確性に関しては保証いたしかねますので、履修の際は必ず公式の資料に目を通してください。本サービスの利用によって生じたいかなる損害についても
           ut.code(); は責任を負いません。
         </FaqItem>
         <FaqItem question="成績評価方法の検索">
@@ -22,7 +35,7 @@ const disclaimer: React.FC = () => {
         <FaqItem question="ライセンス">
           本サービスは
           <a href="https://www.apache.org/licenses/LICENSE-2.0.txt">
-            Apacheライセンス バージョン2.0
+            <Blue>Apacheライセンス バージョン2.0</Blue>
           </a>
           の下で提供されている Google Material Icons をその一部に含みます。
         </FaqItem>
