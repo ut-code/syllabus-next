@@ -1,38 +1,51 @@
-## setup
+## セットアップ
 
-After cloning the repository, you need to install the required packages.
-Please run the following command in the root directory of the repository
+リポジトリをクローンした後、必要なパッケージをインストールする必要があります。  
+リポジトリのルートディレクトリで以下のコマンドを実行してください。
 
 ```bash
 npm install
 ```
 
-## development
+## 開発
 
-To run the development mode, run the following command.
+開発モードを実行するには、以下のコマンドを実行してください。
 
 ```bash
 npm run dev
 ```
 
-Before pushing the code, please run the following command to check the code quality.
+コードをプッシュする前に、コード品質をチェックするために以下のコマンドを実行してください。
 
 ```bash
 npm run lint
 ```
 
-if there are any prettier errors, please run the following command to fix them.
+もし `prettier` のエラーがある場合は、以下のコマンドを実行して修正してください。
 
 ```bash
 npx prettier . --write
 ```
 
-## mock mode
+## モックモード
 
-To run the mock mode, run the following command.
+モックモードを実行するには、以下のコマンドを実行してください。
 
 ```bash
 npm run dev:mock
 ```
 
-It will run the application with the mock data.
+このコマンドを実行すると、モックデータを使用してアプリケーションが実行されます。
+
+## 関数やクラスの説明
+
+### 1. Userのデータを扱う場合 (src/app/utils/user.ts)
+
+Userのデータは`User`クラスを使用して扱います。Userのデータは以下の場合があります。
+
+- `npm run dev:mock`を実行した場合
+  - Userはモックのデータが使用されます。
+- `npm run dev`を実行した場合
+  - UserはlocalStorageに保存されたデータが使用されます。
+
+ただ、まだユーザを登録する機能がないので、mockでユーザを作成する必要があります。

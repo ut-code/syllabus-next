@@ -1,17 +1,23 @@
+"use client";
+
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import Logo from "@/../../public/syllabus_icon.svg";
 import Image from "next/image";
+import { useUser } from "@/app/UserContext";
+import { RegisterType } from "@/app/type";
+
+import { useEffect } from "react";
 
 /**
  * Home コンポーネントは、ホームページの内容を表示します。
  * @returns HTMLを生成するReactコンポーネント。
  */
 export default function Home(): JSX.Element {
+  const { user, setUser } = useUser();
   return (
     <div>
       <Header />
-
       {/* バックグラウンド画像 */}
       <div className={`absolute right-0 bottom-0 w-[800px] h-full`}>
         <Image
