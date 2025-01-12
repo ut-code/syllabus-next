@@ -6,6 +6,7 @@ import { SemestersCheckbox } from "./FilterComponents/Semester";
 import { EvaluationFilter } from "./FilterComponents/Evaluation";
 import { ClassTypeFilter } from "./FilterComponents/ClassTypeFilter";
 import { RegistrationFilter } from "./FilterComponents/RegistrationFilter";
+import { FilterCard } from "./UI/FilterCard";
 
 /**
  *  フィルタの型定義
@@ -30,18 +31,25 @@ export const FilterUI: React.FC = () => {
 
   return (
     <div className="flex gap-8 flex-wrap">
+      <FilterCard title={"フリーワード検索"}>
       <Freeword
         isFreewordForSyllabusDetail={filter.isFreewordForSyllabusDetail}
         setFreewordTarget={(isFreewordForSyllabusDetail) =>
           setFilter({ ...filter, isFreewordForSyllabusDetail })
         }
       />
+      </FilterCard>
+
+      <FilterCard title={"セメスター"}>
       <SemestersCheckbox
         selectedSemesters={filter.semesters}
         setSelectedSemesters={(semesters: Semester[]) =>
           setFilter({ ...filter, semesters })
         }
       />
+      </FilterCard>
+
+      <FilterCard title={"評価方法"}>
       <EvaluationFilter
         evaluation_included={filter.evaluation_included}
         evaluation_excluded={filter.evaluation_excluded}
@@ -50,12 +58,18 @@ export const FilterUI: React.FC = () => {
           evaluation_excluded,
         ) => setFilter({ ...filter, evaluation_included, evaluation_excluded })}
       />
+      </FilterCard>
+
+      <FilterCard title={"種別"}>
       <ClassTypeFilter
         selectedClassTypes={filter.classTypes}
         setSelectedClassTypes={(classTypes: ClassType[]) =>
           setFilter({ ...filter, classTypes })
         }
       />
+      </FilterCard>
+
+      <FilterCard title={"履修登録済み"}>
       <RegistrationFilter
         showRegistered={filter.showRegistered}
         showNotRegistered={filter.showNotRegistered}
@@ -64,6 +78,8 @@ export const FilterUI: React.FC = () => {
           showNotRegistered: boolean,
         ) => setFilter({ ...filter, showRegistered, showNotRegistered })}
       />
+      </FilterCard>
+
     </div>
   );
 };
