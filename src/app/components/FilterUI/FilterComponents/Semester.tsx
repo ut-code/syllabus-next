@@ -1,5 +1,5 @@
 /*
- * セメスターフィルターのコンポーネントを定義する
+ * セメスターフィルターのコンポーネント
  */
 
 "use client";
@@ -11,7 +11,7 @@ import { FlagButton } from "../UI/FlagButton";
  * セメスターフィルターのプロパティ
  */
 interface SemesterProp {
-  selectedSemesters?: Semester[];
+  selectedSemesters?: Semester[]; // 選択されているセメスター
   setSelectedSemesters: (semesters: Semester[]) => void;
 }
 

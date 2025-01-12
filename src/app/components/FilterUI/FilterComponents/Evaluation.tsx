@@ -1,5 +1,5 @@
 /*
- * 評価方法フィルターのコンポーネントを定義する
+ * 評価方法フィルターのコンポーネント
  */
 
 "use client";
@@ -10,7 +10,7 @@ import Checkbox from "../UI/Checkbox";
 const evaluations: Evaluation[] = ["試験", "レポート", "出席", "平常"];
 
 /**
- * フリーワード検索のプロパティ
+ * 評価方法フィルターのプロパティ
  */
 interface EvaluationProp {
   evaluation_included?: Evaluation[];
@@ -37,19 +37,42 @@ export const EvaluationFilter: React.FC<EvaluationProp> = (
 
   evaluations.map((ev) => {
     slots.push(<div key={ev + "header"}>{ev.substring(0, 2)}</div>);
-    slots.push(checkbox(true, ev, ev + "included", prop));
-    slots.push(checkbox(false, ev, ev + "excluded", prop));
+    slots.push(
+      <CheckboxInGrid
+        isInclude={true}
+        ev={ev}
+        key={ev + "included"}
+        prop={prop}
+      />,
+    );
+    slots.push(
+      <CheckboxInGrid
+        isInclude={false}
+        ev={ev}
+        key={ev + "excluded"}
+        prop={prop}
+      />,
+    );
   });
 
   return <div className="grid grid-rows-3 grid-flow-col gap-2">{slots}</div>;
 };
 
-function checkbox(
-  isInclude: boolean,
-  ev: Evaluation,
-  key: string,
-  prop: EvaluationProp,
-) {
+/**
+ * グリッド上に並べるチェックボックスのコンポーネント
+ * @param param0 プロパティ
+ * @param param0.isInclude このチェックボックスが、含めたい評価方法を示しているか否か
+ * @param param0.ev 評価方法
+ * @param param0.key ループ処理に使用するkey
+ * @param param0.prop 評価方法のフィルターコンポーネントのプロパティ
+ * @returns チェックボックスコンポーネント
+ */
+const CheckboxInGrid: React.FC<{
+  isInclude: boolean;
+  ev: Evaluation;
+  key: string;
+  prop: EvaluationProp;
+}> = ({ isInclude, ev, key, prop }) => {
   let evaluation_included = prop.evaluation_included ?? [];
   let evaluation_excluded = prop.evaluation_excluded ?? [];
   let myEvaluation = isInclude ? evaluation_included : evaluation_excluded;
@@ -58,11 +81,13 @@ function checkbox(
   // クリックされたときの挙動
   const onClick = (ev: Evaluation) => {
     if (myEvaluation.includes(ev)) {
+      // もともとチェックされていたボックスをクリックしたら、外す
       myEvaluation.splice(myEvaluation.indexOf(ev), 1);
     } else {
-      const index = otherEvaluation.indexOf(ev);
-      if (index >= 0) otherEvaluation.splice(index, 1);
-      myEvaluation.push(ev);
+      // もともとチェックされていなかったボックスをクリックしたら
+      const index = otherEvaluation.indexOf(ev); // 相方のチェックがされているかを確認
+      if (index >= 0) otherEvaluation.splice(index, 1); // 相方のチェックを外す
+      myEvaluation.push(ev); // 自分のボックスにチェックを入れる
     }
 
     prop.setEvaluation(evaluation_included, evaluation_excluded);
@@ -75,4 +100,4 @@ function checkbox(
       onChange={(_) => onClick(ev)}
     />
   );
-}
+};

@@ -1,5 +1,5 @@
 /*
- * セメスターフィルターのコンポーネントを定義する
+ * セメスターフィルターのコンポーネント
  */
 
 "use client";
@@ -19,8 +19,8 @@ const ClassType1: ClassType[] = ["基礎", "要求", "主題", "展開"];
 const ClassType2: ClassType[] = ["L", "A", "B", "C", "D", "E", "F"];
 
 /**
- * セメスターフィルターのコンポーネント
- * @param prop セメスターフィルターのプロパティ
+ * 種別フィルターのコンポーネント
+ * @param prop 種別フィルターのプロパティ
  * @returns コンポーネント
  */
 export const ClassTypeFilter: React.FC<SemesterProp> = (prop: SemesterProp) => {
@@ -29,10 +29,12 @@ export const ClassTypeFilter: React.FC<SemesterProp> = (prop: SemesterProp) => {
   // ボタンがクリックされたときの関数
   const onClick = (classType: ClassType) => {
     if (selectedClassTypes.includes(classType)) {
+      // 既に含まれている場合、除外
       prop.setSelectedClassTypes(
         selectedClassTypes.filter((c) => c !== classType),
       );
     } else {
+      // 含まれていた場合、追加
       prop.setSelectedClassTypes([...selectedClassTypes, classType]);
     }
   };

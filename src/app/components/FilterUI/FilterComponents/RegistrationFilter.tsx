@@ -1,5 +1,5 @@
 /*
- * 履修登録済みか否かのフィルターのコンポーネント
+ * 履修登録済みか否かでフィルターするコンポーネント
  */
 
 "use client";
@@ -10,8 +10,8 @@ import { FlagButton } from "../UI/FlagButton";
  * 履修登録済みか否かのフィルターのプロパティ
  */
 interface RegistrationFilterProp {
-  showRegistered?: boolean;
-  showNotRegistered?: boolean;
+  showRegistered?: boolean; // 履修登録済みの講義を表示するか否か
+  showNotRegistered?: boolean; // 未履修の講義を表示するか否か
   setShowRegistered: (
     showRegistered: boolean,
     showNotRegistered: boolean,
@@ -31,11 +31,9 @@ export const RegistrationFilter: React.FC<RegistrationFilterProp> = (
 
   // ボタンがクリックされたときの関数
   const onClick = (showRegistered: boolean, showNotRegistered: boolean) => {
-    if (!showRegistered && !showNotRegistered) {
-      return;
-    } else {
-      prop.setShowRegistered(showRegistered, showNotRegistered);
-    }
+    if (!showRegistered && !showNotRegistered)
+      return; // どちらも非表示になることを防ぐ
+    else prop.setShowRegistered(showRegistered, showNotRegistered);
   };
 
   return (
@@ -44,13 +42,13 @@ export const RegistrationFilter: React.FC<RegistrationFilterProp> = (
         label={"未"}
         isSelected={showNotRegistered}
         onClick={() => onClick(showRegistered, !showNotRegistered)}
-        className="aspect-square"
+        className="aspect-square" // 円形
       />
       <FlagButton
         label={"済"}
         isSelected={showRegistered}
         onClick={() => onClick(!prop.showRegistered, showNotRegistered)}
-        className="aspect-square"
+        className="aspect-square" // 円形
       />
     </div>
   );

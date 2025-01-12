@@ -1,3 +1,7 @@
+/*
+ * 全てのフィルターを表示するコンポーネント
+ */
+
 "use client";
 import { useState } from "react";
 import { Freeword } from "./FilterComponents/Freeword";
@@ -12,13 +16,13 @@ import { FilterCard } from "./UI/FilterCard";
  *  フィルタの型定義
  */
 type Filter = {
-  isFreewordForSyllabusDetail?: boolean;
-  semesters?: Semester[];
-  evaluation_included?: Evaluation[];
-  evaluation_excluded?: Evaluation[];
-  classTypes?: ClassType[];
-  showRegistered?: boolean;
-  showNotRegistered?: boolean;
+  isFreewordForSyllabusDetail?: boolean; // フリーワード検索
+  semesters?: Semester[]; // セメスター
+  evaluation_included?: Evaluation[]; // 含めたい評価方法
+  evaluation_excluded?: Evaluation[]; // 除外したい評価方法
+  classTypes?: ClassType[]; // 種別
+  showRegistered?: boolean; // 履修登録済みの授業を表示する
+  showNotRegistered?: boolean; // 未履修の授業を表示する
 };
 
 /**
