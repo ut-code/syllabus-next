@@ -10,9 +10,9 @@ type CheckboxProps = {
 /**
  *  チェックボックスコンポーネント
  * @param param0  チェックボックスのプロパティ
- * @param param0.label チェックボックスに表示するラベル
  * @param param0.checked チェック状態
  * @param param0.onChange チェック状態が変化したときのコールバック
+ * @param param0.className tailwindcss
  * @returns チェックボックスコンポーネント
  */
 const Checkbox: React.FC<CheckboxProps> = ({

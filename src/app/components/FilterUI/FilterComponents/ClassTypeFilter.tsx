@@ -41,6 +41,7 @@ export const ClassTypeFilter: React.FC<SemesterProp> = (prop: SemesterProp) => {
     <div className="grid grid-cols-8 gap-2">
       {ClassType1.map((c) => (
         <FlagButton
+          key={c}
           label={c}
           isSelected={selectedClassTypes.includes(c)}
           onClick={() => onClick(c)}
@@ -50,6 +51,7 @@ export const ClassTypeFilter: React.FC<SemesterProp> = (prop: SemesterProp) => {
 
       {ClassType2.map((c) => (
         <FlagButton
+          key={c}
           label={c}
           isSelected={selectedClassTypes.includes(c)}
           onClick={() => onClick(c)}

@@ -17,7 +17,9 @@ export interface FilterCardProps {
 
 /**
  * フィルターの内容とタイトルをセットにするコンポーネント
- * @param props フィルターのプロパティ
+ * @param param0 プロパティ
+ * @param param0.title フィルターのタイトル
+ * @param param0.children フィルターコンポーネント
  * @returns コンポーネント
  */
 export const FilterCard: React.FC<FilterCardProps> = ({ title, children }) => {
