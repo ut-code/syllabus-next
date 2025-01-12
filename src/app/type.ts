@@ -73,4 +73,15 @@ export type Evaluation = "試験" | "レポート" | "出席" | "平常";
 /**
  * セメスターを表現する型
  */
-export type ClassType = "基礎" | "要求" | "主題" | "展開" | "L" | "A" | "B" | "C" | "D" | "E" | "F";
+export type ClassType =
+  | "基礎"
+  | "要求"
+  | "主題"
+  | "展開"
+  | "L"
+  | "A"
+  | "B"
+  | "C"
+  | "D"
+  | "E"
+  | "F";

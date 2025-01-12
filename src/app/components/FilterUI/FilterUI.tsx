@@ -26,7 +26,7 @@ export const FilterUI: React.FC = () => {
   const [filter, setFilter] = useState<Filter>({});
 
   return (
-    <div className="flex gap-4 flex-wrap">
+    <div className="flex gap-8 flex-wrap">
       <Freeword
         isFreewordForSyllabusDetail={filter.isFreewordForSyllabusDetail}
         setFreewordTarget={(isFreewordForSyllabusDetail) =>

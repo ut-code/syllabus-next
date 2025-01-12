@@ -15,7 +15,7 @@ interface SemesterProp {
   setSelectedClassTypes: (classType: ClassType[]) => void;
 }
 
-const ClassType1: ClassType[] = ["基礎", "要求", "主題","展開"];
+const ClassType1: ClassType[] = ["基礎", "要求", "主題", "展開"];
 const ClassType2: ClassType[] = ["L", "A", "B", "C", "D", "E", "F"];
 
 /**
@@ -23,9 +23,7 @@ const ClassType2: ClassType[] = ["L", "A", "B", "C", "D", "E", "F"];
  * @param prop セメスターフィルターのプロパティ
  * @returns コンポーネント
  */
-export const ClassTypeFilter: React.FC<SemesterProp> = (
-  prop: SemesterProp,
-) => {
+export const ClassTypeFilter: React.FC<SemesterProp> = (prop: SemesterProp) => {
   const selectedClassTypes = prop.selectedClassTypes ?? [];
 
   // ボタンがクリックされたときの関数
@@ -40,26 +38,24 @@ export const ClassTypeFilter: React.FC<SemesterProp> = (
   };
 
   return (
-      <div className="grid grid-cols-8 gap-2">
-        {ClassType1.map((c)=>
+    <div className="grid grid-cols-8 gap-2">
+      {ClassType1.map((c) => (
+        <FlagButton
+          label={c}
+          isSelected={selectedClassTypes.includes(c)}
+          onClick={() => onClick(c)}
+          className="col-span-2"
+        />
+      ))}
 
-<FlagButton
-label={c}
-isSelected={selectedClassTypes.includes(c)}
-onClick={() => onClick(c)}
-className="col-span-2"
-/>
-        )}
-            
-            {ClassType2.map((c)=>
-
-<FlagButton
-label={c}
-isSelected={selectedClassTypes.includes(c)}
-onClick={() => onClick(c)}
-className="aspect-square col-span-1"
-/>
-        )}
-      </div>
+      {ClassType2.map((c) => (
+        <FlagButton
+          label={c}
+          isSelected={selectedClassTypes.includes(c)}
+          onClick={() => onClick(c)}
+          className="aspect-square col-span-1"
+        />
+      ))}
+    </div>
   );
 };

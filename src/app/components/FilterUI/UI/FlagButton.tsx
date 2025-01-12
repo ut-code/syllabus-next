@@ -4,7 +4,7 @@
  * セメスター選択ボタンや、種別選択ボタンで使用。
  */
 
-import React from 'react';
+import React from "react";
 
 /**
  * 選択状態を示すボタンのプロパティ
@@ -35,15 +35,19 @@ interface FlagButtonProp {
  * @returns 選択状態を示すボタンのコンポーネント
  */
 export const FlagButton: React.FC<FlagButtonProp> = (prop: FlagButtonProp) => {
-    const className = prop.className ?? "";
+  const className = prop.className ?? "";
   return (
     <button
-      className={`${
-        prop.isSelected ? 'bg-primary/30' : 'bg-surface'
-      } text-text-default px-4 py-2 rounded-full outline-2 outline-primary/30 outline` + " " + className}
+      className={
+        `${
+          prop.isSelected ? "bg-primary/30" : "bg-surface"
+        } text-text-default px-4 py-2 rounded-full outline-2 outline-primary/30 outline` +
+        " " +
+        className
+      }
       onClick={prop.onClick}
     >
       {prop.label}
     </button>
   );
-}
+};

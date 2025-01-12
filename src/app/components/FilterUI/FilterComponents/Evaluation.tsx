@@ -5,6 +5,7 @@
 "use client";
 import React, { ReactNode } from "react";
 import { Evaluation } from "@/app/type";
+import Checkbox from "../UI/Checkbox";
 
 const evaluations: Evaluation[] = ["試験", "レポート", "出席", "平常"];
 
@@ -54,23 +55,24 @@ function checkbox(
   let myEvaluation = isInclude ? evaluation_included : evaluation_excluded;
   let otherEvaluation = isInclude ? evaluation_excluded : evaluation_included;
 
-  return (
-    <input
-      key={key}
-      className="w-6 h-6"
-      type="checkbox"
-      checked={myEvaluation.includes(ev)}
-      onChange={() => {
-        if (myEvaluation.includes(ev)) {
-          myEvaluation.splice(myEvaluation.indexOf(ev), 1);
-        } else {
-          const index = otherEvaluation.indexOf(ev);
-          if (index >= 0) otherEvaluation.splice(index, 1);
-          myEvaluation.push(ev);
-        }
+  // クリックされたときの挙動
+  const onClick = (ev: Evaluation) => {
+    if (myEvaluation.includes(ev)) {
+      myEvaluation.splice(myEvaluation.indexOf(ev), 1);
+    } else {
+      const index = otherEvaluation.indexOf(ev);
+      if (index >= 0) otherEvaluation.splice(index, 1);
+      myEvaluation.push(ev);
+    }
 
-        prop.setEvaluation(evaluation_included, evaluation_excluded);
-      }}
+    prop.setEvaluation(evaluation_included, evaluation_excluded);
+  };
+
+  return (
+    <Checkbox
+      key={key}
+      checked={myEvaluation.includes(ev)}
+      onChange={(_) => onClick(ev)}
     />
   );
 }

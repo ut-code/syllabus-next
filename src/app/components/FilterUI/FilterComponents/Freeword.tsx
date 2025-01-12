@@ -4,7 +4,7 @@
 
 "use client";
 import React from "react";
-import Checkbox from "../Checkbox";
+import Checkbox from "../UI/Checkbox";
 
 /**
  * フリーワード検索のプロパティ
@@ -23,17 +23,21 @@ export const Freeword: React.FC<FreewordProp> = (prop: FreewordProp) => {
   const isFreewordForSyllabusDetail = prop.isFreewordForSyllabusDetail ?? false;
   return (
     <div>
-      <input className="text-lg w-72"
+      <input
+        className="text-lg w-72 block"
         placeholder={
           "検索対象 : " +
           (isFreewordForSyllabusDetail ? "授業情報全体" : "講義名")
         }
-      ></input>
-      <Checkbox
-        label={"授業情報全体を検索"}
-        checked={isFreewordForSyllabusDetail}
-        onChange={prop.setFreewordTarget}
-      ></Checkbox>
+      />
+      <label className="flex items-center mt-2">
+        <Checkbox
+          checked={isFreewordForSyllabusDetail}
+          onChange={prop.setFreewordTarget}
+          className="mr-2"
+        />
+        授業情報全体を検索
+      </label>
     </div>
   );
 };

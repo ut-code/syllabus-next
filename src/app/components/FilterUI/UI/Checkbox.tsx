@@ -2,9 +2,9 @@
 import React from "react";
 
 type CheckboxProps = {
-  label: string; // チェックボックスに表示するラベル
   checked: boolean; // チェック状態
   onChange: (checked: boolean) => void; // チェック状態が変化したときのコールバック
+  className?: string; 
 };
 
 /**
@@ -15,16 +15,14 @@ type CheckboxProps = {
  * @param param0.onChange チェック状態が変化したときのコールバック
  * @returns チェックボックスコンポーネント
  */
-const Checkbox: React.FC<CheckboxProps> = ({ label, checked, onChange }) => {
+const Checkbox: React.FC<CheckboxProps> = ({ checked, onChange,className }) => {
   return (
-    <label style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={() => onChange(!checked)}
-      />
-      {label}
-    </label>
+    <input
+      type="checkbox"
+      checked={checked}
+      onChange={() => onChange(!checked)}
+      className={"accent-primary w-6 h-6 "+className}
+    />
   );
 };
 
