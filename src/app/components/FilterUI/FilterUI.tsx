@@ -32,54 +32,55 @@ export const FilterUI: React.FC = () => {
   return (
     <div className="flex gap-8 flex-wrap">
       <FilterCard title={"フリーワード検索"}>
-      <Freeword
-        isFreewordForSyllabusDetail={filter.isFreewordForSyllabusDetail}
-        setFreewordTarget={(isFreewordForSyllabusDetail) =>
-          setFilter({ ...filter, isFreewordForSyllabusDetail })
-        }
-      />
+        <Freeword
+          isFreewordForSyllabusDetail={filter.isFreewordForSyllabusDetail}
+          setFreewordTarget={(isFreewordForSyllabusDetail) =>
+            setFilter({ ...filter, isFreewordForSyllabusDetail })
+          }
+        />
       </FilterCard>
 
       <FilterCard title={"セメスター"}>
-      <SemestersCheckbox
-        selectedSemesters={filter.semesters}
-        setSelectedSemesters={(semesters: Semester[]) =>
-          setFilter({ ...filter, semesters })
-        }
-      />
+        <SemestersCheckbox
+          selectedSemesters={filter.semesters}
+          setSelectedSemesters={(semesters: Semester[]) =>
+            setFilter({ ...filter, semesters })
+          }
+        />
       </FilterCard>
 
       <FilterCard title={"評価方法"}>
-      <EvaluationFilter
-        evaluation_included={filter.evaluation_included}
-        evaluation_excluded={filter.evaluation_excluded}
-        setEvaluation={(
-          evaluation_included: Evaluation[],
-          evaluation_excluded,
-        ) => setFilter({ ...filter, evaluation_included, evaluation_excluded })}
-      />
+        <EvaluationFilter
+          evaluation_included={filter.evaluation_included}
+          evaluation_excluded={filter.evaluation_excluded}
+          setEvaluation={(
+            evaluation_included: Evaluation[],
+            evaluation_excluded,
+          ) =>
+            setFilter({ ...filter, evaluation_included, evaluation_excluded })
+          }
+        />
       </FilterCard>
 
       <FilterCard title={"種別"}>
-      <ClassTypeFilter
-        selectedClassTypes={filter.classTypes}
-        setSelectedClassTypes={(classTypes: ClassType[]) =>
-          setFilter({ ...filter, classTypes })
-        }
-      />
+        <ClassTypeFilter
+          selectedClassTypes={filter.classTypes}
+          setSelectedClassTypes={(classTypes: ClassType[]) =>
+            setFilter({ ...filter, classTypes })
+          }
+        />
       </FilterCard>
 
       <FilterCard title={"履修登録済み"}>
-      <RegistrationFilter
-        showRegistered={filter.showRegistered}
-        showNotRegistered={filter.showNotRegistered}
-        setShowRegistered={(
-          showRegistered: boolean,
-          showNotRegistered: boolean,
-        ) => setFilter({ ...filter, showRegistered, showNotRegistered })}
-      />
+        <RegistrationFilter
+          showRegistered={filter.showRegistered}
+          showNotRegistered={filter.showNotRegistered}
+          setShowRegistered={(
+            showRegistered: boolean,
+            showNotRegistered: boolean,
+          ) => setFilter({ ...filter, showRegistered, showNotRegistered })}
+        />
       </FilterCard>
-
     </div>
   );
 };
