@@ -5,6 +5,7 @@ import { ClassType, Evaluation, Semester } from "@/app/type";
 import { SemestersCheckbox } from "./FilterComponents/Semester";
 import { EvaluationFilter } from "./FilterComponents/Evaluation";
 import { ClassTypeFilter } from "./FilterComponents/ClassTypeFilter";
+import { RegistrationFilter } from "./FilterComponents/RegistrationFilter";
 
 /**
  *  フィルタの型定義
@@ -15,6 +16,8 @@ type Filter = {
   evaluation_included?: Evaluation[];
   evaluation_excluded?: Evaluation[];
   classTypes?: ClassType[];
+  showRegistered?: boolean;
+  showNotRegistered?: boolean;
 };
 
 /**
@@ -53,6 +56,7 @@ export const FilterUI: React.FC = () => {
           setFilter({ ...filter, classTypes })
         }
       />
+      <RegistrationFilter showRegistered={filter.showRegistered} showNotRegistered={filter.showNotRegistered} setShowRegistered={(showRegistered:boolean,showNotRegistered:boolean)=>setFilter({...filter, showRegistered, showNotRegistered})} />
     </div>
   );
 };
