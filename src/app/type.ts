@@ -69,3 +69,8 @@ export type Semester = "S" | "S1" | "S2" | "A" | "A1" | "A2";
  * 評価方法を表現する型
  */
 export type Evaluation = "試験" | "レポート" | "出席" | "平常";
+
+/**
+ * セメスターを表現する型
+ */
+export type ClassType = "基礎" | "要求" | "主題" | "展開" | "L" | "A" | "B" | "C" | "D" | "E" | "F";

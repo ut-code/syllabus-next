@@ -1,9 +1,10 @@
 "use client";
 import { useState } from "react";
 import { Freeword } from "./FilterComponents/Freeword";
-import { Evaluation, Semester } from "@/app/type";
+import { ClassType, Evaluation, Semester } from "@/app/type";
 import { SemestersCheckbox } from "./FilterComponents/Semester";
 import { EvaluationFilter } from "./FilterComponents/Evaluation";
+import { ClassTypeFilter } from "./FilterComponents/ClassTypeFilter";
 
 /**
  *  フィルタの型定義
@@ -13,6 +14,7 @@ type Filter = {
   semesters?: Semester[];
   evaluation_included?: Evaluation[];
   evaluation_excluded?: Evaluation[];
+  classTypes?: ClassType[];
 };
 
 /**
@@ -24,7 +26,7 @@ export const FilterUI: React.FC = () => {
   const [filter, setFilter] = useState<Filter>({});
 
   return (
-    <div className="flex justify-center gap-4">
+    <div className="flex gap-4 flex-wrap">
       <Freeword
         isFreewordForSyllabusDetail={filter.isFreewordForSyllabusDetail}
         setFreewordTarget={(isFreewordForSyllabusDetail) =>
@@ -44,6 +46,12 @@ export const FilterUI: React.FC = () => {
           evaluation_included: Evaluation[],
           evaluation_excluded,
         ) => setFilter({ ...filter, evaluation_included, evaluation_excluded })}
+      />
+      <ClassTypeFilter
+        selectedClassTypes={filter.classTypes}
+        setSelectedClassTypes={(classTypes: ClassType[]) =>
+          setFilter({ ...filter, classTypes })
+        }
       />
     </div>
   );

@@ -5,6 +5,7 @@
 "use client";
 import React from "react";
 import { Semester } from "@/app/type";
+import { FlagButton } from "../UI/FlagButton";
 
 /**
  * セメスターフィルターのプロパティ
@@ -13,8 +14,6 @@ interface SemesterProp {
   selectedSemesters?: Semester[];
   setSelectedSemesters: (semesters: Semester[]) => void;
 }
-
-const Semesters: Semester[] = ["S", "S1", "S2", "A", "A1", "A2"];
 
 /**
  * セメスターフィルターのコンポーネント
@@ -26,39 +25,55 @@ export const SemestersCheckbox: React.FC<SemesterProp> = (
 ) => {
   const selectedSemesters = prop.selectedSemesters ?? [];
 
+  // ボタンがクリックされたときの関数
+  const onClick = (semester: Semester) => {
+    if (selectedSemesters.includes(semester)) {
+      prop.setSelectedSemesters(
+        selectedSemesters.filter((s) => s !== semester),
+      );
+    } else {
+      prop.setSelectedSemesters([...selectedSemesters, semester]);
+    }
+  };
+
   return (
-    <div>
-      <div style={{ display: "flex", gap: "16px" }}>
-        {Semesters.map((s) => (
-          <label
-            key={s}
-            style={{ display: "flex", alignItems: "center", gap: "8px" }}
-          >
-            <input
-              type="checkbox"
-              checked={selectedSemesters.includes(s)}
-              onChange={() => {
-                if (selectedSemesters.includes(s)) {
-                  prop.setSelectedSemesters(
-                    selectedSemesters.filter((semester) => semester !== s),
-                  );
-                } else {
-                  prop.setSelectedSemesters([...selectedSemesters, s]);
-                }
-              }}
+      <div className="grid grid-cols-4 gap-2">
+            <FlagButton
+              label={"S1"}
+              isSelected={selectedSemesters.includes("S1")}
+              onClick={() => onClick("S1")}
+              className="aspect-square"
             />
-            {s}
-          </label>
-        ))}
+            <FlagButton
+              label={"S2"}
+              isSelected={selectedSemesters.includes("S2")}
+              onClick={() => onClick("S2")}
+              className="aspect-square"
+            />
+            <FlagButton
+              label={"A1"}
+              isSelected={selectedSemesters.includes("A1")}
+              onClick={() => onClick("A1")}
+              className="aspect-square"
+            />
+            <FlagButton
+              label={"A2"}
+              isSelected={selectedSemesters.includes("A2")}
+              onClick={() => onClick("A2")}
+              className="aspect-square"
+            />
+            <FlagButton
+              label={"S"}
+              isSelected={selectedSemesters.includes("S")}
+              onClick={() => onClick("S")}
+              className="col-span-2"
+            />
+            <FlagButton
+              label={"A"}
+              isSelected={selectedSemesters.includes("A")}
+              onClick={() => onClick("A")}
+              className="col-span-2"
+            />
       </div>
-      <div style={{ marginTop: "16px" }}>
-        <h2>選択された項目:</h2>
-        <ul>
-          {selectedSemesters.map((checkbox, i) => (
-            <li key={i}>{checkbox}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
   );
 };
