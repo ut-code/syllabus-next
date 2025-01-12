@@ -56,7 +56,14 @@ export const FilterUI: React.FC = () => {
           setFilter({ ...filter, classTypes })
         }
       />
-      <RegistrationFilter showRegistered={filter.showRegistered} showNotRegistered={filter.showNotRegistered} setShowRegistered={(showRegistered:boolean,showNotRegistered:boolean)=>setFilter({...filter, showRegistered, showNotRegistered})} />
+      <RegistrationFilter
+        showRegistered={filter.showRegistered}
+        showNotRegistered={filter.showNotRegistered}
+        setShowRegistered={(
+          showRegistered: boolean,
+          showNotRegistered: boolean,
+        ) => setFilter({ ...filter, showRegistered, showNotRegistered })}
+      />
     </div>
   );
 };

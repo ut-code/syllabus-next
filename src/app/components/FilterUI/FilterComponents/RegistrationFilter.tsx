@@ -12,7 +12,10 @@ import { FlagButton } from "../UI/FlagButton";
 interface RegistrationFilterProp {
   showRegistered?: boolean;
   showNotRegistered?: boolean;
-  setShowRegistered: (showRegistered: boolean, showNotRegistered: boolean) => void;
+  setShowRegistered: (
+    showRegistered: boolean,
+    showNotRegistered: boolean,
+  ) => void;
 }
 
 /**
@@ -23,9 +26,8 @@ interface RegistrationFilterProp {
 export const RegistrationFilter: React.FC<RegistrationFilterProp> = (
   prop: RegistrationFilterProp,
 ) => {
-
-    const showRegistered = prop.showRegistered ?? true;
-    const showNotRegistered = prop.showNotRegistered ?? true;
+  const showRegistered = prop.showRegistered ?? true;
+  const showNotRegistered = prop.showNotRegistered ?? true;
 
   // ボタンがクリックされたときの関数
   const onClick = (showRegistered: boolean, showNotRegistered: boolean) => {
