@@ -4,7 +4,6 @@
 
 "use client";
 import React from "react";
-import Checkbox from "../Checkbox";
 import { Semester } from "@/app/type";
 
 /**
