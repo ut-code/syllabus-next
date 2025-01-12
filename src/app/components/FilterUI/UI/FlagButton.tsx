@@ -40,7 +40,7 @@ export const FlagButton: React.FC<FlagButtonProp> = (prop: FlagButtonProp) => {
     <button
       className={`${
         prop.isSelected ? 'bg-primary/30' : 'bg-surface'
-      } text-text-default px-4 py-2 rounded-full` + " " + className}
+      } text-text-default px-4 py-2 rounded-full outline-2 outline-primary/30 outline` + " " + className}
       onClick={prop.onClick}
     >
       {prop.label}

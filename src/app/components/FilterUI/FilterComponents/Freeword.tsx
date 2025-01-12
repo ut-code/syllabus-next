@@ -23,9 +23,9 @@ export const Freeword: React.FC<FreewordProp> = (prop: FreewordProp) => {
   const isFreewordForSyllabusDetail = prop.isFreewordForSyllabusDetail ?? false;
   return (
     <div>
-      <input
+      <input className="text-lg w-72"
         placeholder={
-          "フリーワード : " +
+          "検索対象 : " +
           (isFreewordForSyllabusDetail ? "授業情報全体" : "講義名")
         }
       ></input>
