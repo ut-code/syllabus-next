@@ -7,6 +7,7 @@ import { useState } from "react";
 import { ClassType, Evaluation, Semester } from "@/app/type";
 import { SemestersCheckbox } from "./FilterComponents/Semester";
 import { FilterCard } from "./UI/FilterCard";
+import { EvaluationFilter } from "./FilterComponents/Evaluation";
 
 /**
  *  フィルタの型定義
@@ -36,6 +37,19 @@ export const FilterUI: React.FC = () => {
           selectedSemesters={filter.semesters}
           setSelectedSemesters={(semesters: Semester[]) =>
             setFilter({ ...filter, semesters })
+          }
+        />
+      </FilterCard>
+
+      <FilterCard title={"評価方法"}>
+        <EvaluationFilter
+          evaluation_included={filter.evaluation_included}
+          evaluation_excluded={filter.evaluation_excluded}
+          setEvaluation={(
+            evaluation_included: Evaluation[],
+            evaluation_excluded,
+          ) =>
+            setFilter({ ...filter, evaluation_included, evaluation_excluded })
           }
         />
       </FilterCard>
