@@ -85,7 +85,6 @@ const CheckboxInGrid: React.FC<{
       // もともとチェックされていなかったボックスをクリックしたら
       const index = otherEvaluation.indexOf(ev); // 相方のチェックがされているかを確認
       if (index >= 0) otherEvaluation.splice(index, 1); // 相方のチェックを外す
-      console.log(index);
       myEvaluation.push(ev); // 自分のボックスにチェックを入れる
     }
 
