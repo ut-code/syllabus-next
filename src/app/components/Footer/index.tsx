@@ -36,7 +36,7 @@ export default function Footer() {
           免責事項
         </Link>
         <Link
-          href="#"
+          href="/aboutus"
           className="hover:bg-surface-variant hover:text-white px-2 py-1 rounded transition duration-200"
         >
           About us
