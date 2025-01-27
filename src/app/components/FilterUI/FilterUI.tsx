@@ -9,6 +9,7 @@ import { SemestersCheckbox } from "./FilterComponents/Semester";
 import { FilterCard } from "./UI/FilterCard";
 import { EvaluationFilter } from "./FilterComponents/Evaluation";
 import { Freeword } from "./FilterComponents/Freeword";
+import { RegistrationFilter } from "./FilterComponents/RegistrationFilter";
 
 /**
  *  フィルタの型定義
@@ -61,6 +62,17 @@ export const FilterUI: React.FC = () => {
           ) =>
             setFilter({ ...filter, evaluation_included, evaluation_excluded })
           }
+        />
+      </FilterCard>
+
+      <FilterCard title={"履修登録済み"}>
+        <RegistrationFilter
+          showRegistered={filter.showRegistered}
+          showNotRegistered={filter.showNotRegistered}
+          setShowRegistered={(
+            showRegistered: boolean,
+            showNotRegistered: boolean,
+          ) => setFilter({ ...filter, showRegistered, showNotRegistered })}
         />
       </FilterCard>
     </div>
