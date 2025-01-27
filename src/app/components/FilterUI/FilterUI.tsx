@@ -8,6 +8,7 @@ import { ClassType, Evaluation, Semester } from "@/app/type";
 import { SemestersCheckbox } from "./FilterComponents/Semester";
 import { FilterCard } from "./UI/FilterCard";
 import { EvaluationFilter } from "./FilterComponents/Evaluation";
+import { Freeword } from "./FilterComponents/Freeword";
 
 /**
  *  フィルタの型定義
@@ -32,6 +33,15 @@ export const FilterUI: React.FC = () => {
 
   return (
     <div className="flex gap-8 flex-wrap">
+      <FilterCard title={"フリーワード検索"}>
+        <Freeword
+          isFreewordForSyllabusDetail={filter.isFreewordForSyllabusDetail}
+          setFreewordTarget={(isFreewordForSyllabusDetail) =>
+            setFilter({ ...filter, isFreewordForSyllabusDetail })
+          }
+        />
+      </FilterCard>
+
       <FilterCard title={"セメスター"}>
         <SemestersCheckbox
           selectedSemesters={filter.semesters}
