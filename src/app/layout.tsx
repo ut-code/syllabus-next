@@ -55,7 +55,11 @@ export default function RootLayout({
           lang="ja"
           className={`bg-surface-container text-text-default ${theme}`}
         >
-          <body className={inter.className}>{children}</body>
+          <body className={inter.className}>
+            <Header />
+            {children}
+            <Footer />
+          </body>
         </html>
       </UserContext.Provider>
     </ThemeContext.Provider>

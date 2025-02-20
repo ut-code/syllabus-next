@@ -1,7 +1,5 @@
 "use client";
 
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
 import Logo from "@/../../public/syllabus_icon.svg";
 import Image from "next/image";
 import { useUser } from "@/app/UserContext";
