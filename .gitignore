@@ -18,6 +18,7 @@ bun.lockb
 
 # production
 /build
+/class_data/build
 
 # misc
 .DS_Store

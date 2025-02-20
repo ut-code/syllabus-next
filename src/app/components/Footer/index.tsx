@@ -30,7 +30,7 @@ export default function Footer() {
           履修上の注意
         </Link>
         <Link
-          href="#"
+          href="/disclaimer"
           className="hover:bg-surface-variant hover:text-white px-2 py-1 rounded transition duration-200"
         >
           免責事項
