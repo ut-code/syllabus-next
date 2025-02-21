@@ -55,7 +55,7 @@ export default function RootLayout({
           lang="ja"
           className={`bg-surface-container text-text-default ${theme}`}
         >
-          <body className={inter.className}>
+          <body className={`${inter.className} overscroll-none`}>
             <Header />
             {children}
             <Footer />

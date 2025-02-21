@@ -29,7 +29,7 @@ export default function Home(): JSX.Element {
         {/* タイトルとボタンを中央ぞろえするためgridを使用 */}
         <div className="grid grid-column-1">
           {/* タイトル */}
-          <div className="relative flex justify-center items-center rounded-lg z-10">
+          <div className="relative flex justify-center items-center rounded-lg">
             {/* ロゴ(解像度に応じてサイズを変える) */}
             <div
               className={`relative w-[100px] h-[100px] md:w-[150px] md:h-[150px]`}
