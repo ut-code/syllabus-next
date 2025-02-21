@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FaCog } from "react-icons/fa";
 import { MdDarkMode } from "react-icons/md";
 import { MdOutlineWbSunny } from "react-icons/md";
+import Link from "next/link";
 
 import { ThemeContext } from "@/app/context";
 import { ThemeProviderValue } from "@/app/type";
@@ -21,12 +22,12 @@ export default function Header() {
       className="flex items-center justify-between px-4 py-2 bg-on-primary shadow-md fixed top-0 w-full z-10"
     >
       <div className="flex items-center space-x-2">
-        <a href="/" id="syllabus-link" className="text-lg">
+        <Link href="/" id="syllabus-link" className="text-lg">
           <ruby>
             シ楽バス<rt>しらばす</rt>
           </ruby>
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://utcode.net/"
           target="_blank"
           id="logo-link"
@@ -39,7 +40,7 @@ export default function Header() {
             width={100}
             height={100}
           />
-        </a>
+        </Link>
       </div>
       <div className="flex space-x-4">
         <button>
