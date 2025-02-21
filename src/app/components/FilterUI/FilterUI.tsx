@@ -8,6 +8,9 @@ import { ClassType, Evaluation, Semester } from "@/app/type";
 import { SemestersCheckbox } from "./FilterComponents/Semester";
 import { FilterCard } from "./UI/FilterCard";
 import { EvaluationFilter } from "./FilterComponents/Evaluation";
+import { Freeword } from "./FilterComponents/Freeword";
+import { RegistrationFilter } from "./FilterComponents/RegistrationFilter";
+import { ClassTypeFilter } from "./FilterComponents/ClassType";
 
 /**
  *  フィルタの型定義
@@ -32,6 +35,15 @@ export const FilterUI: React.FC = () => {
 
   return (
     <div className="flex gap-8 flex-wrap">
+      <FilterCard title={"フリーワード検索"}>
+        <Freeword
+          isFreewordForSyllabusDetail={filter.isFreewordForSyllabusDetail}
+          setFreewordTarget={(isFreewordForSyllabusDetail) =>
+            setFilter({ ...filter, isFreewordForSyllabusDetail })
+          }
+        />
+      </FilterCard>
+
       <FilterCard title={"セメスター"}>
         <SemestersCheckbox
           selectedSemesters={filter.semesters}
@@ -51,6 +63,26 @@ export const FilterUI: React.FC = () => {
           ) =>
             setFilter({ ...filter, evaluation_included, evaluation_excluded })
           }
+        />
+      </FilterCard>
+
+      <FilterCard title={"種別"}>
+        <ClassTypeFilter
+          selectedClassTypes={filter.classTypes}
+          setSelectedClassTypes={(classTypes: ClassType[]) =>
+            setFilter({ ...filter, classTypes })
+          }
+        />
+      </FilterCard>
+
+      <FilterCard title={"履修登録済み"}>
+        <RegistrationFilter
+          showRegistered={filter.showRegistered}
+          showNotRegistered={filter.showNotRegistered}
+          setShowRegistered={(
+            showRegistered: boolean,
+            showNotRegistered: boolean,
+          ) => setFilter({ ...filter, showRegistered, showNotRegistered })}
         />
       </FilterCard>
     </div>
