@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <header
       id="global-header"
-      className="flex items-center justify-between px-4 py-2 bg-on-primary shadow-md sticky top-0 w-full z-10"
+      className="flex items-center justify-between px-4 py-2 bg-on-primary shadow-md fixed top-0 w-full z-10"
     >
       <div className="flex items-center space-x-2">
         <a href="/" id="syllabus-link" className="text-lg">
