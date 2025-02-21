@@ -1,5 +1,3 @@
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
 import Logo from "@/../../public/syllabus_icon.svg";
 import Image from "next/image";
 
@@ -9,9 +7,7 @@ import Image from "next/image";
  */
 export default function NotFound(): JSX.Element {
   return (
-    <div>
-      <Header />
-
+    <>
       {/* バックグラウンド画像 */}
       <div className={`absolute right-0 bottom-0 w-[800px] h-full`}>
         <Image
@@ -57,8 +53,6 @@ export default function NotFound(): JSX.Element {
           </div>
         </div>
       </div>
-
-      <Footer />
-    </div>
+    </>
   );
 }

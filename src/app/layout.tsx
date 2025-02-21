@@ -6,6 +6,8 @@ import { useState } from "react";
 import "./globals.css";
 import { ThemeType, RegisterType } from "@/app/type";
 import { ThemeContext } from "@/app/context";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { UserContext, UserContextValue } from "@/app/UserContext";
 
 import { User } from "@/app/utils/user";
@@ -53,7 +55,13 @@ export default function RootLayout({
           lang="ja"
           className={`bg-surface-container text-text-default ${theme}`}
         >
-          <body className={inter.className}>{children}</body>
+          <body
+            className={`${inter.className} overscroll-none min-width-[300px] pt-[3rem] pb-[3rem]`}
+          >
+            <Header />
+            {children}
+            <Footer />
+          </body>
         </html>
       </UserContext.Provider>
     </ThemeContext.Provider>

@@ -1,7 +1,5 @@
 "use client";
 
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
 import Logo from "@/../../public/syllabus_icon.svg";
 import Image from "next/image";
 import { useUser } from "@/app/UserContext";
@@ -16,8 +14,7 @@ import { useEffect } from "react";
 export default function Home(): JSX.Element {
   const { user, setUser } = useUser();
   return (
-    <div>
-      <Header />
+    <>
       {/* バックグラウンド画像 */}
       <div className={`absolute right-0 bottom-0 w-[800px] h-full`}>
         <Image
@@ -32,7 +29,7 @@ export default function Home(): JSX.Element {
         {/* タイトルとボタンを中央ぞろえするためgridを使用 */}
         <div className="grid grid-column-1">
           {/* タイトル */}
-          <div className="relative flex justify-center items-center rounded-lg z-10">
+          <div className="relative flex justify-center items-center rounded-lg">
             {/* ロゴ(解像度に応じてサイズを変える) */}
             <div
               className={`relative w-[100px] h-[100px] md:w-[150px] md:h-[150px]`}
@@ -70,8 +67,6 @@ export default function Home(): JSX.Element {
           </div>
         </div>
       </div>
-
-      <Footer />
-    </div>
+    </>
   );
 }

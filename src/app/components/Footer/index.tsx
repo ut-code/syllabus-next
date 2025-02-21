@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer
       id="global-footer"
-      className="flex justify-end items-center p-4 text-white fixed bottom-0 w-full bg-inverse-primary"
+      className="flex items-center justify-end px-4 py-2 text-white bg-inverse-primary fixed bottom-0 w-full"
     >
       <div className="flex flex-wrap justify-end space-x-4 bg-gray-800">
         <Link
