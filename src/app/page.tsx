@@ -6,6 +6,7 @@ import { useUser } from "@/app/UserContext";
 import { RegisterType } from "@/app/type";
 
 import { useEffect } from "react";
+import Link from "next/link";
 
 /**
  * Home コンポーネントは、ホームページの内容を表示します。
@@ -16,7 +17,7 @@ export default function Home(): JSX.Element {
   return (
     <>
       {/* バックグラウンド画像 */}
-      <div className={`absolute right-0 bottom-0 w-[800px] h-full`}>
+      <div className={`absolute right-0 bottom-0 w-[800px] h-full -z-10`}>
         <Image
           className="opacity-40 object-cover"
           src={"/backgroundImage.png"}
@@ -59,11 +60,11 @@ export default function Home(): JSX.Element {
             </div>
           </div>
 
-          {/* はじめるボタン */}
           <div className="flex items-center justify-center">
-            <div className="rounded-full bg-primary text-on-primary w-36 text-center p-3 mt-24 hover:bg-primary/90 font-bold">
+            {/* はじめるボタン */}
+            <Link href="/profile" className="rounded-full bg-primary text-on-primary w-36 text-center p-3 mt-24 hover:bg-primary/90 font-bold">
               はじめる
-            </div>
+            </Link>
           </div>
         </div>
       </div>

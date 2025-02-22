@@ -1,4 +1,3 @@
-import Header from "@/app/components/Header";
 import { options, gradeOptions, numberOptions } from "@/app/profile/data";
 import Selector from "@/app/profile/Selector";
 
@@ -9,7 +8,6 @@ import Selector from "@/app/profile/Selector";
 export default function Profile(): JSX.Element {
   return (
     <>
-      <Header />
       <div className="flex items-center justify-center h-screen">
         <div className="border border-gray-300 p-4 rounded-md shadow-md h-1/4 w-1/3 flex flex-col items-center justify-center">
           <div className="grid grid-cols-3 gap-2 mb-4">
@@ -28,6 +26,9 @@ export default function Profile(): JSX.Element {
           </div>
         </div>
       </div>
+      <button className="fixed bottom-[5rem] right-6 bg-primary text-on-primary w-36 text-center p-3 mt-24 hover:bg-primary/90 font-bold rounded-md shadow-md">
+        OK
+      </button>
     </>
   );
 }

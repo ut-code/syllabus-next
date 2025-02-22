@@ -21,7 +21,7 @@ export const gradeOptions: SelectorProps = {
 };
 
 export const numberOptions: SelectorProps = {
-  options: Array.from({ length: 50 }, (_, i) => ({
+  options: Array.from({ length: 40 }, (_, i) => ({
     value: (i + 1).toString(),
     data: (i + 1).toString(),
   })),
