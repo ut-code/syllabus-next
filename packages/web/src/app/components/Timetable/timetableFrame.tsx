@@ -10,13 +10,14 @@
  */
 
 "use client";
-import { ClassDataType, Day, DayPeriod } from "@/app/type";
-import React, { ReactElement, ReactNode, useEffect, useState } from "react";
+import type React from "react";
+import { type ReactElement, useEffect, useState } from "react";
+import type { ClassDataType, Day, DayPeriod } from "@/app/type";
 import { SampleClasses } from "../Sample/ClassModal/SampleClassData";
-import { Period, SlotDiv } from "./slots/slot";
 import { ClassSlot } from "./slots/classSlot";
-import { PeriodSlot } from "./slots/periodSlot";
 import { DaySlot } from "./slots/daySlot";
+import { PeriodSlot } from "./slots/periodSlot";
+import { type Period, SlotDiv } from "./slots/slot";
 
 /**
  * 時間割のフレームコンポーネントのプロパティ
@@ -58,15 +59,15 @@ function findClasses(classes: ClassDataType[], dayPeriod: DayPeriod | "集中") 
   // i番目の講義が、指定の曜限(dayPeriod)に開講されているか否かを判定する関数
   const predicate = (i: number) => {
     // 集中講義が検索されているとき
-    if (dayPeriod == "集中") {
+    if (dayPeriod === "集中") {
       // classes[i] が集中か否かを返す
-      return classes[i].dayPeriod == "集中";
+      return classes[i].dayPeriod === "集中";
     }
 
     // 集中講義ではない場合
     else {
       // classes[i]が集中講義ならfalse
-      if (classes[i].dayPeriod == "集中") return false;
+      if (classes[i].dayPeriod === "集中") return false;
       const dayPeriods = classes[i].dayPeriod as DayPeriod[];
 
       // classes[i]が集中講義ではない場合、
@@ -74,8 +75,8 @@ function findClasses(classes: ClassDataType[], dayPeriod: DayPeriod | "集中") 
       for (let j = 0; j < dayPeriods.length; j++) {
         // 一つでもdayPeriodに一致するものがあればtrue
         if (
-          dayPeriods[j].day == dayPeriod.day &&
-          dayPeriods[j].period == dayPeriod.period
+          dayPeriods[j].day === dayPeriod.day &&
+          dayPeriods[j].period === dayPeriod.period
         )
           return true;
       }
@@ -145,7 +146,7 @@ const Timetable: React.FC<TimetableProps> = (props: TimetableProps) => {
     /* 時限のヘッダー */
     slots.push(
       <PeriodSlot
-        key={"period" + period}
+        key={`period${period}`}
         period={period}
         periodSlotElement={props.periodSlotElement}
       />,

@@ -3,7 +3,7 @@
  */
 
 "use client";
-import React from "react";
+import type React from "react";
 import Checkbox from "../UI/Checkbox";
 
 /**
@@ -30,6 +30,7 @@ export const Freeword: React.FC<FreewordProp> = (prop: FreewordProp) => {
           (isFreewordForSyllabusDetail ? "授業情報全体" : "講義名")
         }
       />
+      {/* biome-ignore lint/a11y/noLabelWithoutControl: Checkbox has input inside */}
       <label className="flex items-center mt-2">
         <Checkbox
           checked={isFreewordForSyllabusDetail}

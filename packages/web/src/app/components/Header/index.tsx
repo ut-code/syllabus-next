@@ -1,13 +1,12 @@
 "use client";
 
-import { useContext } from "react";
 import Image from "next/image";
+import { useContext } from "react";
 import { FaCog } from "react-icons/fa";
-import { MdDarkMode } from "react-icons/md";
-import { MdOutlineWbSunny } from "react-icons/md";
+import { MdDarkMode, MdOutlineWbSunny } from "react-icons/md";
 
 import { ThemeContext } from "@/app/context";
-import { ThemeProviderValue } from "@/app/type";
+import type { ThemeProviderValue } from "@/app/type";
 
 /**
  * ヘッダー
@@ -31,6 +30,7 @@ export default function Header() {
           target="_blank"
           id="logo-link"
           className="flex items-center space-x-1 text-green-600"
+          rel="noopener"
         >
           <span>by</span>
           <Image
@@ -42,7 +42,7 @@ export default function Header() {
         </a>
       </div>
       <div className="flex space-x-4">
-        <button>
+        <button type="button">
           {theme === "light" ? (
             <MdOutlineWbSunny
               size={24}
@@ -57,7 +57,7 @@ export default function Header() {
             />
           )}
         </button>
-        <button id="settings" className="text-green-600">
+        <button type="button" id="settings" className="text-green-600">
           <FaCog size={24} />
         </button>
       </div>

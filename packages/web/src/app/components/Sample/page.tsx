@@ -1,6 +1,6 @@
 // src/components/SampleComponent.tsx
 
-import React from "react";
+import type React from "react";
 
 const SampleComponent: React.FC = () => {
   return (

@@ -3,8 +3,8 @@
  */
 
 "use client";
-import React from "react";
-import { ClassType } from "@/app/type";
+import type React from "react";
+import type { ClassType } from "@/app/type";
 import { FlagButton } from "../UI/FlagButton";
 
 /**

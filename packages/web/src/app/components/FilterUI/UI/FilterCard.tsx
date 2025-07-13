@@ -2,7 +2,8 @@
  * フィルターの内容とタイトルをセットにするコンポーネント
  */
 
-import React, { ReactNode } from "react";
+import type React from "react";
+import type { ReactNode } from "react";
 
 /**
  * フィルターカードのプロパティ

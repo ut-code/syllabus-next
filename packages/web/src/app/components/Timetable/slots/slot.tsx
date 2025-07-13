@@ -5,7 +5,8 @@
  * 設定することで冗長な記述を避ける
  */
 
-import React, { ReactNode } from "react";
+import type React from "react";
+import type { ReactNode } from "react";
 
 /**
  * 時限の型

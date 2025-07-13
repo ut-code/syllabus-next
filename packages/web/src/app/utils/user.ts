@@ -1,7 +1,7 @@
 "use client";
 
-import { SampleClasses, SampleUser } from "@/app/utils/mock_data";
-import { ClassDataType, RegisterType } from "@/app/type";
+import type { RegisterType } from "@/app/type";
+import { SampleUser } from "@/app/utils/mock_data";
 
 const MODE = process.env.NEXT_PUBLIC_MODE;
 

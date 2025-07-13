@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import type React from "react";
 
 type CheckboxProps = {
   checked: boolean; // チェック状態
@@ -25,7 +25,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
       type="checkbox"
       checked={checked}
       onChange={() => onChange(!checked)}
-      className={"accent-primary w-6 h-6 " + className}
+      className={`accent-primary w-6 h-6 ${className}`}
     />
   );
 };

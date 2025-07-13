@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-import { ThemeProviderValue } from "@/app/type";
+import type { ThemeProviderValue } from "@/app/type";
 
 /**
  * テーマコンテキスト

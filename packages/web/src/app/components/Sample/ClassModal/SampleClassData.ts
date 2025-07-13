@@ -1,9 +1,14 @@
-import { ClassDataType } from "@/app/type";
+import type { ClassDataType } from "@/app/type";
 
 /**
  * 講義詳細モーダルの動作確認に利用するサンプルデータ
  */
-export const SampleClasses: ClassDataType[] = [
+export const SampleClasses: [
+  ClassDataType,
+  ClassDataType,
+  ClassDataType,
+  ClassDataType,
+] = [
   {
     code: "30003",
     type: "基礎",

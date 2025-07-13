@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import ClassModalComponent from "../../ClassModal"; // モーダルのコンポーネント
 import { SampleClasses } from "./SampleClassData"; // モーダルのデモで利用する講義のサンプルデータ
 
@@ -17,6 +18,7 @@ const ThemeSampleComponent: React.FC = () => {
       <div className="flex justify-center m-24">
         {/* モーダルを表示するボタン */}
         <button
+          type="button"
           className="bg-primary text-on-primary p-2 rounded-full"
           onClick={() => setIsOpen(true)}
         >

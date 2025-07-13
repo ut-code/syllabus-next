@@ -3,7 +3,8 @@
  */
 "use client";
 
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 
 /**
  *  定義済みColorを用いてデザインしたトグルボタンのサンプル
@@ -18,6 +19,7 @@ const ToggleSample: React.FC = () => {
 
   return (
     <button
+      type="button"
       onClick={toggle}
       className={`
               ${

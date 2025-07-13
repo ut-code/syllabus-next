@@ -4,13 +4,13 @@
 
 "use client";
 import { useState } from "react";
-import { ClassType, Evaluation, Semester } from "@/app/type";
-import { SemestersCheckbox } from "./FilterComponents/Semester";
-import { FilterCard } from "./UI/FilterCard";
+import type { ClassType, Evaluation, Semester } from "@/app/type";
+import { ClassTypeFilter } from "./FilterComponents/ClassType";
 import { EvaluationFilter } from "./FilterComponents/Evaluation";
 import { Freeword } from "./FilterComponents/Freeword";
 import { RegistrationFilter } from "./FilterComponents/RegistrationFilter";
-import { ClassTypeFilter } from "./FilterComponents/ClassType";
+import { SemestersCheckbox } from "./FilterComponents/Semester";
+import { FilterCard } from "./UI/FilterCard";
 
 /**
  *  フィルタの型定義

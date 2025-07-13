@@ -10,15 +10,15 @@ import type { ClassDataType } from "@/app/type";
  * @returns コンポーネント
  */
 const LoadClass: React.FC = () => {
-	// 読み取り
-	const classes = classData as ClassDataType[];
+  // 読み取り
+  const classes = classData as ClassDataType[];
 
-	// 1つ授業を取り出し、再度Jsonに変換
-	// ( classes[64] には、全ての授業情報プロパティが入力されている )
-	let json = JSON.stringify(classes[64], null, 4);
+  // 1つ授業を取り出し、再度Jsonに変換
+  // ( classes[64] には、全ての授業情報プロパティが入力されている )
+  const json = JSON.stringify(classes[64], null, 4);
 
-	// 表示
-	return <p style={{ whiteSpace: "pre-wrap" }}>{json}</p>;
+  // 表示
+  return <p style={{ whiteSpace: "pre-wrap" }}>{json}</p>;
 };
 
 export default LoadClass;

@@ -1,6 +1,5 @@
-import Head from "next/head";
-import React from "react";
-import { FaqItem, HowToUseItem } from "../how-to-use/HowToUseItem";
+import type React from "react";
+import { HowToUseItem } from "../how-to-use/HowToUseItem";
 
 const Notion: React.FC = () => {
   return (

@@ -2,7 +2,7 @@
     定義済みColorを用いてインプットフィールドをデザインするサンプル
 */
 "use client";
-import React from "react";
+import type React from "react";
 import { useForm } from "react-hook-form";
 
 type ValidatedInputProps = {

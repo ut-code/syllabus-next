@@ -1,9 +1,10 @@
-import React, { ComponentProps } from "react";
 import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react";
+import type React from "react";
+import type { ComponentProps } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 /**
@@ -141,7 +142,5 @@ export const IndentLi: React.FC<
     children: React.ReactNode;
   } & ComponentProps<"li">
 > = ({ children, ...prop }) => {
-  return (
-    <li className={"pl-5 -indent-5" + " " + prop.className}>{children}</li>
-  );
+  return <li className={`pl-5 -indent-5 ${prop.className}`}>{children}</li>;
 };

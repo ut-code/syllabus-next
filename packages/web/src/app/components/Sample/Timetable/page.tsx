@@ -1,8 +1,8 @@
 "use client";
-import { ClassDataType } from "@/app/type";
-import TimetableFrame from "../../Timetable/timetableFrame";
 import { useState } from "react";
+import type { ClassDataType } from "@/app/type";
 import ClassModalComponent from "../../ClassModal";
+import TimetableFrame from "../../Timetable/timetableFrame";
 
 /**
  * 時間割のサンプル
@@ -36,7 +36,8 @@ function ClassSlotElement(classes: ClassDataType[]) {
       <div className="w-full h-full flex items-center justify-center">
         {classes.map((c, i) => {
           return (
-            <div
+            <button
+              type="button"
               className="flex w-full h-full items-center justify-center min-w-0 m-1"
               key={i}
               onClick={() => setClassForModal(c)}
@@ -49,7 +50,7 @@ function ClassSlotElement(classes: ClassDataType[]) {
                   {c.classroom}
                 </div>
               </div>
-            </div>
+            </button>
           );
         })}
       </div>

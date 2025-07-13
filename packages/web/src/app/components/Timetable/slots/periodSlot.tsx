@@ -1,4 +1,4 @@
-import { Period, SlotDiv, slotProps } from "./slot";
+import { type Period, SlotDiv, type slotProps } from "./slot";
 
 /**
  * 時限が表示されるスロット要素のプロパティ

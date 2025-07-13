@@ -1,4 +1,5 @@
-import React from "react";
+import type React from "react";
+import { MdOutlineInfo } from "react-icons/md";
 import {
   ClassMark,
   FaqItem,
@@ -7,7 +8,6 @@ import {
   IndentLi,
   QuickStartItem,
 } from "./HowToUseItem";
-import { MdOutlineInfo } from "react-icons/md";
 
 /**
  * 文字をtertiaryカラーで表示するコンポーネント

@@ -1,7 +1,8 @@
-import React from "react";
+import type React from "react";
 
 type SearchResultProps = {
   headers: string[];
+  // biome-ignore lint/suspicious/noExplicitAny: TODO: 直して
   data: Array<Record<string, any>>;
 };
 

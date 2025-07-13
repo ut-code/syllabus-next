@@ -4,13 +4,12 @@ import { Inter } from "next/font/google";
 import { useState } from "react";
 
 import "./globals.css";
-import { ThemeType, RegisterType } from "@/app/type";
 import { ThemeContext } from "@/app/context";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import { UserContext, UserContextValue } from "@/app/UserContext";
-
+import type { RegisterType, ThemeType } from "@/app/type";
+import { UserContext, type UserContextValue } from "@/app/UserContext";
 import { User } from "@/app/utils/user";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -1,6 +1,6 @@
-import { ClassDataType, DayPeriod } from "@/app/type";
-import React from "react";
-import { SlotDiv, slotProps } from "./slot";
+import type React from "react";
+import type { ClassDataType, DayPeriod } from "@/app/type";
+import { SlotDiv, type slotProps } from "./slot";
 
 /**
  * 講義が表示されるスロット要素のプロパティ

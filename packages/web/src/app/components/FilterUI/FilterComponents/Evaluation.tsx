@@ -3,8 +3,9 @@
  */
 
 "use client";
-import React, { ReactNode } from "react";
-import { Evaluation } from "@/app/type";
+import type React from "react";
+import type { ReactNode } from "react";
+import type { Evaluation } from "@/app/type";
 import Checkbox from "../UI/Checkbox";
 
 const evaluations: Evaluation[] = ["試験", "レポート", "出席", "平常"];
@@ -36,12 +37,12 @@ export const EvaluationFilter: React.FC<EvaluationProp> = (
   slots.push(<div key={"label_ex"}>除外</div>);
 
   evaluations.map((ev) => {
-    slots.push(<div key={ev + "header"}>{ev.substring(0, 2)}</div>);
+    slots.push(<div key={`${ev}header`}>{ev.substring(0, 2)}</div>);
     slots.push(
       <CheckboxInGrid
         isInclude={true}
         ev={ev}
-        key={ev + "included"}
+        key={`${ev}included`}
         prop={prop}
       />,
     );
@@ -49,7 +50,7 @@ export const EvaluationFilter: React.FC<EvaluationProp> = (
       <CheckboxInGrid
         isInclude={false}
         ev={ev}
-        key={ev + "excluded"}
+        key={`${ev}excluded`}
         prop={prop}
       />,
     );
@@ -71,10 +72,10 @@ const CheckboxInGrid: React.FC<{
   ev: Evaluation;
   prop: EvaluationProp;
 }> = ({ isInclude, ev, prop }) => {
-  let evaluation_included = prop.evaluation_included ?? [];
-  let evaluation_excluded = prop.evaluation_excluded ?? [];
-  let myEvaluation = isInclude ? evaluation_included : evaluation_excluded;
-  let otherEvaluation = isInclude ? evaluation_excluded : evaluation_included;
+  const evaluation_included = prop.evaluation_included ?? [];
+  const evaluation_excluded = prop.evaluation_excluded ?? [];
+  const myEvaluation = isInclude ? evaluation_included : evaluation_excluded;
+  const otherEvaluation = isInclude ? evaluation_excluded : evaluation_included;
 
   // クリックされたときの挙動
   const onClick = (ev: Evaluation) => {
