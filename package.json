@@ -8,10 +8,8 @@
   "scripts": {
     "dev": "bun --filter=@packages/web dev",
     "build": "cd packages/web && bun run build",
-    "lint": "bunx eslint . --fix",
-    "check:lint": "bunx eslint .",
-    "fmt": "bunx prettier . --write",
-    "check:fmt": "bunx prettier . --check"
+    "check": "bunx biome check .",
+    "fix": "bunx biome check . --fix"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.1.1",
