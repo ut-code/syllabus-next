@@ -13,12 +13,11 @@ bun.lockb
 /coverage
 
 # next.js
-/.next/
-/out/
+.next
+out
 
 # production
-/build
-/class_data/build
+build
 
 # misc
 .DS_Store

@@ -4,7 +4,7 @@
 リポジトリのルートディレクトリで以下のコマンドを実行してください。
 
 ```bash
-npm install
+bun install
 ```
 
 ## 開発
@@ -12,19 +12,19 @@ npm install
 開発モードを実行するには、以下のコマンドを実行してください。
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 コードをプッシュする前に、コード品質をチェックするために以下のコマンドを実行してください。
 
 ```bash
-npm run lint
+bun run lint
 ```
 
 もし `prettier` のエラーがある場合は、以下のコマンドを実行して修正してください。
 
 ```bash
-npx prettier . --write
+bunx prettier . --write
 ```
 
 ## モックモード
@@ -32,7 +32,7 @@ npx prettier . --write
 モックモードを実行するには、以下のコマンドを実行してください。
 
 ```bash
-npm run dev:mock
+bun dev:mock
 ```
 
 このコマンドを実行すると、モックデータを使用してアプリケーションが実行されます。
@@ -43,9 +43,9 @@ npm run dev:mock
 
 Userのデータは`User`クラスを使用して扱います。Userのデータは以下の場合があります。
 
-- `npm run dev:mock`を実行した場合
+- `bun dev:mock`を実行した場合
   - Userはモックのデータが使用されます。
-- `npm run dev`を実行した場合
+- `bun dev`を実行した場合
   - UserはlocalStorageに保存されたデータが使用されます。
 
 ただ、まだユーザを登録する機能がないので、mockでユーザを作成する必要があります。
