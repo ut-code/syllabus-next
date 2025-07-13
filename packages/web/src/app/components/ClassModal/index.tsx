@@ -1,6 +1,7 @@
 import { FiX } from "react-icons/fi";
 import { type ClassDataType, type DayPeriod, dayMapping } from "@/app/type";
 import Item from "./ClassModalItem";
+import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 
 /**
  * モーダルに渡すprops

@@ -29,7 +29,7 @@ interface TimetableProps {
   // 講義スロット内のデザイン
   // このスロットに表示したい講義はこのコンポーネントで解決し
   // デザインだけ外部(classSlotElementの内容)に任せる
-  classSlotElement: React.FC<ClassDataType[]>;
+  classSlotElement: (classes: ClassDataType[]) => React.ReactNode;
 
   // 時限ヘッダー内のデザイン
   // 詳細はclassSlotElementと同じ
@@ -61,22 +61,22 @@ function findClasses(classes: ClassDataType[], dayPeriod: DayPeriod | "集中") 
     // 集中講義が検索されているとき
     if (dayPeriod === "集中") {
       // classes[i] が集中か否かを返す
-      return classes[i].dayPeriod === "集中";
+      return classes[i]?.dayPeriod === "集中";
     }
 
     // 集中講義ではない場合
     else {
       // classes[i]が集中講義ならfalse
-      if (classes[i].dayPeriod === "集中") return false;
-      const dayPeriods = classes[i].dayPeriod as DayPeriod[];
+      if (classes[i]?.dayPeriod === "集中") return false;
+      const dayPeriods = classes[i]?.dayPeriod as DayPeriod[];
 
       // classes[i]が集中講義ではない場合、
       // 開講曜限でループを回し、
       for (let j = 0; j < dayPeriods.length; j++) {
         // 一つでもdayPeriodに一致するものがあればtrue
         if (
-          dayPeriods[j].day === dayPeriod.day &&
-          dayPeriods[j].period === dayPeriod.period
+          dayPeriods[j]?.day === dayPeriod.day &&
+          dayPeriods[j]?.period === dayPeriod.period
         )
           return true;
       }

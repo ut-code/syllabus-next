@@ -10,7 +10,7 @@ interface classProps extends slotProps {
   hasSaturday: boolean; // 土曜日表示か否か
   classes: ClassDataType[]; // このスロットに表示したいクラス
   isIntensiveClass: boolean; // このスロットが集中講義か否か
-  classSlotElement: React.FC<ClassDataType[]>; //講義スロット内に配置する要素
+  classSlotElement: (classes: ClassDataType[]) => React.ReactNode; //講義スロット内に配置する要素
 }
 
 /**
