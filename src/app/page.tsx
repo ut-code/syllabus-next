@@ -4,6 +4,7 @@ import Logo from "@/../../public/syllabus_icon.svg";
 import Image from "next/image";
 import { useUser } from "@/app/UserContext";
 import { RegisterType } from "@/app/type";
+import Link from "next/link";
 
 import { useEffect } from "react";
 
@@ -64,6 +65,15 @@ export default function Home(): JSX.Element {
             <div className="rounded-full bg-primary text-on-primary w-36 text-center p-3 mt-24 hover:bg-primary/90 font-bold">
               はじめる
             </div>
+          </div>
+
+          <div className="flex items-center justify-center mt-8">
+            <Link 
+              href="/showcase" 
+              className="text-primary hover:underline font-medium"
+            >
+              コンポーネントを見る →
+            </Link>
           </div>
         </div>
       </div>
