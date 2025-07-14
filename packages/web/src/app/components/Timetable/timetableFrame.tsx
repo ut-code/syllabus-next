@@ -198,7 +198,7 @@ const Timetable: React.FC<TimetableProps> = (props: TimetableProps) => {
     // ヘッダーの厚みを1x2 (or 2x1)、講義スロットを2x2で計算し、
     // 時間割は15行11列(土曜日を表示する場合は13列)を使用
     <div
-      className={`grid ${props.hasSaturday ? "grid-cols-13" : "grid-cols-11"} grid-rows-15 gap-[1px] grid-flow-row h-full bg-outline rounded-md border border-outline overflow-hidden`}
+      className={`grid ${props.hasSaturday ? "grid-cols-13" : "grid-cols-11"} grid-rows-15 gap-px grid-flow-row h-full bg-outline rounded-md border border-outline overflow-hidden`}
     >
       {/* 作成したスロットを表示 */}
       {slots}

@@ -20,7 +20,7 @@ const ThemeSampleComponent: React.FC = () => {
             </div>
 
             {/* FABは、primary-containerを利用推奨 */}
-            <div className="col-start-2 col-span-1 row-start-1 p-4 bg-primary-container text-on-primary-container shadow rounded-full text-center">
+            <div className="col-start-2 col-span-1 row-start-1 p-4 bg-primary-container text-on-primary-container shadow-sm rounded-full text-center">
               Float Button
             </div>
 

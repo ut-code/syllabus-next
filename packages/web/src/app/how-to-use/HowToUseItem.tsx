@@ -62,7 +62,7 @@ export const FilterCard: React.FC<{
   return (
     <div className="flex flex-col bg-surface-container-high p-4 w-[400px]">
       <h3 className="text-xl text-center">{title}</h3>
-      <div className="bg-outline/50 h-[1px] my-3" />
+      <div className="bg-outline/50 h-px my-3" />
       <div className="my-2">
         <h3 className="font-bold">詳細</h3>
         <p className="my-1 text-sm">{detail}</p>
@@ -114,12 +114,12 @@ export const FaqItem: React.FC<{
       {/* クリックで回答を表示するボタン */}
       <DisclosureButton className="group flex w-full items-center justify-between">
         {/* 質問を表示。ホーバーで色が変わる。 */}
-        <span className="font-medium group-data-[hover]:text-text-default/80">
+        <span className="font-medium group-data-hover:text-text-default/80">
           {question}
         </span>
 
         {/* 開閉アイコン */}
-        <MdKeyboardArrowDown className="size-5 group-data-[hover]:fill-text-default/50 group-data-[open]:rotate-180" />
+        <MdKeyboardArrowDown className="size-5 group-data-hover:fill-text-default/50 group-data-open:rotate-180" />
       </DisclosureButton>
 
       {/* 回答 */}
