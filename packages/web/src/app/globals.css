@@ -1,0 +1,217 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-*: initial;
+  --color-primary: rgb(var(--color-primary));
+  --color-on-primary: rgb(var(--color-on-primary));
+  --color-primary-container: rgb(var(--color-primary-container));
+  --color-on-primary-container: rgb(var(--color-on-primary-container));
+  --color-secondary: rgb(var(--color-secondary));
+  --color-on-secondary: rgb(var(--color-on-secondary));
+  --color-secondary-container: rgb(var(--color-secondary-container));
+  --color-on-secondary-container: rgb(var(--color-on-secondary-container));
+  --color-tertiary: rgb(var(--color-tertiary));
+  --color-on-tertiary: rgb(var(--color-on-tertiary));
+  --color-tertiary-container: rgb(var(--color-tertiary-container));
+  --color-on-tertiary-container: rgb(var(--color-on-tertiary-container));
+  --color-error: rgb(var(--color-error));
+  --color-on-error: rgb(var(--color-on-error));
+  --color-error-container: rgb(var(--color-error-container));
+  --color-on-error-container: rgb(var(--color-on-error-container));
+  --color-background: rgb(var(--color-background));
+  --color-on-background: rgb(var(--color-on-background));
+  --color-surface: rgb(var(--color-surface));
+  --color-on-surface: rgb(var(--color-on-surface));
+  --color-surface-container-lowest: rgb(var(--color-surface-container-lowest));
+  --color-surface-container-low: rgb(var(--color-surface-container-low));
+  --color-surface-container: rgb(var(--color-surface-container));
+  --color-surface-container-high: rgb(var(--color-surface-container-high));
+  --color-surface-container-highest: rgb(
+    var(--color-surface-container-highest)
+  );
+  --color-surface-variant: rgb(var(--color-surface-variant));
+  --color-on-surface-variant: rgb(var(--color-on-surface-variant));
+  --color-outline: rgb(var(--color-outline));
+  --color-outline-variant: rgb(var(--color-outline-variant));
+  --color-inverse-surface: rgb(var(--color-inverse-surface));
+  --color-inverse-on-surface: rgb(var(--color-inverse-on-surface));
+  --color-inverse-primary: rgb(var(--color-inverse-primary));
+  --color-primary-fixed: rgb(var(--color-primary-fixed));
+  --color-on-primary-fixed: rgb(var(--color-on-primary-fixed));
+  --color-primary-fixed-dim: rgb(var(--color-primary-fixed-dim));
+  --color-on-primary-fixed-variant: rgb(var(--color-on-primary-fixed-variant));
+  --color-secondary-fixed: rgb(var(--color-secondary-fixed));
+  --color-on-secondary-fixed: rgb(var(--color-on-secondary-fixed));
+  --color-secondary-fixed-dim: rgb(var(--color-secondary-fixed-dim));
+  --color-on-secondary-fixed-variant: rgb(
+    var(--color-on-secondary-fixed-variant)
+  );
+  --color-tertiary-fixed: rgb(var(--color-tertiary-fixed));
+  --color-on-tertiary-fixed: rgb(var(--color-on-tertiary-fixed));
+  --color-tertiary-fixed-dim: rgb(var(--color-tertiary-fixed-dim));
+  --color-on-tertiary-fixed-variant: rgb(
+    var(--color-on-tertiary-fixed-variant)
+  );
+  --color-surface-dim: rgb(var(--color-surface-dim));
+  --color-surface-bright: rgb(var(--color-surface-bright));
+  --color-shadow: rgb(var(--color-shadow));
+  --color-scrim: rgb(var(--color-scrim));
+  --color-surface-tint: rgb(var(--color-surface-tint));
+  --color-text-default: rgb(var(--color-text-default));
+
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+
+  --grid-template-columns-11: repeat(11, minmax(0, 1fr));
+  --grid-template-columns-13: repeat(13, minmax(0, 1fr));
+
+  --grid-template-rows-15: repeat(15, minmax(0, 1fr));
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@layer base {
+  /* 
+    色の定義を行う。
+    ここで宣言した変数は、tailwind.config.tsで参照されるが、
+    ライトモードでは:rootの値が
+    ダークモードでは:root[class~="dark"]の値が適用される。
+     */
+
+  /* 色の定義(ライトモード) */
+  :root {
+    /* Color Highlight というvscode拡張機能を利用すると、
+        コメント部に色が付き見やすくなります */
+    /* 色の種類や用途についてはtailwind.config.tsを参照 */
+    --color-primary: #2E6A44;
+    --color-surface-tint: #2E6A44;
+    --color-on-primary: #FFFFFF;
+    --color-primary-container: #B1F1C1;
+    --color-on-primary-container: #00210E;
+    --color-secondary: #4F6353;
+    --color-on-secondary: #FFFFFF;
+    --color-secondary-container: #D2E8D4;
+    --color-on-secondary-container: #0D1F13;
+    --color-tertiary: #3A646F;
+    --color-on-tertiary: #FFFFFF;
+    --color-tertiary-container: #BEEAF6;
+    --color-on-tertiary-container: #001F26;
+    --color-error: #BA1A1A;
+    --color-on-error: #FFFFFF;
+    --color-error-container: #FFDAD6;
+    --color-on-error-container: #410002;
+    --color-background: #F6FBF3;
+    --color-on-background: #181D18;
+    --color-surface: #F6FBF3;
+    --color-on-surface: #181D18;
+    --color-surface-variant: #DDE5DB;
+    --color-on-surface-variant: #414942;
+    --color-outline: #717971;
+    --color-outline-variant: #C1C9BF;
+    --color-shadow: #000000;
+    --color-scrim: #000000;
+    --color-inverse-surface: #2C322D;
+    --color-inverse-on-surface: #EDF2EB;
+    --color-inverse-primary: #96D5A6;
+    --color-primary-fixed: #B1F1C1;
+    --color-on-primary-fixed: #00210E;
+    --color-primary-fixed-dim: #96D5A6;
+    --color-on-primary-fixed-variant: #12512E;
+    --color-secondary-fixed: #D2E8D4;
+    --color-on-secondary-fixed: #0D1F13;
+    --color-secondary-fixed-dim: #B6CCB8;
+    --color-on-secondary-fixed-variant: #384B3C;
+    --color-tertiary-fixed: #BEEAF6;
+    --color-on-tertiary-fixed: #001F26;
+    --color-tertiary-fixed-dim: #A2CEDA;
+    --color-on-tertiary-fixed-variant: #214C57;
+    --color-surface-dim: #D7DBD4;
+    --color-surface-bright: #F6FBF3;
+    --color-surface-container-lowest: #FFFFFF;
+    --color-surface-container-low: #F0F5ED;
+    --color-surface-container: #EAEFE8;
+    --color-surface-container-high: #E5EAE2;
+    --color-surface-container-highest: #DFE4DC;
+    --color-text-default: #000000;
+  }
+
+  /* 色の定義(ダークモード) */
+  :root[class~="dark"] {
+    --color-primary: #96D5A6;
+    --color-surface-tint: #96D5A6;
+    --color-on-primary: #00391C;
+    --color-primary-container: #12512E;
+    --color-on-primary-container: #B1F1C1;
+    --color-secondary: #B6CCB8;
+    --color-on-secondary: #223527;
+    --color-secondary-container: #384B3C;
+    --color-on-secondary-container: #D2E8D4;
+    --color-tertiary: #A2CEDA;
+    --color-on-tertiary: #023640;
+    --color-tertiary-container: #214C57;
+    --color-on-tertiary-container: #BEEAF6;
+    --color-error: #FFB4AB;
+    --color-on-error: #690005;
+    --color-error-container: #93000A;
+    --color-on-error-container: #FFDAD6;
+    --color-background: #101510;
+    --color-on-background: #DFE4DC;
+    --color-surface: #101510;
+    --color-on-surface: #DFE4DC;
+    --color-surface-variant: #414942;
+    --color-on-surface-variant: #C1C9BF;
+    --color-outline: #8B938A;
+    --color-outline-variant: #414942;
+    --color-shadow: 0 0 0;
+    --color-scrim: 0 0 0;
+    --color-inverse-surface: #DFE4DC;
+    --color-inverse-on-surface: #2C322D;
+    --color-inverse-primary: #2E6A44;
+    --color-primary-fixed: #B1F1C1;
+    --color-on-primary-fixed: #00210E;
+    --color-primary-fixed-dim: #96D5A6;
+    --color-on-primary-fixed-variant: #12512E;
+    --color-secondary-fixed: #D2E8D4;
+    --color-on-secondary-fixed: #0D1F13;
+    --color-secondary-fixed-dim: #B6CCB8;
+    --color-on-secondary-fixed-variant: #384B3C;
+    --color-tertiary-fixed: #BEEAF6;
+    --color-on-tertiary-fixed: #001F26;
+    --color-tertiary-fixed-dim: #A2CEDA;
+    --color-on-tertiary-fixed-variant: #214C57;
+    --color-surface-dim: #101510;
+    --color-surface-bright: #353A35;
+    --color-surface-container-lowest: #0A0F0B;
+    --color-surface-container-low: #181D18;
+    --color-surface-container: #1C211C;
+    --color-surface-container-high: #262B26;
+    --color-surface-container-highest: #313631;
+    --color-text-default: #FFFFFF;
+  }
+  a {
+    text-decoration: underline;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
