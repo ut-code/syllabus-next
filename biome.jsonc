@@ -7,7 +7,11 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**/*", "!packages/class_data/data/**"]
+    "includes": [
+      "**/*",
+      "!packages/class_data/data/**",
+      "!packages/web/src/app/globals.css"
+    ]
   },
   "formatter": {
     "enabled": true,
