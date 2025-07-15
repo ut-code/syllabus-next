@@ -4,7 +4,7 @@
 リポジトリのルートディレクトリで以下のコマンドを実行してください。
 
 ```bash
-bun install
+bun install --frozen-lockfile
 ```
 
 ## 開発
@@ -12,19 +12,19 @@ bun install
 開発モードを実行するには、以下のコマンドを実行してください。
 
 ```bash
-bun run dev
+bun dev
 ```
 
 コードをプッシュする前に、コード品質をチェックするために以下のコマンドを実行してください。
 
 ```bash
-bun run lint
+bun check
 ```
 
-もし `prettier` のエラーがある場合は、以下のコマンドを実行して修正してください。
+もしコード品質チェックでエラーがある場合は、以下のコマンドを実行して修正してください。
 
 ```bash
-bunx prettier . --write
+bun fix
 ```
 
 ## モックモード

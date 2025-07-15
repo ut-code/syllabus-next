@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "dev": "bun --filter=@packages/web dev",
+    "dev:mock": "bun --filter=@packages/web dev:mock",
     "build": "cd packages/web && bun run build",
     "check": "bunx biome check .",
     "fix": "bunx biome check . --fix"
