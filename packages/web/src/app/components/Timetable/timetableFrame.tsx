@@ -9,7 +9,6 @@
  * 使用例: components/Sample/Timetable/page
  */
 
-"use client";
 import type React from "react";
 import { type ReactElement, useEffect, useState } from "react";
 import type { ClassDataType, Day, DayPeriod } from "@/app/type";

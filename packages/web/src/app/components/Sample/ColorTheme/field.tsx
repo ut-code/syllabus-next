@@ -1,7 +1,6 @@
 /*
     定義済みColorを用いてインプットフィールドをデザインするサンプル
 */
-"use client";
 import type React from "react";
 import { useForm } from "react-hook-form";
 

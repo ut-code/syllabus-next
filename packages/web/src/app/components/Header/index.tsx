@@ -1,5 +1,3 @@
-"use client";
-
 import { useContext } from "react";
 import { FaCog } from "react-icons/fa";
 import { MdDarkMode, MdOutlineWbSunny } from "react-icons/md";
