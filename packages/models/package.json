@@ -1,0 +1,17 @@
+{
+  "name": "@packages/models",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./models.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.18"
+  },
+  "peerDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "elysia": "^1.3.5"
+  }
+}

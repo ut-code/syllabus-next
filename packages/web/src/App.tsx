@@ -13,6 +13,7 @@ import Home from "./pages/Home";
 import HowToUse from "./pages/HowToUse";
 import NotFound from "./pages/NotFound";
 import Notion from "./pages/Notion";
+import UserManagement from "./sample/UserManagement";
 
 /**
  * App コンポーネントは、アプリケーション全体のレイアウトを定義します。
@@ -59,6 +60,7 @@ export default function App() {
                 <Route path="/disclaimer" element={<Disclaimer />} />
                 <Route path="/how-to-use" element={<HowToUse />} />
                 <Route path="/notion" element={<Notion />} />
+                <Route path="/sample" element={<UserManagement />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
               <Footer />

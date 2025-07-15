@@ -11,13 +11,15 @@
     "check": "tsc --noEmit"
   },
   "dependencies": {
+    "@elysiajs/eden": "^1.3.2",
     "@headlessui/react": "^2.2.4",
+    "@packages/class_data": "workspace:*",
+    "@tanstack/react-query": "^5.83.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router-dom": "^7.1.1",
     "react-hook-form": "^7.60.0",
     "react-icons": "^5.5.0",
-    "@packages/class_data": "workspace:*"
+    "react-router-dom": "^7.1.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.11",
