@@ -22,8 +22,15 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "correctness": {
+        "useImportExtensions": {
+          "level": "error",
+          "fix": "safe",
+          "options": {}
+        }
+      },
       "suspicious": {
-        "noArrayIndexKey": "off" // we are smarter than you
+        "noArrayIndexKey": "off"
       }
     }
   },
