@@ -2,7 +2,6 @@
  * 評価方法フィルターのコンポーネント
  */
 
-"use client";
 import type React from "react";
 import type { ReactNode } from "react";
 import type { Evaluation } from "@/app/type";

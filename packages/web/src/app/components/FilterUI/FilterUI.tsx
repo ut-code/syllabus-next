@@ -2,7 +2,6 @@
  * 全てのフィルターを表示するコンポーネント
  */
 
-"use client";
 import { useState } from "react";
 import type { ClassType, Evaluation, Semester } from "@/app/type";
 import { ClassTypeFilter } from "./FilterComponents/ClassType";

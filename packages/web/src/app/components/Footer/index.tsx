@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 /**
  * フッター
@@ -11,43 +11,46 @@ export default function Footer() {
       className="flex items-center justify-end px-4 py-2 text-white bg-inverse-primary fixed bottom-0 w-full"
     >
       <div className="flex flex-wrap justify-end space-x-4 bg-gray-800">
-        <Link
+        <a
           href="https://forms.gle/stBdKuCsXm8LUdBm8"
           className="hover:bg-surface-variant hover:text-white px-2 py-1 rounded-sm transition duration-200 "
+          target="_blank"
+          rel="noopener noreferrer"
         >
           ご意見
-        </Link>
+        </a>
         <Link
-          href="/how-to-use"
+          to="/how-to-use"
           className="hover:bg-surface-variant hover:text-white px-2 py-1 rounded-sm transition duration-200"
         >
           使い方
         </Link>
         <Link
-          href="/notion"
+          to="/notion"
           className="hover:bg-surface-variant hover:text-white px-2 py-1 rounded-sm transition duration-200"
         >
           履修上の注意
         </Link>
         <Link
-          href="/disclaimer"
+          to="/disclaimer"
           className="hover:bg-surface-variant hover:text-white px-2 py-1 rounded-sm transition duration-200"
         >
           免責事項
         </Link>
         <Link
-          href="/aboutus"
+          to="/aboutus"
           className="hover:bg-surface-variant hover:text-white px-2 py-1 rounded-sm transition duration-200"
         >
           About us
         </Link>
-        <Link
+        <a
           href="https://utcode.net/"
           className="hover:bg-surface-variant hover:text-white px-2 py-1 rounded-sm transition duration-200"
           target="_blank"
+          rel="noopener noreferrer"
         >
           ut.code();
-        </Link>
+        </a>
       </div>
     </footer>
   );

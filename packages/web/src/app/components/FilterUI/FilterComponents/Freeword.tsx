@@ -2,7 +2,6 @@
  * フリーワード検索のコンポーネントを定義する
  */
 
-"use client";
 import type React from "react";
 import Checkbox from "../UI/Checkbox";
 

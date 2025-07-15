@@ -1,4 +1,3 @@
-"use client";
 import { useState } from "react";
 import type { ClassDataType } from "@/app/type";
 import ClassModalComponent from "../../ClassModal";

@@ -2,7 +2,6 @@
  * 履修登録済みか否かでフィルターするコンポーネント
  */
 
-"use client";
 import type React from "react";
 import { FlagButton } from "../UI/FlagButton";
 

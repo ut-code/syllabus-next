@@ -1,8 +1,6 @@
 /*
  * セメスターフィルターのコンポーネント
  */
-
-"use client";
 import type React from "react";
 import type { ClassType } from "@/app/type";
 import { FlagButton } from "../UI/FlagButton";

@@ -9,7 +9,6 @@
  * 使用例: components/Sample/Timetable/page
  */
 
-"use client";
 import type React from "react";
 import { type ReactElement, useEffect, useState } from "react";
 import type { ClassDataType, Day, DayPeriod } from "@/app/type";
@@ -33,11 +32,11 @@ interface TimetableProps {
 
   // 時限ヘッダー内のデザイン
   // 詳細はclassSlotElementと同じ
-  periodSlotElement: React.FC<Period | "集中">;
+  periodSlotElement: (period: Period | "集中") => React.ReactNode;
 
   // 曜日ヘッダー内のデザイン
   // 詳細はclassSlotElementと同じ
-  daySlotElement: React.FC<Day>;
+  daySlotElement: (day: Day) => React.ReactNode;
 }
 
 /**

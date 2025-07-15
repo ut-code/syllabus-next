@@ -1,3 +1,4 @@
+import type React from "react";
 import { type Period, SlotDiv, type slotProps } from "./slot";
 
 /**
@@ -5,7 +6,7 @@ import { type Period, SlotDiv, type slotProps } from "./slot";
  */
 interface periodProps extends slotProps {
   period: Period | "集中";
-  periodSlotElement: React.FC<Period | "集中">;
+  periodSlotElement: (period: Period | "集中") => React.ReactNode;
 }
 
 /**

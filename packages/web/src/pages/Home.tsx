@@ -1,24 +1,23 @@
-"use client";
-
-import Image from "next/image";
-import Logo from "@/../public/syllabus_icon.svg";
+import type React from "react";
+import Logo from "/syllabus_icon.svg";
 // import { useUser } from "@/app/UserContext";
 
 /**
  * Home コンポーネントは、ホームページの内容を表示します。
  * @returns HTMLを生成するReactコンポーネント。
  */
-export default function Home(): JSX.Element {
+export default function Home(): React.ReactElement {
   // const { user, setUser } = useUser();
   return (
     <>
       {/* バックグラウンド画像 */}
-      <div className={`absolute right-0 bottom-0 w-[800px] h-full`}>
-        <Image
-          className="opacity-40 object-cover"
+      <div
+        className={`absolute right-0 bottom-0 w-[800px] h-full overflow-hidden`}
+      >
+        <img
+          className="opacity-40 object-cover w-full h-full"
           src={"/backgroundImage.png"}
           alt="backgroundImage"
-          fill
         />
       </div>
 
@@ -28,14 +27,11 @@ export default function Home(): JSX.Element {
           {/* タイトル */}
           <div className="relative flex justify-center items-center rounded-lg">
             {/* ロゴ(解像度に応じてサイズを変える) */}
-            <div
-              className={`relative w-[100px] h-[100px] md:w-[150px] md:h-[150px]`}
-            >
-              <Image
+            <div className={`w-[100px] h-[100px] md:w-[150px] md:h-[150px]`}>
+              <img
                 src={Logo}
                 alt="Logo"
-                className="mr-4 object-contain"
-                fill
+                className="mr-4 object-contain w-full h-full"
               />
             </div>
 

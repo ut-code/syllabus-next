@@ -10,7 +10,8 @@
     "includes": [
       "**/*",
       "!packages/class_data/data/**",
-      "!packages/web/src/app/globals.css"
+      "!packages/web/src/app/globals.css",
+      "!packages/web/src/styles/globals.css"
     ]
   },
   "formatter": {
