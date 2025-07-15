@@ -2,7 +2,7 @@
  * FilterUIのサンプルページ
  */
 
-import { FilterUI } from "../FilterUI";
+import { FilterUI } from "../FilterUI.tsx";
 
 const FilterUISample: React.FC = () => {
   return <FilterUI />;

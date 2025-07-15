@@ -4,7 +4,7 @@
 
 import type React from "react";
 import type { Semester } from "@/app/type";
-import { FlagButton } from "../UI/FlagButton";
+import { FlagButton } from "../UI/FlagButton.tsx";
 
 /**
  * セメスターフィルターのプロパティ

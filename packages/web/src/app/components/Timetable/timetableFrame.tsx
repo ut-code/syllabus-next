@@ -12,11 +12,11 @@
 import type React from "react";
 import { type ReactElement, useEffect, useState } from "react";
 import type { ClassDataType, Day, DayPeriod } from "@/app/type";
-import { SampleClasses } from "../Sample/ClassModal/SampleClassData";
-import { ClassSlot } from "./slots/classSlot";
-import { DaySlot } from "./slots/daySlot";
-import { PeriodSlot } from "./slots/periodSlot";
-import { type Period, SlotDiv } from "./slots/slot";
+import { SampleClasses } from "../Sample/ClassModal/SampleClassData.ts";
+import { ClassSlot } from "./slots/classSlot.tsx";
+import { DaySlot } from "./slots/daySlot.tsx";
+import { PeriodSlot } from "./slots/periodSlot.tsx";
+import { type Period, SlotDiv } from "./slots/slot.tsx";
 
 /**
  * 時間割のフレームコンポーネントのプロパティ
