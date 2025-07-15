@@ -1,12 +1,13 @@
+import { QueryClientProvider } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
 import { ThemeContext } from "@/app/context";
 import type { RegisterType, ThemeType } from "@/app/type";
 import { UserContext, type UserContextValue } from "@/app/UserContext";
 import { User } from "@/app/utils/user";
 import Footer from "./app/components/Footer";
 import Header from "./app/components/Header";
+import { queryClient } from "./lib/tanstack/client";
 import AboutUs from "./pages/AboutUs";
 import Disclaimer from "./pages/Disclaimer";
 import Home from "./pages/Home";
@@ -50,23 +51,27 @@ export default function App() {
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <UserContext.Provider value={userContextValue}>
-        <div className={`bg-surface-container text-text-default min-h-screen`}>
-          <BrowserRouter>
-            <div className="overscroll-none min-width-[300px] pt-12 pb-12">
-              <Header />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/aboutus" element={<AboutUs />} />
-                <Route path="/disclaimer" element={<Disclaimer />} />
-                <Route path="/how-to-use" element={<HowToUse />} />
-                <Route path="/notion" element={<Notion />} />
-                <Route path="/sample" element={<UserManagement />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-              <Footer />
-            </div>
-          </BrowserRouter>
-        </div>
+        <QueryClientProvider client={queryClient}>
+          <div
+            className={`bg-surface-container text-text-default min-h-screen`}
+          >
+            <BrowserRouter>
+              <div className="overscroll-none min-width-[300px] pt-12 pb-12">
+                <Header />
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/aboutus" element={<AboutUs />} />
+                  <Route path="/disclaimer" element={<Disclaimer />} />
+                  <Route path="/how-to-use" element={<HowToUse />} />
+                  <Route path="/notion" element={<Notion />} />
+                  <Route path="/sample" element={<UserManagement />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+                <Footer />
+              </div>
+            </BrowserRouter>
+          </div>
+        </QueryClientProvider>
       </UserContext.Provider>
     </ThemeContext.Provider>
   );

@@ -1,51 +1,8 @@
-import type { CreateUser } from "@packages/models";
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { api } from "@/lib/api.ts";
-import { queryClient } from "@/lib/tanstack/client.ts";
-
-const keys = {
-  users: {
-    list: ["users", "list"] as const,
-  },
-};
-
-const useUserListQuery = () =>
-  useQuery({
-    queryKey: keys.users.list,
-    queryFn: async () => {
-      const { data, error } = await api.users.get();
-      if (error) throw error;
-      return data;
-    },
-  });
-
-const useUserCreateMutation = () =>
-  useMutation({
-    mutationFn: async (user: CreateUser) => {
-      const { data, error } = await api.users.post(user);
-      if (error) throw error;
-      return data;
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({
-        queryKey: keys.users.list,
-      });
-    },
-  });
-
-const useUserDeleteMutation = () =>
-  useMutation({
-    mutationFn: async (id: string) => {
-      const { data, error } = await api.users.delete({
-        $query: {
-          id,
-        },
-      });
-      if (error) throw error;
-      return data;
-    },
-    onSuccess: () => {},
-  });
+import {
+  useUserCreateMutation,
+  useUserDeleteMutation,
+  useUserListQuery,
+} from "@/lib/tanstack/users.sample.ts";
 
 export default function UserManagement() {
   const { data, isLoading } = useUserListQuery();
@@ -53,17 +10,23 @@ export default function UserManagement() {
   const deleteUser = useUserDeleteMutation();
 
   return (
-    <div>
-      aaaaaa!!!!!!!!
-      <h1>User Management</h1>
+    <div className="max-w-150 mx-auto">
+      <h1 className="text-2xl font-bold text-center my-4">User Management</h1>
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <ul>
+        <ul className="list">
           {data?.map((user) => (
-            <li key={user.id}>
-              {user.name}
-              <button onClick={() => deleteUser.mutate(user.id)} type="button">
+            <li className="list-row" key={user.id}>
+              <span className="list-col-grow p-2 align-middle">
+                {user.name}
+              </span>
+              <button
+                type="button"
+                className="btn btn-error"
+                onClick={() => deleteUser.mutate(user.id)}
+                disabled={deleteUser.isPending}
+              >
                 Delete
               </button>
             </li>
@@ -71,16 +34,39 @@ export default function UserManagement() {
         </ul>
       )}
       <form
+        className="flex p-4 gap-2"
         onSubmit={(e) => {
           e.preventDefault();
           const formData = new FormData(e.currentTarget);
-          createUser.mutate({
-            name: formData.get("name") as string,
-          });
+          createUser.mutate(
+            {
+              name: formData.get("name") as string,
+            },
+            {
+              onSuccess: () => {
+                const inputEl = document.getElementById(
+                  "form-input-name",
+                ) as HTMLInputElement;
+                inputEl.value = "";
+              },
+            },
+          );
         }}
       >
-        <input type="text" name="name" />
-        <button type="submit">Create</button>
+        <input
+          id="form-input-name"
+          type="text"
+          name="name"
+          className="flex-grow input input-bordered"
+          required
+        />
+        <button
+          type="submit"
+          className="btn btn-primary"
+          disabled={createUser.isPending}
+        >
+          Create
+        </button>
       </form>
     </div>
   );
