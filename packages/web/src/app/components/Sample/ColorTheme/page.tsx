@@ -15,7 +15,7 @@ const ThemeSampleComponent: React.FC = () => {
         <div className="mt-4">
           <div className="grid grid-cols-2 justify-center items-center gap-2">
             {/* primary背景に、on-primary色のテキストを使用 */}
-            <div className="col-start-1 col-span-1 row-start-1 p-4 bg-primary text-on-primary">
+            <div className="col-start-1 col-span-1 row-start-1 p-4 bg-primary text-primary-content">
               Primary
             </div>
 

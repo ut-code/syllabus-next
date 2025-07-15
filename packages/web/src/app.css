@@ -1,0 +1,178 @@
+/*
+# メモ
+
+## 過去の色の定義
+
+色の定義はけっこう消えてるので、必要であれば git の履歴から復元すること。
+
+## `--color-primary`, `--color-primary-content` の違い
+
+`--color-primary` は背景色、`--color-primary-content` は文字色に使われる。
+
+例:
+<button class="btn btn-primary">Primary</button>
+<button style="background-color: var(--color-primary); color: var(--color-primary-content);">Primary</button>
+*/
+
+@import "tailwindcss";
+
+@source "../";
+
+@plugin "daisyui" {
+  themes: "light" --default, "dark" --prefersdark;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true; /* set as default */
+  prefersdark: false; /* set as default dark mode (prefers-color-scheme:dark) */
+  color-scheme: light; /* color of browser-provided UI */
+
+  --color-base-100: #f6fbf3; /* ほとんどの背景色 */
+  --color-base-200: #96d5a6; /* ヘッダーなど */
+  --color-base-300: #96d5a6; /* フッターなど */
+  --color-base-content: #181d18;
+
+  --color-primary: #2e6a44;
+  --color-primary-content: #ffffff;
+  --color-primary-container: #b1f1c1;
+
+  --color-secondary: #4f6353;
+  --color-secondary-content: #ffffff;
+  --color-secondary-container: #d2e8d4;
+
+  --color-tertiary: #3a646f;
+  --color-tertiary-content: #ffffff;
+  --color-tertiary-container: #beeaf6;
+
+  --color-error: #ba1a1a;
+  --color-error-content: #ffffff;
+  --color-error-container: #ffdad6;
+
+  --color-background: #f6fbf3;
+  --color-on-background: #181d18;
+  --color-surface: #f6fbf3;
+  --color-on-surface: #181d18;
+  --color-surface-variant: #dde5db;
+  --color-on-surface-variant: #414942;
+  --color-outline: #717971;
+  --color-outline-variant: #c1c9bf;
+  --color-shadow: #000000;
+  --color-scrim: #000000;
+  --color-inverse-surface: #2c322d;
+  --color-inverse-on-surface: #edf2eb;
+  --color-primary-fixed: #b1f1c1;
+  --color-on-primary-fixed: #00210e;
+  --color-primary-fixed-dim: #96d5a6;
+  --color-on-primary-fixed-variant: #12512e;
+  --color-secondary-fixed: #d2e8d4;
+  --color-on-secondary-fixed: #0d1f13;
+  --color-secondary-fixed-dim: #b6ccb8;
+  --color-on-secondary-fixed-variant: #384b3c;
+  --color-tertiary-fixed: #beeaf6;
+  --color-on-tertiary-fixed: #001f26;
+  --color-tertiary-fixed-dim: #a2ceda;
+  --color-on-tertiary-fixed-variant: #214c57;
+  --color-surface-dim: #d7dbd4;
+  --color-surface-bright: #f6fbf3;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f0f5ed;
+  --color-surface-container: #eaefe8;
+  --color-surface-container-high: #e5eae2;
+  --color-surface-container-highest: #dfe4dc;
+  --color-text-default: #000000;
+}
+
+/* 色の定義(ダークモード) */
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: false; /* set as default */
+  prefersdark: true; /* set as default dark mode (prefers-color-scheme:dark) */
+  color-scheme: dark; /* color of browser-provided UI */
+
+  --color-base-100: #181d18; /* ほとんどの背景色 */
+  --color-base-200: #052920; /* ヘッダーなど */
+  --color-base-300: #275A3F; /* フッターなど */
+  --color-base-content: #ffffff;
+
+  --color-primary: #96d5a6;
+  --color-primary-content: #000000;
+  --color-primary-container: #12512e; /* color-primary との使い分け何？不明だったら消す */
+
+  --color-secondary: #b6ccb8;
+  --color-secondary-content: #223527;
+  --color-secondary-container: #384b3c; /* 同上 */
+
+  --color-tertiary: #a2ceda;
+  --color-tertiary-content: #023640;
+  --color-tertiary-container: #214c57; /* 同上 */
+
+  --color-error: #ffb4ab;
+  --color-error-content: #690005;
+  --color-error-container: #93000a; /* 同上 */
+
+  /* ユースケース別の色をテーマで決めるのはアンチパターンなので、そのうち整理する (決して面倒で放置しているわけではない) */
+  --color-background: #101510;
+  --color-on-background: #dfe4dc;
+  --color-surface: #101510;
+  --color-on-surface: #dfe4dc;
+  --color-surface-variant: #414942;
+  --color-on-surface-variant: #c1c9bf;
+  --color-outline: #8b938a;
+  --color-outline-variant: #414942;
+  --color-shadow: 0 0 0;
+  --color-scrim: 0 0 0;
+  --color-inverse-surface: #dfe4dc;
+  --color-inverse-on-surface: #2c322d;
+  --color-primary-fixed: #b1f1c1;
+  --color-on-primary-fixed: #00210e;
+  --color-primary-fixed-dim: #96d5a6;
+  --color-on-primary-fixed-variant: #12512e;
+  --color-secondary-fixed: #d2e8d4;
+  --color-on-secondary-fixed: #0d1f13;
+  --color-secondary-fixed-dim: #b6ccb8;
+  --color-on-secondary-fixed-variant: #384b3c;
+  --color-tertiary-fixed: #beeaf6;
+  --color-on-tertiary-fixed: #001f26;
+  --color-tertiary-fixed-dim: #a2ceda;
+  --color-on-tertiary-fixed-variant: #214c57;
+  --color-surface-dim: #101510;
+  --color-surface-bright: #353a35;
+  --color-surface-container-lowest: #0a0f0b;
+  --color-surface-container-low: #181d18;
+  --color-surface-container: #1c211c;
+  --color-surface-container-high: #262b26;
+  --color-surface-container-highest: #313631;
+  --color-text-default: #ffffff;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+.btn {
+  @apply rounded-full p-5;
+}
+.btn-lg {
+  @apply h-12 font-bold;
+}
+
+/* Example Use Case: フッターのボタン */
+.link-btn {
+  /* ダークモードのときでも bg-white, text-black で問題ない */
+  @apply hover:bg-white/70 hover:text-black px-2 py-1 rounded-sm transition duration-200;
+}

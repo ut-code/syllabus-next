@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { ThemeContext } from "@/app/context";
@@ -26,6 +26,10 @@ export default function App() {
    * テーマ管理
    */
   const [theme, setTheme] = useState<ThemeType>("light");
+  // the only proper use of useEffect
+  useEffect(() => {
+    document.body.setAttribute("data-theme", theme);
+  }, [theme]);
 
   const userInstance = new User();
   const [user, setUserState] = useState<RegisterType | undefined>(
@@ -45,9 +49,7 @@ export default function App() {
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <UserContext.Provider value={userContextValue}>
-        <div
-          className={`bg-surface-container text-text-default ${theme} min-h-screen`}
-        >
+        <div className={`bg-surface-container text-text-default min-h-screen`}>
           <BrowserRouter>
             <div className="overscroll-none min-width-[300px] pt-12 pb-12">
               <Header />

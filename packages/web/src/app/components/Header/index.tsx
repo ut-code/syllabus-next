@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <header
       id="global-header"
-      className="flex items-center justify-between px-4 py-2 bg-on-primary shadow-md fixed top-0 w-full z-10"
+      className="flex items-center justify-between px-4 py-2 bg-base-200 shadow-md fixed top-0 w-full z-10"
     >
       <div className="flex items-center space-x-2">
         <a href="/" id="syllabus-link" className="text-lg">
@@ -26,7 +26,7 @@ export default function Header() {
           href="https://utcode.net/"
           target="_blank"
           id="logo-link"
-          className="flex items-center space-x-1 text-green-600"
+          className="flex items-center space-x-1"
           rel="noopener"
         >
           <span>by</span>
@@ -44,17 +44,17 @@ export default function Header() {
             <MdOutlineWbSunny
               size={24}
               onClick={() => setTheme("dark")}
-              className="text-green-600"
+              className="text-base-content"
             />
           ) : (
             <MdDarkMode
               size={24}
               onClick={() => setTheme("light")}
-              className="text-green-600"
+              className="text-base-content"
             />
           )}
         </button>
-        <button type="button" id="settings" className="text-green-600">
+        <button type="button" id="settings" className="text-base-content">
           <FaCog size={24} />
         </button>
       </div>

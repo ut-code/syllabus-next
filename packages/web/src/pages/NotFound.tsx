@@ -1,5 +1,5 @@
 import type React from "react";
-import Logo from "@/../public/syllabus_icon.svg";
+import Logo from "@/assets/syllabus_icon.svg";
 
 /**
  * NotFound コンポーネントは、存在しないリンクへのアクセス時に表示されます。

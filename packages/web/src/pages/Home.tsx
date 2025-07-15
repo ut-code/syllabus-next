@@ -40,7 +40,8 @@ export default function Home(): React.ReactElement {
               {/* タイトル */}
               <div className={`text-6xl font-bold break-keep text-left`}>
                 {/* 幅に余裕があるときに表示 */}
-                <span className="max-md:hidden">Welcome to </span>シ楽バス
+                <span className="max-md:hidden">Welcome to </span>
+                シ楽バス
               </div>
 
               {/* サブタイトル (幅に余裕があるときに表示) */}
@@ -54,9 +55,7 @@ export default function Home(): React.ReactElement {
 
           {/* はじめるボタン */}
           <div className="flex items-center justify-center">
-            <div className="rounded-full bg-primary text-on-primary w-36 text-center p-3 mt-24 hover:bg-primary/90 font-bold">
-              はじめる
-            </div>
+            <div className="btn btn-primary w-36 mt-24">はじめる</div>
           </div>
         </div>
       </div>
