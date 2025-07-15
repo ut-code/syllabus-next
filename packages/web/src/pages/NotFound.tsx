@@ -1,10 +1,11 @@
+import type React from "react";
 import Logo from "@/../public/syllabus_icon.svg";
 
 /**
  * NotFound コンポーネントは、存在しないリンクへのアクセス時に表示されます。
  * @returns HTMLを生成するReactコンポーネント。
  */
-export default function NotFound(): JSX.Element {
+export default function NotFound(): React.ReactElement {
   return (
     <>
       {/* バックグラウンド画像 */}

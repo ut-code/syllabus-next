@@ -1,3 +1,4 @@
+import type React from "react";
 import Logo from "/syllabus_icon.svg";
 // import { useUser } from "@/app/UserContext";
 
@@ -5,7 +6,7 @@ import Logo from "/syllabus_icon.svg";
  * Home コンポーネントは、ホームページの内容を表示します。
  * @returns HTMLを生成するReactコンポーネント。
  */
-export default function Home(): JSX.Element {
+export default function Home(): React.ReactElement {
   // const { user, setUser } = useUser();
   return (
     <>

@@ -33,11 +33,11 @@ interface TimetableProps {
 
   // 時限ヘッダー内のデザイン
   // 詳細はclassSlotElementと同じ
-  periodSlotElement: React.FC<Period | "集中">;
+  periodSlotElement: (period: Period | "集中") => React.ReactNode;
 
   // 曜日ヘッダー内のデザイン
   // 詳細はclassSlotElementと同じ
-  daySlotElement: React.FC<Day>;
+  daySlotElement: (day: Day) => React.ReactNode;
 }
 
 /**

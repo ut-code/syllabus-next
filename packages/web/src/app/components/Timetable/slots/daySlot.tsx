@@ -7,7 +7,7 @@ import { SlotDiv, type slotProps } from "./slot";
  */
 interface dayProps extends slotProps {
   day: Day;
-  daySlotElement: React.FC<Day>;
+  daySlotElement: (day: Day) => React.ReactNode;
 }
 
 /**
