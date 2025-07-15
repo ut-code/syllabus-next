@@ -7,8 +7,7 @@
     ".": "./app.ts"
   },
   "scripts": {
-    "dev": "bun run --watch ./serve.ts",
-    "dev:mock": "MOCK=true bun run --watch ./serve.ts"
+    "dev": "bun --env-file=../../.env run --watch ./serve.ts"
   },
   "devDependencies": {
     "@types/bun": "^1.2.18"

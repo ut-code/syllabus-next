@@ -9,6 +9,8 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  envDir: "../../",
+  envPrefix: "PUBLIC_",
   server: {
     port: 3000,
   },
