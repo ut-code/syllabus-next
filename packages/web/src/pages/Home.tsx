@@ -11,7 +11,9 @@ export default function Home(): React.ReactElement {
   return (
     <>
       {/* バックグラウンド画像 */}
-      <div className={`absolute right-0 bottom-0 w-[800px] h-full overflow-hidden`}>
+      <div
+        className={`absolute right-0 bottom-0 w-[800px] h-full overflow-hidden`}
+      >
         <img
           className="opacity-40 object-cover w-full h-full"
           src={"/backgroundImage.png"}
@@ -25,9 +27,7 @@ export default function Home(): React.ReactElement {
           {/* タイトル */}
           <div className="relative flex justify-center items-center rounded-lg">
             {/* ロゴ(解像度に応じてサイズを変える) */}
-            <div
-              className={`w-[100px] h-[100px] md:w-[150px] md:h-[150px]`}
-            >
+            <div className={`w-[100px] h-[100px] md:w-[150px] md:h-[150px]`}>
               <img
                 src={Logo}
                 alt="Logo"

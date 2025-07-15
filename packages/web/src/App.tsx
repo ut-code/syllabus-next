@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { ThemeContext } from "@/app/context";
 import type { RegisterType, ThemeType } from "@/app/type";
@@ -7,13 +7,12 @@ import { UserContext, type UserContextValue } from "@/app/UserContext";
 import { User } from "@/app/utils/user";
 import Footer from "./app/components/Footer";
 import Header from "./app/components/Header";
-
-import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Disclaimer from "./pages/Disclaimer";
+import Home from "./pages/Home";
 import HowToUse from "./pages/HowToUse";
-import Notion from "./pages/Notion";
 import NotFound from "./pages/NotFound";
+import Notion from "./pages/Notion";
 
 /**
  * App コンポーネントは、アプリケーション全体のレイアウトを定義します。
@@ -46,7 +45,9 @@ export default function App() {
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <UserContext.Provider value={userContextValue}>
-        <div className={`bg-surface-container text-text-default ${theme} min-h-screen`}>
+        <div
+          className={`bg-surface-container text-text-default ${theme} min-h-screen`}
+        >
           <BrowserRouter>
             <div className="overscroll-none min-width-[300px] pt-12 pb-12">
               <Header />
