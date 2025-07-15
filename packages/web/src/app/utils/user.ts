@@ -1,9 +1,7 @@
-"use client";
-
 import type { RegisterType } from "@/app/type";
 import { SampleUser } from "@/app/utils/mock_data";
 
-const MODE = process.env.NEXT_PUBLIC_MODE;
+const MODE = import.meta.env.VITE_MODE;
 
 export class User {
   private user: RegisterType | undefined;

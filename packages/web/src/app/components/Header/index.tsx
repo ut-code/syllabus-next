@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { FaCog } from "react-icons/fa";
 import { MdDarkMode, MdOutlineWbSunny } from "react-icons/md";
@@ -33,7 +32,7 @@ export default function Header() {
           rel="noopener"
         >
           <span>by</span>
-          <Image
+          <img
             src="/utcode_logo.svg"
             alt="ut.code();"
             width={100}

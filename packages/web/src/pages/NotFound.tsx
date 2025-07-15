@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Logo from "@/../public/syllabus_icon.svg";
 
 /**
@@ -10,11 +9,10 @@ export default function NotFound(): JSX.Element {
     <>
       {/* バックグラウンド画像 */}
       <div className={`absolute right-0 bottom-0 w-[800px] h-full`}>
-        <Image
-          className="opacity-40 object-cover"
-          src={"/backgroundImage.png"}
+        <img
+          className="opacity-40 object-cover w-full h-full"
+          src="/backgroundImage.png"
           alt="backgroundImage"
-          fill
         />
       </div>
 
@@ -27,11 +25,10 @@ export default function NotFound(): JSX.Element {
             <div
               className={`relative w-[100px] h-[100px] md:w-[150px] md:h-[150px]`}
             >
-              <Image
+              <img
                 src={Logo}
                 alt="Logo"
-                className="mr-4 object-contain"
-                fill
+                className="mr-4 object-contain w-full h-full"
               />
             </div>
 
