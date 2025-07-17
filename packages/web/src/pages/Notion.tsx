@@ -1,5 +1,5 @@
 import type React from "react";
-import { HowToUseItem } from "../app/how-to-use/HowToUseItem";
+import { HowToUseItem } from "../app/how-to-use/HowToUseItem.tsx";
 
 const Notion: React.FC = () => {
   return (

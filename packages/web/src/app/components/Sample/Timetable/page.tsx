@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { ClassDataType } from "@/app/type";
-import ClassModalComponent from "../../ClassModal";
-import TimetableFrame from "../../Timetable/timetableFrame";
+import ClassModalComponent from "../../ClassModal/index.tsx";
+import TimetableFrame from "../../Timetable/timetableFrame.tsx";
 
 /**
  * 時間割のサンプル

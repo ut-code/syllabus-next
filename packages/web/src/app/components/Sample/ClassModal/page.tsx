@@ -1,7 +1,7 @@
 import type React from "react";
 import { useState } from "react";
-import ClassModalComponent from "../../ClassModal"; // モーダルのコンポーネント
-import { SampleClasses } from "./SampleClassData"; // モーダルのデモで利用する講義のサンプルデータ
+import ClassModalComponent from "../../ClassModal/index.tsx"; // モーダルのコンポーネント
+import { SampleClasses } from "./SampleClassData.ts"; // モーダルのデモで利用する講義のサンプルデータ
 
 /**
  * ClassModalComponentを利用するサンプルです

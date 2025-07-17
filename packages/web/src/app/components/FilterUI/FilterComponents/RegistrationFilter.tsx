@@ -3,7 +3,7 @@
  */
 
 import type React from "react";
-import { FlagButton } from "../UI/FlagButton";
+import { FlagButton } from "../UI/FlagButton.tsx";
 
 /**
  * 履修登録済みか否かのフィルターのプロパティ
