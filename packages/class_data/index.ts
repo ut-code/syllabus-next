@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import { argv } from "node:process";
-import { NewClassData } from "./newClass";
-import type { PreviousClassData } from "./previousClassDaya";
+import { NewClassData } from "./newClass.ts";
+import type { PreviousClassData } from "./previousClassDaya.ts";
 
 /**
  * 変換処理本体

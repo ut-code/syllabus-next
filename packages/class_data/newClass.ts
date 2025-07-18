@@ -1,5 +1,5 @@
-import { PreviousClassData } from "./previousClassDaya";
-import { type DayPeriod, dayMappingToEn } from "./type";
+import { PreviousClassData } from "./previousClassDaya.ts";
+import { type DayPeriod, dayMappingToEn } from "./type.ts";
 
 /**
  * 新シ楽バス仕様の講義情報クラス

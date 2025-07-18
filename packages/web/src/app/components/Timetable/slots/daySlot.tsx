@@ -1,6 +1,6 @@
 import type React from "react";
 import type { Day } from "@/app/type";
-import { SlotDiv, type slotProps } from "./slot";
+import { SlotDiv, type slotProps } from "./slot.tsx";
 
 /**
  * 曜日が表示されるスロット要素のプロパティ

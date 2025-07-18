@@ -49,3 +49,14 @@ Userのデータは`User`クラスを使用して扱います。Userのデータ
   - UserはlocalStorageに保存されたデータが使用されます。
 
 ただ、まだユーザを登録する機能がないので、mockでユーザを作成する必要があります。
+
+## 推奨 VS Code 設定
+
+```json
+{
+	"editor.codeActionsOnSave": {
+		"source.biome": "always",
+		"source.organizeImports.biome": "always"
+	}
+}
+```

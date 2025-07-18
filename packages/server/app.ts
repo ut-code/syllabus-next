@@ -1,6 +1,6 @@
 import { cors } from "@elysiajs/cors";
 import { Elysia } from "elysia";
-import { usersRouter } from "./router/users.sample";
+import { usersRouter } from "./router/users.sample.ts";
 
 export const app = new Elysia({
   prefix: "/api",

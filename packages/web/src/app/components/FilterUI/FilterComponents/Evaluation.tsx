@@ -5,7 +5,7 @@
 import type React from "react";
 import type { ReactNode } from "react";
 import type { Evaluation } from "@/app/type";
-import Checkbox from "../UI/Checkbox";
+import Checkbox from "../UI/Checkbox.tsx";
 
 const evaluations: Evaluation[] = ["試験", "レポート", "出席", "平常"];
 

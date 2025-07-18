@@ -7,7 +7,7 @@ import {
   HowToUseItem,
   IndentLi,
   QuickStartItem,
-} from "./HowToUseItem";
+} from "./HowToUseItem.tsx";
 
 /**
  * 文字をtertiaryカラーで表示するコンポーネント

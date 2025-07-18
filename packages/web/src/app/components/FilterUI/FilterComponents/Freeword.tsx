@@ -3,7 +3,7 @@
  */
 
 import type React from "react";
-import Checkbox from "../UI/Checkbox";
+import Checkbox from "../UI/Checkbox.tsx";
 
 /**
  * フリーワード検索のプロパティ

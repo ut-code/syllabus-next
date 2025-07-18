@@ -4,12 +4,12 @@
 
 import { useState } from "react";
 import type { ClassType, Evaluation, Semester } from "@/app/type";
-import { ClassTypeFilter } from "./FilterComponents/ClassType";
-import { EvaluationFilter } from "./FilterComponents/Evaluation";
-import { Freeword } from "./FilterComponents/Freeword";
-import { RegistrationFilter } from "./FilterComponents/RegistrationFilter";
-import { SemestersCheckbox } from "./FilterComponents/Semester";
-import { FilterCard } from "./UI/FilterCard";
+import { ClassTypeFilter } from "./FilterComponents/ClassType.tsx";
+import { EvaluationFilter } from "./FilterComponents/Evaluation.tsx";
+import { Freeword } from "./FilterComponents/Freeword.tsx";
+import { RegistrationFilter } from "./FilterComponents/RegistrationFilter.tsx";
+import { SemestersCheckbox } from "./FilterComponents/Semester.tsx";
+import { FilterCard } from "./UI/FilterCard.tsx";
 
 /**
  *  フィルタの型定義

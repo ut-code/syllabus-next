@@ -1,5 +1,5 @@
 import type React from "react";
-import { type Period, SlotDiv, type slotProps } from "./slot";
+import { type Period, SlotDiv, type slotProps } from "./slot.tsx";
 
 /**
  * 時限が表示されるスロット要素のプロパティ

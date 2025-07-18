@@ -2,8 +2,8 @@
   ColorThemeを利用したデザイン例
 */
 import type React from "react";
-import ValidatedInput from "./field";
-import ToggleSample from "./toggle";
+import ValidatedInput from "./field.tsx";
+import ToggleSample from "./toggle.tsx";
 
 const ThemeSampleComponent: React.FC = () => {
   return (

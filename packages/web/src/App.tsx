@@ -5,16 +5,16 @@ import { ThemeContext } from "@/app/context";
 import type { RegisterType, ThemeType } from "@/app/type";
 import { UserContext, type UserContextValue } from "@/app/UserContext";
 import { User } from "@/app/utils/user";
-import Footer from "./app/components/Footer";
-import Header from "./app/components/Header";
-import { queryClient } from "./lib/tanstack/client";
-import AboutUs from "./pages/AboutUs";
-import Disclaimer from "./pages/Disclaimer";
-import Home from "./pages/Home";
-import HowToUse from "./pages/HowToUse";
-import NotFound from "./pages/NotFound";
-import Notion from "./pages/Notion";
-import UserManagement from "./sample/UserManagement";
+import Footer from "./app/components/Footer/index.tsx";
+import Header from "./app/components/Header/index.tsx";
+import { queryClient } from "./lib/tanstack/client.ts";
+import AboutUs from "./pages/AboutUs.tsx";
+import Disclaimer from "./pages/Disclaimer.tsx";
+import Home from "./pages/Home.tsx";
+import HowToUse from "./pages/HowToUse.tsx";
+import NotFound from "./pages/NotFound.tsx";
+import Notion from "./pages/Notion.tsx";
+import UserManagement from "./sample/UserManagement.tsx";
 
 /**
  * App コンポーネントは、アプリケーション全体のレイアウトを定義します。
