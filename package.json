@@ -6,8 +6,8 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "cd packages/web && bun dev",
-    "dev:mock": "cd packages/web && bun dev:mock",
+    "dev": "bun --filter=@packages/{web,server} dev",
+    "dev:mock": "bun --filter=@packages/{web,server} dev:mock",
     "build": "cd packages/web && bun run build",
     "check": "bunx biome check .",
     "fix": "bunx biome check . --fix"

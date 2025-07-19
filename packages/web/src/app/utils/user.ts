@@ -1,14 +1,13 @@
 import type { RegisterType } from "@/app/type";
 import { SampleUser } from "@/app/utils/mock_data";
-
-const MODE = import.meta.env.VITE_MODE;
+import { env } from "../../lib/env.ts";
 
 export class User {
   private user: RegisterType | undefined;
 
   constructor() {
     if (typeof window !== "undefined") {
-      if (MODE === "mock") {
+      if (env.mockData) {
         this.user = SampleUser;
       } else {
         const storedUser = localStorage.getItem("user");
@@ -36,7 +35,7 @@ export class User {
   setUser(newUser: RegisterType): void {
     this.user = newUser;
 
-    if (typeof window !== "undefined" && MODE !== "mock") {
+    if (typeof window !== "undefined" && !env.mockData) {
       localStorage.setItem("user", JSON.stringify(newUser));
     }
   }
