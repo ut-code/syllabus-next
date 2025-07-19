@@ -60,3 +60,9 @@ Userのデータは`User`クラスを使用して扱います。Userのデータ
 	}
 }
 ```
+
+## Storybookの使用
+```bash
+bun run storybook
+```
+ - localhost:6006にStorybookが立ち上がるので、そこでUIを確認してください。
