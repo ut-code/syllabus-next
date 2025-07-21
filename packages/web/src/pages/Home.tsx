@@ -1,4 +1,5 @@
 import type React from "react";
+import { useNavigate } from "react-router-dom";
 import Logo from "/syllabus_icon.svg";
 // import { useUser } from "@/app/UserContext";
 
@@ -7,6 +8,7 @@ import Logo from "/syllabus_icon.svg";
  * @returns HTMLを生成するReactコンポーネント。
  */
 export default function Home(): React.ReactElement {
+  const navigate = useNavigate();
   // const { user, setUser } = useUser();
   return (
     <>
@@ -55,7 +57,13 @@ export default function Home(): React.ReactElement {
 
           {/* はじめるボタン */}
           <div className="flex items-center justify-center">
-            <div className="btn btn-primary w-36 mt-24">はじめる</div>
+            <button
+              type="button"
+              onClick={() => navigate("/sign-in")}
+              className="btn btn-primary w-36 mt-24"
+            >
+              サインインページへ
+            </button>
           </div>
         </div>
       </div>
