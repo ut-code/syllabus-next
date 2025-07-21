@@ -14,6 +14,7 @@ import Home from "./pages/Home.tsx";
 import HowToUse from "./pages/HowToUse.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Notion from "./pages/Notion.tsx";
+import Profile from "./pages/Profile.tsx";
 import SignIn from "./pages/SignIn.tsx";
 import UserManagement from "./sample/UserManagement.tsx";
 
@@ -67,6 +68,7 @@ export default function App() {
                   <Route path="/notion" element={<Notion />} />
                   <Route path="/sample" element={<UserManagement />} />
                   <Route path="/sign-in" element={<SignIn />} />
+                  <Route path="/profile" element={<Profile />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 <Footer />
