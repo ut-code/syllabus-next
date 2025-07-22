@@ -8,11 +8,13 @@
   "scripts": {
     "dev": "bun --filter=@packages/{web,server} dev",
     "dev:mock": "bun --filter=@packages/{web,server} dev:mock",
+    "storybook": "concurrently 'cd packages/server; bun dev' 'cd packages/web; bun run storybook'",
     "build": "cd packages/web && bun run build",
     "check": "bunx biome check .",
     "fix": "bunx biome check . --fix"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.1.1"
+    "@biomejs/biome": "^2.1.1",
+    "concurrently": "^9.2.0"
   }
 }
