@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { fn } from "@storybook/test";
 
-import { Header } from "./Header.tsx";
+import { Header } from "./sample-components/Header.tsx";
 
 const meta = {
   title: "Example/Header",

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { expect, userEvent, within } from "@storybook/test";
 
-import { Page } from "./Page.tsx";
+import { Page } from "./sample-components/Page.tsx";
 
 const meta = {
   title: "Example/Page",

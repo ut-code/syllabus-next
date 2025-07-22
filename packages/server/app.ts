@@ -1,11 +1,8 @@
 import { cors } from "@elysiajs/cors";
 import { Elysia } from "elysia";
-import { usersRouter } from "./router/users.sample.ts";
 
 export const app = new Elysia({
   prefix: "/api",
-})
-  .use(cors())
-  .group("/users", (app) => app.use(usersRouter));
+}).use(cors());
 
 export type App = typeof app;
