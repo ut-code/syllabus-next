@@ -6,7 +6,7 @@ export default function SignIn() {
       await authClient.signIn.social({
         provider: "google",
         // Use an absolute path for the callbackURL to prevent redirecting to the server.
-        callbackURL: `${import.meta.env.PUBLIC_WEB_URL}/profile`,
+        callbackURL: `${window.location.origin}/profile`,
       });
     } catch (error) {
       console.error("error", error);
