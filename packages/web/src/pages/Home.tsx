@@ -1,5 +1,5 @@
 import type React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logo from "/syllabus_icon.svg";
 // import { useUser } from "@/app/UserContext";
 
@@ -8,7 +8,6 @@ import Logo from "/syllabus_icon.svg";
  * @returns HTMLを生成するReactコンポーネント。
  */
 export default function Home(): React.ReactElement {
-  const navigate = useNavigate();
   // const { user, setUser } = useUser();
   return (
     <>
