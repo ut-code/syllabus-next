@@ -1,6 +1,6 @@
 import { cors } from "@elysiajs/cors";
 import { Elysia } from "elysia";
-import { auth } from "./auth.ts";
+import { auth } from "./lib/auth.ts";
 import { usersRouter } from "./router/users.sample.ts";
 
 const betterAuth = new Elysia({ name: "better-auth" })
