@@ -1,5 +1,5 @@
 import type React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "/syllabus_icon.svg";
 // import { useUser } from "@/app/UserContext";
 
@@ -57,13 +57,9 @@ export default function Home(): React.ReactElement {
 
           {/* はじめるボタン */}
           <div className="flex items-center justify-center">
-            <button
-              type="button"
-              onClick={() => navigate("/sign-in")}
-              className="btn btn-primary w-36 mt-24"
-            >
+            <Link to="/sign-in" className="btn btn-primary w-36 mt-24">
               サインインページへ
-            </button>
+            </Link>
           </div>
         </div>
       </div>
