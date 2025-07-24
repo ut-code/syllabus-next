@@ -1,7 +1,5 @@
 import type { ClassDataType } from "@packages/models";
 import type { Meta, StoryObj } from "@storybook/react";
-import { useState } from "react";
-import { SampleClasses } from "@/components/Sample/ClassModal/SampleClassData";
 import Timetable from "@/components/Timetable/timetableFrame";
 
 // Define the default export that configures the component
