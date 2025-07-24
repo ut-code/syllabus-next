@@ -1,8 +1,8 @@
+import type { ClassDataType } from "@packages/models";
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import Timetable from "@/components/Timetable/timetableFrame";
-import type { ClassDataType } from "@packages/models";
 import { SampleClasses } from "@/components/Sample/ClassModal/SampleClassData";
+import Timetable from "@/components/Timetable/timetableFrame";
 
 // Define the default export that configures the component
 const meta = {
@@ -22,8 +22,8 @@ const ClassSlotElement = (classes: ClassDataType[]) => {
   return (
     <div className="w-full h-full p-1">
       {classes.map((c, i) => (
-        <div 
-          key={i} 
+        <div
+          key={i}
           className="mb-1 p-2 bg-blue-100 rounded text-xs overflow-hidden hover:bg-blue-200 transition-colors cursor-pointer"
           title={`${c.titleJp}\n${c.classroom}`}
         >
@@ -47,11 +47,17 @@ export const Default: Story = {
     ),
     daySlotElement: (day) => (
       <div className="flex items-center justify-center font-medium">
-        {day === 'mon' ? '月' : 
-         day === 'tue' ? '火' :
-         day === 'wed' ? '水' :
-         day === 'thu' ? '木' :
-         day === 'fri' ? '金' : '土'}
+        {day === "mon"
+          ? "月"
+          : day === "tue"
+            ? "火"
+            : day === "wed"
+              ? "水"
+              : day === "thu"
+                ? "木"
+                : day === "fri"
+                  ? "金"
+                  : "土"}
       </div>
     ),
   },

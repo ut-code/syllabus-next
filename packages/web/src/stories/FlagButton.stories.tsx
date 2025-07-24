@@ -14,7 +14,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const FlagButtonWrapper = ({ initialSelected = false, label = "Sample Button" }) => {
+const FlagButtonWrapper = ({
+  initialSelected = false,
+  label = "Sample Button",
+}) => {
   const [isSelected, setIsSelected] = useState(initialSelected);
 
   return (

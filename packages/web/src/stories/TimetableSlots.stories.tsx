@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { SlotDiv } from "@/components/Timetable/slots/slot";
+import { SampleClasses } from "@/components/Sample/ClassModal/SampleClassData";
+import { ClassSlot } from "@/components/Timetable/slots/classSlot";
 import { DaySlot } from "@/components/Timetable/slots/daySlot";
 import { PeriodSlot } from "@/components/Timetable/slots/periodSlot";
-import { ClassSlot } from "@/components/Timetable/slots/classSlot";
-import { SampleClasses } from "@/components/Sample/ClassModal/SampleClassData";
+import { SlotDiv } from "@/components/Timetable/slots/slot";
 
 const meta = {
   title: "Components/Timetable/Slots",
@@ -19,9 +19,7 @@ type Story = StoryObj<typeof meta>;
 export const BasicSlot: Story = {
   render: () => (
     <div className="w-32 h-16">
-      <SlotDiv className="text-sm">
-        Basic Slot
-      </SlotDiv>
+      <SlotDiv className="text-sm">Basic Slot</SlotDiv>
     </div>
   ),
 };
@@ -29,12 +27,10 @@ export const BasicSlot: Story = {
 export const DaySlotExample: Story = {
   render: () => (
     <div className="w-32 h-16">
-      <DaySlot 
-        day="mon" 
+      <DaySlot
+        day="mon"
         daySlotElement={(day) => (
-          <div className="font-bold">
-            {day === "mon" ? "月" : day}
-          </div>
+          <div className="font-bold">{day === "mon" ? "月" : day}</div>
         )}
       />
     </div>
@@ -44,12 +40,10 @@ export const DaySlotExample: Story = {
 export const PeriodSlotExample: Story = {
   render: () => (
     <div className="w-32 h-16">
-      <PeriodSlot 
-        period={1} 
+      <PeriodSlot
+        period={1}
         periodSlotElement={(period) => (
-          <div className="font-bold text-lg">
-            {period}
-          </div>
+          <div className="font-bold text-lg">{period}</div>
         )}
       />
     </div>
@@ -59,12 +53,10 @@ export const PeriodSlotExample: Story = {
 export const IntensivePeriodSlot: Story = {
   render: () => (
     <div className="w-32 h-16">
-      <PeriodSlot 
-        period="集中" 
+      <PeriodSlot
+        period="集中"
         periodSlotElement={(period) => (
-          <div className="font-bold text-sm">
-            {period}
-          </div>
+          <div className="font-bold text-sm">{period}</div>
         )}
       />
     </div>
@@ -103,9 +95,7 @@ export const EmptyClassSlot: Story = {
         classes={[]}
         isIntensiveClass={false}
         classSlotElement={() => (
-          <div className="p-1 text-xs text-gray-400">
-            空き時間
-          </div>
+          <div className="p-1 text-xs text-gray-400">空き時間</div>
         )}
       />
     </div>

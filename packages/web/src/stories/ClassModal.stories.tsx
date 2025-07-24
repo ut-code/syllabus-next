@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 import { useState } from "react";
 import ClassModal from "@/components/ClassModal/index.tsx";
 import { SampleClasses } from "@/components/Sample/ClassModal/SampleClassData";
-import { fn } from "@storybook/test";
 
 const meta = {
   title: "Components/ClassModal",
@@ -25,7 +25,7 @@ const ClassModalWrapper = ({ classData = SampleClasses[0] }) => {
 
   return (
     <div>
-      <button 
+      <button
         type="button"
         onClick={() => setIsOpen(true)}
         className="px-4 py-2 bg-primary text-white rounded"

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { useState } from "react";
+import Checkbox from "@/components/FilterUI/UI/Checkbox";
 import { FilterCard } from "@/components/FilterUI/UI/FilterCard";
 import { FlagButton } from "@/components/FilterUI/UI/FlagButton";
-import Checkbox from "@/components/FilterUI/UI/Checkbox";
-import { useState } from "react";
 
 const meta = {
   title: "Components/UI/FilterCard",
@@ -33,7 +33,11 @@ const FilterCardExample = () => {
               key={semester}
               label={semester}
               isSelected={selectedSemester === semester}
-              onClick={() => setSelectedSemester(selectedSemester === semester ? null : semester)}
+              onClick={() =>
+                setSelectedSemester(
+                  selectedSemester === semester ? null : semester,
+                )
+              }
             />
           ))}
         </div>
