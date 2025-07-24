@@ -10,7 +10,7 @@ bun install --frozen-lockfile
 ## 開発
 
 ```bash
-# データベースを作成するには、packages/server で以下のコマンドを実行してください。
+# データベースを作成するには、packages/server に移動してから以下のコマンドを実行してください。
 bunx drizzle-kit push
 ```
 
