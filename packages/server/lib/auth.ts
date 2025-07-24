@@ -3,6 +3,7 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import Elysia from "elysia";
 import { db } from "../db/index.ts";
 import * as schema from "../db/schema.ts";
+import { env } from "../lib/env.ts";
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
@@ -11,11 +12,11 @@ export const auth = betterAuth({
   }),
   socialProviders: {
     google: {
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+      clientId: env.GOOGLE_CLIENT_ID,
+      clientSecret: env.GOOGLE_CLIENT_SECRET,
     },
   },
-  trustedOrigins: [process.env.PUBLIC_WEB_URL ?? "http://localhost:3000"],
+  trustedOrigins: [env.PUBLIC_WEB_URL],
 });
 
 const betterAuthMacro = new Elysia({ name: "better-auth" })

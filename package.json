@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "bun --filter=@packages/{web,server} dev",
     "dev:mock": "bun --filter=@packages/{web,server} dev:mock",
+    "db": "cd packages/server; bun --env-file=../../.env drizzle-kit",
     "storybook": "concurrently 'cd packages/server; bun dev' 'cd packages/web; bun run storybook'",
     "build": "cd packages/web && bun run build",
     "check": "bunx biome check .",
