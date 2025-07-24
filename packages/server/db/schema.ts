@@ -52,15 +52,15 @@ export const account = sqliteTable("accounts", {
   updatedAt: integer("updated_at", { mode: "timestamp" }).notNull(),
 });
 
-// export const verification = sqliteTable("verifications", {
-//   id: text("id").primaryKey(),
-//   identifier: text("identifier").notNull(),
-//   value: text("value").notNull(),
-//   expiresAt: integer("expires_at", { mode: "timestamp" }).notNull(),
-//   createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(
-//     () => /* @__PURE__ */ new Date(),
-//   ),
-//   updatedAt: integer("updated_at", { mode: "timestamp" }).$defaultFn(
-//     () => /* @__PURE__ */ new Date(),
-//   ),
-// });
+export const verification = sqliteTable("verifications", {
+  id: text("id").primaryKey(),
+  identifier: text("identifier").notNull(),
+  value: text("value").notNull(),
+  expiresAt: integer("expires_at", { mode: "timestamp" }).notNull(),
+  createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(
+    () => /* @__PURE__ */ new Date(),
+  ),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).$defaultFn(
+    () => /* @__PURE__ */ new Date(),
+  ),
+});
