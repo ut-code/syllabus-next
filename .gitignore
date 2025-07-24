@@ -12,3 +12,5 @@ dist
 
 *storybook.log
 storybook-static
+
+local.db

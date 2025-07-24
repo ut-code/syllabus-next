@@ -1,4 +1,5 @@
 import type React from "react";
+import { Link } from "react-router-dom";
 import Logo from "/syllabus_icon.svg";
 // import { useUser } from "@/app/UserContext";
 
@@ -55,7 +56,9 @@ export default function Home(): React.ReactElement {
 
           {/* はじめるボタン */}
           <div className="flex items-center justify-center">
-            <div className="btn btn-primary w-36 mt-24">はじめる</div>
+            <Link to="/sign-in" className="btn btn-primary w-36 mt-24">
+              サインインページへ
+            </Link>
           </div>
         </div>
       </div>
