@@ -9,10 +9,15 @@ bun install --frozen-lockfile
 
 ## 開発
 
-開発モードを実行するには、以下のコマンドを実行してください。
 
 ```bash
+# 開発モードを実行するには、以下のコマンドを実行してください。
+# localhost:5173 に Vite サーバーが立ち上がるので、そこで確認してください。
 bun dev
+
+# Storybookの使用
+# localhost:6006にStorybookが立ち上がるので、そこでUIを確認してください。
+bun run storybook
 ```
 
 コードをプッシュする前に、コード品質をチェックするために以下のコマンドを実行してください。
@@ -60,9 +65,3 @@ Userのデータは`User`クラスを使用して扱います。Userのデータ
 	}
 }
 ```
-
-## Storybookの使用
-```bash
-bun run storybook
-```
- - localhost:6006にStorybookが立ち上がるので、そこでUIを確認してください。

@@ -1,5 +1,5 @@
 import type React from "react";
-import { HowToUseItem } from "../app/how-to-use/HowToUseItem.tsx";
+import { HowToUseItem } from "./how-to-use/HowToUseItem.tsx";
 
 const _Blue: React.FC<{ children: string }> = ({ children }) => {
   return <span className="text-tertiary">{children}</span>;

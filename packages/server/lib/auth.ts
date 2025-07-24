@@ -1,5 +1,6 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import Elysia from "elysia";
 import { db } from "../db/index.ts";
 import * as schema from "../db/schema.ts";
 
@@ -16,3 +17,22 @@ export const auth = betterAuth({
   },
   trustedOrigins: [process.env.PUBLIC_WEB_URL ?? "http://localhost:3000"],
 });
+
+const betterAuthMacro = new Elysia({ name: "better-auth" })
+  .mount(auth.handler)
+  .macro({
+    auth: {
+      async resolve({ status, request: { headers } }) {
+        const session = await auth.api.getSession({
+          headers,
+        });
+        if (!session) return status(401);
+
+        return {
+          user: session.user,
+          session: session.session,
+        };
+      },
+    },
+  });
+export { betterAuthMacro as betterAuth };
