@@ -17,6 +17,8 @@ import HowToUse from "./pages/how-to-use/page.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Notion from "./pages/Notion.tsx";
 import { ThemeContext, useThemeProvider } from "./services/theme/index.ts";
+import Profile from "./pages/Profile.tsx";
+import SignIn from "./pages/SignIn.tsx";
 
 /**
  * App コンポーネントは、アプリケーション全体のレイアウトを定義します。
@@ -62,6 +64,8 @@ export default function App() {
                   <Route path="/disclaimer" element={<Disclaimer />} />
                   <Route path="/how-to-use" element={<HowToUse />} />
                   <Route path="/notion" element={<Notion />} />
+                  <Route path="/sign-in" element={<SignIn />} />
+                  <Route path="/profile" element={<Profile />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 <Footer />
