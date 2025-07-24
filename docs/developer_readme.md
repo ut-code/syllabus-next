@@ -10,8 +10,8 @@ bun install --frozen-lockfile
 ## 開発
 
 ```bash
-# データベースを作成するには、packages/server に移動してから以下のコマンドを実行してください。
-bunx drizzle-kit push
+# データベースを作成するには、 `.env` で `DATABASE_URL` を設定し、以下のコマンドを実行してください。
+bun db push
 ```
 
 ```bash
