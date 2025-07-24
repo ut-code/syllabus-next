@@ -1,10 +1,11 @@
 import { defineConfig } from "drizzle-kit";
+import { env } from "./lib/env.ts";
 
 export default defineConfig({
   out: "./drizzle",
   schema: "./db/schema.ts",
   dialect: "sqlite",
   dbCredentials: {
-    url: process.env.DATABASE_URL ?? "file:local.db",
+    url: env.DATABASE_URL,
   },
 });
