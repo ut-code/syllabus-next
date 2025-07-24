@@ -1,7 +1,7 @@
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
 // auth
-export const user = sqliteTable("user", {
+export const user = sqliteTable("users", {
   id: text("id").primaryKey(),
   name: text("name").notNull(),
   email: text("email").notNull().unique(),
@@ -17,7 +17,7 @@ export const user = sqliteTable("user", {
     .notNull(),
 });
 
-export const session = sqliteTable("session", {
+export const session = sqliteTable("sessions", {
   id: text("id").primaryKey(),
   expiresAt: integer("expires_at", { mode: "timestamp" }).notNull(),
   token: text("token").notNull().unique(),
@@ -30,7 +30,7 @@ export const session = sqliteTable("session", {
     .references(() => user.id, { onDelete: "cascade" }),
 });
 
-export const account = sqliteTable("account", {
+export const account = sqliteTable("accounts", {
   id: text("id").primaryKey(),
   accountId: text("account_id").notNull(),
   providerId: text("provider_id").notNull(),
@@ -52,15 +52,15 @@ export const account = sqliteTable("account", {
   updatedAt: integer("updated_at", { mode: "timestamp" }).notNull(),
 });
 
-export const verification = sqliteTable("verification", {
-  id: text("id").primaryKey(),
-  identifier: text("identifier").notNull(),
-  value: text("value").notNull(),
-  expiresAt: integer("expires_at", { mode: "timestamp" }).notNull(),
-  createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(
-    () => /* @__PURE__ */ new Date(),
-  ),
-  updatedAt: integer("updated_at", { mode: "timestamp" }).$defaultFn(
-    () => /* @__PURE__ */ new Date(),
-  ),
-});
+// export const verification = sqliteTable("verifications", {
+//   id: text("id").primaryKey(),
+//   identifier: text("identifier").notNull(),
+//   value: text("value").notNull(),
+//   expiresAt: integer("expires_at", { mode: "timestamp" }).notNull(),
+//   createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(
+//     () => /* @__PURE__ */ new Date(),
+//   ),
+//   updatedAt: integer("updated_at", { mode: "timestamp" }).$defaultFn(
+//     () => /* @__PURE__ */ new Date(),
+//   ),
+// });
