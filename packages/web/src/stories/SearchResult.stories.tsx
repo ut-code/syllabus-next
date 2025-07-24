@@ -4,7 +4,7 @@ import SearchResult, { sampleHeader } from "@/components/SearchResult";
 const meta = {
   title: "Components/SearchResult",
   component: SearchResult,
-  tags: ["autodocs"],
+  tags: [],
   parameters: {
     layout: "fullscreen",
   },
@@ -51,12 +51,5 @@ export const EmptyResults: Story = {
   args: {
     headers: sampleHeader,
     data: [],
-  },
-};
-
-export const SingleResult: Story = {
-  args: {
-    headers: sampleHeader,
-    data: [sampleData[0]],
   },
 };

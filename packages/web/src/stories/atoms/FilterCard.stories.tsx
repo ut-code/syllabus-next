@@ -4,18 +4,6 @@ import Checkbox from "@/components/FilterUI/UI/Checkbox";
 import { FilterCard } from "@/components/FilterUI/UI/FilterCard";
 import { FlagButton } from "@/components/FilterUI/UI/FlagButton";
 
-const meta = {
-  title: "Components/UI/FilterCard",
-  component: FilterCard,
-  tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-  },
-} satisfies Meta<typeof FilterCard>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
 const FilterCardExample = () => {
   const [selectedSemester, setSelectedSemester] = useState<string | null>(null);
   const [checkboxes, setCheckboxes] = useState({
@@ -53,7 +41,7 @@ const FilterCardExample = () => {
                   setCheckboxes((prev) => ({ ...prev, [key]: newChecked }))
                 }
               />
-              <label>評価オプション {key.slice(-1)}</label>
+              <span>評価オプション {key.slice(-1)}</span>
             </div>
           ))}
         </div>
@@ -62,13 +50,18 @@ const FilterCardExample = () => {
   );
 };
 
-export const Default: Story = {
-  args: {
-    title: "Sample Filter",
-    children: <div className="p-4">Filter content goes here</div>,
+const meta = {
+  title: "Components/atoms/FilterCard",
+  component: FilterCardExample,
+  tags: [],
+  parameters: {
+    layout: "centered",
   },
-};
+} satisfies Meta<typeof FilterCardExample>;
 
-export const WithButtons: Story = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
   render: () => <FilterCardExample />,
 };

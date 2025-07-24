@@ -3,7 +3,7 @@ import { MemoryRouter } from "react-router-dom";
 import Footer from "@/components/Footer";
 
 const meta = {
-  title: "Components/Footer",
+  title: "Components/layout/Footer",
   component: Footer,
   decorators: [
     (Story) => (
@@ -12,7 +12,7 @@ const meta = {
       </MemoryRouter>
     ),
   ],
-  tags: ["autodocs"],
+  tags: [],
   parameters: {
     layout: "fullscreen",
   },
