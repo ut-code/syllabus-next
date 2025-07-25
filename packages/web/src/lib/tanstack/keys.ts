@@ -3,4 +3,9 @@ export const keys = {
     _: ["users_sample"],
     list: ["users_sample", "list"],
   },
+
+  users: {
+    _: ["users"],
+    currentUser: ["users", "current"],
+  },
 } as const;

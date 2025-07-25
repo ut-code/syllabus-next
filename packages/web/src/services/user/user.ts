@@ -1,43 +1,32 @@
 import type { User } from "@packages/models";
-import { SampleUser } from "@/services/user/mock_data.ts";
-import { env } from "../../lib/env.ts";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { queryClient } from "@/lib/tanstack/client.ts";
+import { sampleUser } from "@/services/user/mock_data.ts";
+import { keys } from "@/lib/tanstack/keys";
 
-// TODO: サーバーとデータを送受信する
-export class UserService {
-  private user: User | undefined;
+// TODO: use backend to persist data
+let currentUser = sampleUser;
 
-  constructor() {
-    if (typeof window !== "undefined") {
-      if (env.mockData) {
-        this.user = SampleUser;
-      } else {
-        const storedUser = localStorage.getItem("user");
-        this.user = storedUser ? JSON.parse(storedUser) : undefined;
-      }
-    } else {
-      this.user = undefined;
-    }
-  }
+export const useCurrentUserQuery = () => {
+  return useQuery({
+    queryKey: keys.users.currentUser,
+    queryFn: async () => {
+      // TODO: fetch actual user
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      return currentUser;
+    },
+  });
+};
 
-  /**
-   * ユーザー情報を取得します。
-   * undefinedの場合は、未登録とみなします。
-   * @returns 現在のユーザー情報
-   */
-  getUser(): User | undefined {
-    return this.user;
-  }
-
-  /**
-   * ユーザー情報を更新します。
-   * クライアントサイドのみで localStorage を更新します。
-   * @param newUser 新しいユーザー情報
-   */
-  setUser(newUser: User): void {
-    this.user = newUser;
-
-    if (typeof window !== "undefined" && !env.mockData) {
-      localStorage.setItem("user", JSON.stringify(newUser));
-    }
-  }
-}
+export const useUpdateUserMutation = () => {
+  return useMutation({
+    mutationFn: async (data: User) => {
+      currentUser = data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: keys.users.currentUser,
+      });
+    },
+  });
+};

@@ -3,7 +3,7 @@ import type { ClassDataType, User } from "@packages/models";
 /**
  * 講義詳細モーダルの動作確認に利用するサンプルデータ
  */
-export const SampleClasses: ClassDataType[] = [
+export const sampleClasses: ClassDataType[] = [
   {
     code: "30003",
     type: "基礎",
@@ -184,7 +184,7 @@ export const SampleClasses: ClassDataType[] = [
   },
 ];
 
-export const SampleUser: User = {
+export const sampleUser: User = {
   stream: "l1",
   grade: 1,
   classNumber: 1,

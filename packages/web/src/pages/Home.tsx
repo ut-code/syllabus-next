@@ -1,14 +1,15 @@
 import type React from "react";
 import { Link } from "react-router-dom";
 import Logo from "/syllabus_icon.svg";
-// import { useUser } from "@/app/UserContext";
+// import { useCurrentUserQuery, useUpdateUserMutation } from "@/services/user/user.ts";
 
 /**
  * Home コンポーネントは、ホームページの内容を表示します。
  * @returns HTMLを生成するReactコンポーネント。
  */
 export default function Home(): React.ReactElement {
-  // const { user, setUser } = useUser();
+  // const queryUser = useCurrentUserQuery();
+  // const updateUser = useUpdateUserMutation();
   return (
     <>
       {/* バックグラウンド画像 */}
